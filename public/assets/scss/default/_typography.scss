@@ -18,7 +18,7 @@ body {
   font-weight: 400;
   font-size: var(--font-size-lg);
   line-height: var(--line-height-lg);
-  font-family: var(--body-font);
+  font-family: var(--body-font) !important;
   color: var(--gray-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -119,16 +119,20 @@ h6,
 p {
   font-size: var(--font-size-lg);
   line-height: var(--line-height-lg);
-  margin-bottom: 30px;
+  font-size: 15px;
+  margin-bottom: 0px !important;
   @media #{$sm-layout-device} {
     line-height: 30px !important;
-    font-size: 16px !important;
+    font-size: 12px !important;
   }
   br {
     @media #{$sm-layout-device} {
       display: none;
     }
   }
+}
+a {
+  text-decoration: none !important;
 }
 
 a:focus,

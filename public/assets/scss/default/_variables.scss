@@ -1,15 +1,20 @@
 :root {
   // Body Colors
-  --primary-body-color: #337dff;
-  --secondary-body-color: #3eb75e;
+  --primary-body-color: #fff;
+  --secondary-body-color: #fff;
 
   // Theme Colors
-  --primary-theme-color: #337dff;
-  --secondary-theme-color: #3eb75e;
+  --primary-theme-color: #e73c17;
+  --secondary-theme-color: #292826;
 
   // Typography Colors
   --heading-color: #333;
-  --paragraph-color: #5e5e5e;
+  --text-color-one: #5e5e5e;
+  --text-color-two: #bbb;
+
+  // a tag hover color
+
+  --a-hover-color: #ffcb00;
 
   // Important Colors
   --gray-color: #808080;
@@ -63,8 +68,9 @@
   --transition: 0.3s;
 
   // Font Family
-  --body-font: "Poppins", sans-serif;
-  --heading-font: "Poppins", sans-serif;
+  --body-font: "Lato", sans-serif;
+  --heading-font: "Lato", sans-serif;
+  --intro-font: "Courgette", cursive;
   --font-awesome: "Font Awesome 5 Pro";
 
   // Font Size
