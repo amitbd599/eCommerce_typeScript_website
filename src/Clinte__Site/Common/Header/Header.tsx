@@ -7,19 +7,26 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaRegEnvelope,
+  FaArrowRight,
 } from "react-icons/fa";
 import { MdLanguage, MdFavorite } from "react-icons/md";
+import { BsFillCartFill } from "react-icons/bs";
 import tippy from "tippy.js";
 import "tippy.js/dist/tippy.css";
 import custom_Data from "../../Script/Custom__Data";
+import Image__Data from "../../Script/Image__Data";
+import nav__Items from "../../Script/Nav_items";
+import Product_Data from "../../Script/Product__Data";
 
 const Header = () => {
   const [data, setData] = useState("Eng");
-  const { langauge } = custom_Data();
+  const { language } = custom_Data();
+  const { logo } = Image__Data();
+  const { mixProduct } = Product_Data();
 
-  let hendelClick: (e: string) => void;
-
-  hendelClick: hendelClick = (e: string) => {
+  // Handel typeScript & Langauge change
+  let handelClick: (e: string) => void;
+  handelClick = (e: string) => {
     setData(e);
   };
 
@@ -37,6 +44,7 @@ const Header = () => {
 
   return (
     <section className="header__section">
+      {/* ============= Top header section =============== */}
       {/* Top header section start */}
       <div className="top__headerSection">
         <div className="wrapper">
@@ -82,10 +90,10 @@ const Header = () => {
                         </Link>
 
                         <ul className="dropdown__inner">
-                          {langauge.map((item) => (
+                          {language.map((item) => (
                             <li
                               key={item.id}
-                              onClick={(e) => hendelClick(item.sort_title)}
+                              onClick={(e) => handelClick(item.sort_title)}
                             >
                               {item.title}
                             </li>
@@ -134,6 +142,138 @@ const Header = () => {
         </div>
       </div>
       {/* Top header section End */}
+
+      {/* =============  Desktop Menu Area ============= */}
+      <div className="desktop__menu">
+        <div className="wrapper">
+          <div className="wrapper__body">
+            <Container>
+              <Row>
+                <Col>
+                  <nav>
+                    <div className="logo__section">
+                      <Link to={"/"}>
+                        <img src={logo[0].img} alt="" />
+                      </Link>
+                    </div>
+                    <ul className="nav__items">
+                      {nav__Items.map((item, index) => (
+                        <li
+                          className={
+                            item.className
+                              ? `nav__item ${item.className}`
+                              : `nav__item`
+                          }
+                          key={index}
+                        >
+                          <Link className="link" to={"/"}>
+                            {item.item}
+                          </Link>
+
+                          {item.dropdown && (
+                            <ul className="dropdown__items">
+                              {item.dropdown?.map((dropItem: any) => (
+                                <li className="dropdown__item">
+                                  <Link className="link" to={"/"}>
+                                    {dropItem.item}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                          {item.megaMenu && (
+                            <div className="megaMenu">
+                              <div className="inner__megaMenu">
+                                <div className="categories__items">
+                                  <h3>All Categories</h3>
+                                  <ul>
+                                    <li>
+                                      <Link className="link" to={"/"}>
+                                        Children
+                                      </Link>
+                                    </li>
+                                    <li>
+                                      <Link className="link" to={"/"}>
+                                        Boys
+                                      </Link>
+                                    </li>
+                                    <li>
+                                      <Link className="link" to={"/"}>
+                                        Girls
+                                      </Link>
+                                    </li>
+                                    <li>
+                                      <Link className="link" to={"/"}>
+                                        Women
+                                      </Link>
+                                    </li>
+                                    <li>
+                                      <Link className="link" to={"/"}>
+                                        Men
+                                      </Link>
+                                    </li>
+                                    <li>
+                                      <Link className="link" to={"/"}>
+                                        Accessory
+                                      </Link>
+                                    </li>
+                                    <li>
+                                      <Link className="link" to={"/"}>
+                                        Shoes
+                                      </Link>
+                                    </li>
+
+                                    <Link
+                                      className="button__mid_border_color"
+                                      to={"/"}
+                                    >
+                                      All Product{" "}
+                                      <span>
+                                        <FaArrowRight className="ml-5" />
+                                      </span>
+                                    </Link>
+                                  </ul>
+                                </div>
+                                <div className="product__items">
+                                  <div className="product__item">
+                                    {mixProduct.map((item, index) => (
+                                      <div
+                                        key={index}
+                                        className="product__item__inner"
+                                      >
+                                        <img
+                                          className="img-fluid"
+                                          src={item.img}
+                                          alt=""
+                                        />
+                                        <p>{item.categories}</p>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="login__section">
+                      <ul className="login__innerSection">
+                        <li>LOGIN</li>
+                        <li className="cart__total">
+                          CART / <span>$0.00</span>{" "}
+                          <BsFillCartFill className="icon" />
+                          <span className="cart__item">0</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

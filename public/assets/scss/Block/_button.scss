@@ -1,0 +1,27 @@
+.button__big_solid_color {
+  border: 2px solid var(--primary-theme-color);
+  background-color: var(--primary-theme-color);
+  padding: 12px 50px;
+  font-size: 15px;
+}
+.button__mid_solid_color {
+}
+.button__sm_solid_color {
+}
+.button__big_border_color {
+}
+.button__mid_border_color {
+  border: 2px solid var(--secondary-theme-color);
+  background-color: var(--secondary-theme-color);
+  padding: 10px 50px;
+  font-size: 15px;
+  color: #fff !important;
+  margin-top: 22px;
+  display: block;
+  transition: all 0.1s;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.button__sm_border_color {
+}

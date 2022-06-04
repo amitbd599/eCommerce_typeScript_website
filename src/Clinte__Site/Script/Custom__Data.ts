@@ -1,10 +1,10 @@
 const custom_Data = () => {
-  type langauge = {
+  type language = {
     id: number;
     title: string;
     sort_title: string;
   };
-  const langauge: langauge[] = [
+  const language = [
     {
       id: 1,
       title: "English",
@@ -32,7 +32,7 @@ const custom_Data = () => {
     },
   ];
 
-  return { langauge };
+  return { language };
 };
 
 export default custom_Data;
