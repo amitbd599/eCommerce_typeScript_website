@@ -13,7 +13,7 @@ const nav__Items: nav__Items[] = [
     link: "/",
   },
   {
-    item: "Mega Menu",
+    item: "Mega",
     link: "/about",
     className: "megaMenu__intro",
     megaMenu: "cd",
@@ -55,6 +55,7 @@ const nav__Items: nav__Items[] = [
       },
     ],
   },
+
   {
     item: "Blog",
     link: "/",

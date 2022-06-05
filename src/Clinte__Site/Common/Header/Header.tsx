@@ -8,7 +8,10 @@ import {
   FaLinkedinIn,
   FaRegEnvelope,
   FaArrowRight,
+  FaSearch,
 } from "react-icons/fa";
+import { BiMenu } from "react-icons/bi";
+import { GrFormClose } from "react-icons/gr";
 import { MdLanguage, MdFavorite } from "react-icons/md";
 import { BsFillCartFill } from "react-icons/bs";
 import tippy from "tippy.js";
@@ -20,6 +23,8 @@ import Product_Data from "../../Script/Product__Data";
 
 const Header = () => {
   const [data, setData] = useState("Eng");
+  const [active, setActive] = useState(false);
+  const [close, setClose] = useState(false);
   const { language } = custom_Data();
   const { logo } = Image__Data();
   const { mixProduct } = Product_Data();
@@ -28,6 +33,17 @@ const Header = () => {
   let handelClick: (e: string) => void;
   handelClick = (e: string) => {
     setData(e);
+  };
+
+  // Close item Handel ...
+  let OpenClose__hendelClick: () => void;
+  OpenClose__hendelClick = () => {
+    setClose(!close);
+  };
+  // Search item Handel ...
+  let search__hendelClick: () => void;
+  search__hendelClick = () => {
+    setActive(!active);
   };
 
   // Tooltip load here....
@@ -259,6 +275,37 @@ const Header = () => {
                     </ul>
                     <div className="login__section">
                       <ul className="login__innerSection">
+                        <li className="search__intro">
+                          {!active ? (
+                            <FaSearch
+                              className="Search__icon"
+                              onClick={search__hendelClick}
+                            />
+                          ) : (
+                            <GrFormClose
+                              className="Search__icon"
+                              onClick={search__hendelClick}
+                            />
+                          )}
+
+                          <div
+                            className={
+                              active
+                                ? "search__section active"
+                                : "search__section"
+                            }
+                          >
+                            <div className="inner__section">
+                              <form action="">
+                                <input
+                                  type="text"
+                                  placeholder="search here..."
+                                />
+                                <FaSearch className="Search__icon" />
+                              </form>
+                            </div>
+                          </div>
+                        </li>
                         <li>LOGIN</li>
                         <li className="cart__total">
                           CART / <span>$0.00</span>{" "}
@@ -271,6 +318,97 @@ const Header = () => {
                 </Col>
               </Row>
             </Container>
+          </div>
+        </div>
+      </div>
+
+      {/* =============  Mobile Menu Area ============= */}
+
+      {/*  */}
+
+      <div className="mobile__menu">
+        <div className="header__item">
+          <div className="menu__icon">
+            {!close ? (
+              <BiMenu className="icon" onClick={OpenClose__hendelClick} />
+            ) : (
+              <GrFormClose
+                className="close__menu__icon"
+                onClick={OpenClose__hendelClick}
+              />
+            )}
+          </div>
+          <div className="logo__section">
+            <img src={logo[0].img} alt="" />
+          </div>
+          <div className="cart__section">
+            <BsFillCartFill className="icon" />
+            <span className="cart__item">0</span>
+          </div>
+        </div>
+        <div className={close ? "wrapper active" : "wrapper"}>
+          <div className="wrapper__body">
+            <nav>
+              <div className="search__intro">
+                <input type="text" placeholder="Search Here..." />{" "}
+                <FaSearch className="Search__icon" />
+              </div>
+              <ul className="nav__items">
+                {nav__Items.map((item, index) => (
+                  <li
+                    className={
+                      item.className
+                        ? `nav__item ${item.className}`
+                        : `nav__item`
+                    }
+                    key={index}
+                  >
+                    <Link className="link" to={"/"}>
+                      {item.item}
+                    </Link>
+
+                    {item.dropdown && (
+                      <ul className="dropdown__items">
+                        {item.dropdown?.map((dropItem: any) => (
+                          <li className="dropdown__item">
+                            <Link className="link" to={"/"}>
+                              {dropItem.item}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+              <div className="social__icon">
+                <span>
+                  <a href="#">
+                    <FaFacebookF className="icon" />
+                  </a>
+                </span>
+                <span>
+                  <a href="#">
+                    <FaTwitter className="icon" />
+                  </a>
+                </span>
+                <span>
+                  <a href="#">
+                    <FaInstagram className="icon" />
+                  </a>
+                </span>
+                <span>
+                  <a href="#">
+                    <FaLinkedinIn className="icon" />
+                  </a>
+                </span>
+                <span>
+                  <a href="#">
+                    <FaRegEnvelope className="icon" />
+                  </a>
+                </span>
+              </div>
+            </nav>
           </div>
         </div>
       </div>
