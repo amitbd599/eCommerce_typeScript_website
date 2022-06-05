@@ -1,0 +1,319 @@
+// Hero Slider start
+
+.hero__slider__section {
+  .wrapper {
+    position: relative;
+    .wrapper__body {
+      .slider__inner_one {
+        position: relative;
+        height: 600px;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        .inner__body {
+          .text__info {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 9;
+            transform: translate(-50%, -50%);
+            h2 {
+              font-size: 55px;
+              font-weight: 600;
+              color: #fff;
+              line-height: 70px;
+            }
+            h3 {
+              font-size: 32px;
+              font-weight: 600;
+              color: #fff;
+              margin-bottom: 32px;
+            }
+          }
+          .round__shape {
+            position: absolute;
+            right: 100px;
+            top: 50px;
+            .round__shape_inner {
+              width: 200px;
+              height: 200px;
+              background-color: #171405;
+              border-radius: 100%;
+              padding: 10px;
+              .border__intro {
+                border: 2px solid rgb(148, 148, 148);
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+                border-style: dashed;
+                border-width: 2px;
+                h2 {
+                  font-size: 25px;
+                  text-align: center;
+                  font-weight: 700;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+      .slider__inner_two {
+        position: relative;
+        height: 600px;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        .inner__body {
+          .text__info {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 9;
+            transform: translate(-50%, -50%);
+
+            .animation__hold {
+              padding: 70px 70px;
+              border: 5px solid #fff;
+              h2 {
+                font-size: 140px;
+                font-weight: 600;
+                color: #fff;
+                line-height: 70px;
+                margin-bottom: 47px;
+              }
+              h3 {
+                font-size: 32px;
+                font-weight: 600;
+                color: #fff;
+                margin-bottom: 32px;
+              }
+            }
+          }
+          .round__shape {
+            position: absolute;
+            right: 100px;
+            top: 50px;
+            .round__shape_inner {
+              width: 200px;
+              height: 200px;
+              background-color: #171405;
+              border-radius: 100%;
+              padding: 10px;
+              .border__intro {
+                border: 2px solid rgb(148, 148, 148);
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+                border-style: dashed;
+                border-width: 2px;
+                h2 {
+                  font-size: 25px;
+                  text-align: center;
+                  font-weight: 700;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.hero__slider__section {
+  .slick-prev {
+    left: 35px;
+    z-index: 9 !important;
+    background: transparent;
+    padding: 25px;
+    border-radius: 50%;
+    width: 20px;
+    text-align: center;
+    height: 20px;
+    border: 2px solid #fff;
+    transition: all 0.3s linear;
+    &:hover {
+      left: 30px;
+    }
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .slick-next {
+    right: 35px;
+    z-index: 9 !important;
+    background: transparent;
+    padding: 25px;
+    border-radius: 50%;
+    width: 20px;
+    text-align: center;
+    height: 20px;
+    border: 2px solid #fff;
+    transition: all 0.3s linear;
+    &:hover {
+      right: 30px;
+    }
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .slick-slide {
+    &.slick-current {
+      .slider__inner_one {
+        .inner__body {
+          .text__info {
+            h2 {
+              -webkit-animation: 800ms ease-in-out 0s normal none 1 running
+                customOne;
+              animation: 800ms ease-in-out 0s normal none 1 running customOne;
+            }
+            h3 {
+              -webkit-animation: 1000ms ease-in-out 0s normal none 1 running
+                customOne;
+              animation: 1000ms ease-in-out 0s normal none 1 running customOne;
+            }
+            .button__mid_border_color_white {
+              -webkit-animation: 1200ms ease-in-out 0s normal none 1 running
+                customOne;
+              animation: 1200ms ease-in-out 0s normal none 1 running customOne;
+            }
+          }
+          .round__shape {
+            -webkit-animation: 800ms ease-in-out 0s normal none 1 running
+              round__shape;
+            animation: 800ms ease-in-out 0s normal none 1 running round__shape;
+          }
+        }
+      }
+      .slider__inner_two {
+        .inner__body {
+          .text__info {
+            .animation__hold {
+              -webkit-animation: 1200ms ease-in-out 0s normal none 1 running
+                slider__inner_two;
+              animation: 1200ms ease-in-out 0s normal none 1 running
+                slider__inner_two;
+            }
+          }
+          .round__shape {
+            -webkit-animation: 800ms ease-in-out 0s normal none 1 running
+              round__shape;
+            animation: 800ms ease-in-out 0s normal none 1 running round__shape;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*--------------------
+Custom Animation  
+----------------------*/
+
+// customOne animation
+
+@-webkit-keyframes customOne {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 50%, 0);
+    transform: translate3d(0, 50%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes customOne {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 50%, 0);
+    transform: translate3d(0, 50%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+// round__shape animation
+
+@-webkit-keyframes round__shape {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(50%, 0, 0);
+    transform: translate3d(50%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes round__shape {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(50%, 0, 0);
+    transform: translate3d(50%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+// slider__inner_two animation
+
+@-webkit-keyframes slider__inner_two {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(50%, 0, 0);
+    transform: rotateY(40deg);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes slider__inner_two {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(50%, 0, 0);
+    transform: rotateY(40deg);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}

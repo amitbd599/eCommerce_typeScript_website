@@ -3,6 +3,7 @@
 ===========================*/
 
 .header__section {
+  position: relative;
   .top__headerSection {
     @media #{$md-layout-device} {
       display: none;
@@ -369,9 +370,13 @@
 ===========================*/
 
 .mobile__menu {
-  position: relative;
+  position: absolute;
   overflow-y: scroll;
-  height: 100vh;
+  height: 110vh;
+  z-index: 9999;
+  background: #ddd;
+  width: 100%;
+  transition: all 0.2s linear;
 
   @media #{$extra-device} {
     display: none;
@@ -408,10 +413,6 @@
     }
   }
   .wrapper {
-    transition: all 0.2s linear;
-    visibility: hidden;
-    opacity: 0;
-
     .wrapper__body {
       nav {
         padding: 50px 0;
@@ -500,10 +501,10 @@
         }
       }
     }
-
-    &.active {
-      visibility: visible;
-      opacity: 1;
-    }
+  }
+  &.active {
+    height: 100px;
+    visibility: visible;
+    opacity: 1;
   }
 }

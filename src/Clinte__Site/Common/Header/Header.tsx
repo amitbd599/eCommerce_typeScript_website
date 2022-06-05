@@ -240,7 +240,7 @@ const Header = () => {
                                     </li>
 
                                     <Link
-                                      className="button__mid_border_color"
+                                      className="button__mid_solid_color_black"
                                       to={"/"}
                                     >
                                       All Product{" "}
@@ -324,9 +324,7 @@ const Header = () => {
 
       {/* =============  Mobile Menu Area ============= */}
 
-      {/*  */}
-
-      <div className="mobile__menu">
+      <div className={!close ? "mobile__menu active" : "mobile__menu"}>
         <div className="header__item">
           <div className="menu__icon">
             {!close ? (
@@ -346,7 +344,7 @@ const Header = () => {
             <span className="cart__item">0</span>
           </div>
         </div>
-        <div className={close ? "wrapper active" : "wrapper"}>
+        <div className="wrapper">
           <div className="wrapper__body">
             <nav>
               <div className="search__intro">

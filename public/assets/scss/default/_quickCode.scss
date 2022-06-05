@@ -75,17 +75,17 @@
   @extend %bgImgPosition;
 }
 
-@for $i from 1 through 2{ 
-    .bgImg-#{$i}{
-        background-image: url(../../images/bgImg/bgImg-#{$i}.png) !important;
-    }
+@for $i from 1 through 5 {
+  .bgImg-#{$i} {
+    background-image: url(../../images/bgImg/bgImg-#{$i}.png) !important;
+  }
 }
 
 /*============================================
                 Input Placeholder
 ==============================================*/
 input:-moz-placeholder,
-textarea:-moz-placeholder { 
+textarea:-moz-placeholder {
   opacity: 1;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
