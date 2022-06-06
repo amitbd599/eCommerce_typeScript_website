@@ -21,7 +21,7 @@ import Image__Data from "../../Script/Image__Data";
 import nav__Items from "../../Script/Nav_items";
 import Product_Data from "../../Script/Product__Data";
 
-const Header = () => {
+const Header: React.FC = () => {
   const [data, setData] = useState("Eng");
   const [active, setActive] = useState(false);
   const [close, setClose] = useState(false);
