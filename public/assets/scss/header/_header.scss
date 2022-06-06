@@ -177,6 +177,7 @@
 
             .dropdown__items {
               top: 86px;
+              left: -32px;
               position: absolute;
               max-height: inherit;
               padding: 20px;
@@ -370,7 +371,7 @@
 ===========================*/
 
 .mobile__menu {
-  position: absolute;
+  position: relative;
   overflow-y: scroll;
   height: 110vh;
   z-index: 9999;

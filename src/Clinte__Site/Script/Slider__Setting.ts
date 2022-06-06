@@ -16,6 +16,7 @@ let Slider__Setting = () => {
     adaptiveHeight?: boolean;
     speed?: 500;
     accessibility?: boolean;
+    responsive?: any;
   };
 
   let Hero__Slider__setting: Hero__Slider__setting[] = [
@@ -28,6 +29,26 @@ let Slider__Setting = () => {
       easing: "fade",
       adaptiveHeight: true,
       accessibility: true,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            arrows: true,
+          },
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            arrows: false,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            arrows: false,
+          },
+        },
+      ],
     },
   ];
 

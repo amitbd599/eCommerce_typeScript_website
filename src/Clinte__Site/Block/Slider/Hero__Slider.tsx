@@ -44,7 +44,7 @@ const Hero__Slider: React.FC = () => {
                     <h2 className="">BUY</h2>
                     <h3>Flash Sale With Free Shipping</h3>
                     <Link to={"/"} className="button__mid_border_color_white">
-                      SHOP NOW
+                      SHOP MEN
                     </Link>
                   </div>
                 </div>
@@ -81,10 +81,10 @@ const Hero__Slider: React.FC = () => {
               <div className="inner__body">
                 <div className="text__info ">
                   <div className="animation__hold">
-                    <h2 className="">Careers</h2>
+                    <h2 className="">SALES</h2>
                     <h3>Patterned Outsole For Durability</h3>
                     <Link to={"/"} className="button__mid_border_color_white">
-                      SHOP NOW
+                      SHOP WOMEN
                     </Link>
                   </div>
                 </div>
