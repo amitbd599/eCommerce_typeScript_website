@@ -212,9 +212,9 @@
 
               .megaMenu {
                 position: absolute;
-                width: 100vw;
+                width: 100%;
                 left: -50%;
-                margin-left: 50vw;
+                margin-left: 50%;
                 top: 91px;
                 max-height: inherit;
                 padding: 35px 20px;
@@ -371,7 +371,7 @@
 ===========================*/
 
 .mobile__menu {
-  position: relative;
+  position: fixed;
   overflow-y: scroll;
   height: 110vh;
   z-index: 9999;

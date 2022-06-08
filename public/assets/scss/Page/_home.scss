@@ -1,17 +1,26 @@
 // =========   Intro Product Start  ========= //
 
 .intro__product {
-  padding: 100px 0;
+  padding: 100px 0 50px 0;
   .wrapper {
     .wrapper__body {
       .inner__wrapper {
+        --bs-gutter-x: 40px;
         .inner__body {
           overflow: hidden;
 
           position: relative;
-          img {
-            transition: all 0.3s linear;
+          .img__file {
+            overflow: hidden;
+            // width: 570px;
+            // height: 330px;
+            // margin: auto;
+            img {
+              width: 100%;
+              transition: all 0.3s linear;
+            }
           }
+
           .text__body {
             position: absolute;
             top: 50%;
@@ -36,6 +45,39 @@
             img {
               transform: scale(112%);
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Banner Section
+
+.product__banner {
+  padding: 50px 0;
+  .wrapper {
+    .wrapper__body {
+      .inner__body {
+        position: relative;
+        img {
+          width: 100%;
+        }
+        .text__inner {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 470px;
+          text-align: center;
+          h2 {
+            font-size: 40px;
+            font-weight: 600;
+            color: var(--color-white);
+          }
+          .button__mid_solid_color_black {
+            display: inline-block;
+            margin-top: 12px;
           }
         }
       }

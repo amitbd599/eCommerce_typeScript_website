@@ -1,11 +1,5 @@
 let Slider__Setting = () => {
-  type Hero__Slider__setting = {
-    // dots: boolean;
-    // infinite: boolean;
-    // speed: number;
-    // slidesToShow: number;
-    // slidesToScroll: number;
-
+  type slider_type = {
     infinite?: boolean;
     slidesToShow?: number;
     slidesToScroll?: number;
@@ -17,9 +11,11 @@ let Slider__Setting = () => {
     speed?: 500;
     accessibility?: boolean;
     responsive?: any;
+    initialSlide?: number;
+    autoplay?: boolean;
   };
 
-  let Hero__Slider__setting: Hero__Slider__setting[] = [
+  let Hero__Slider__setting: slider_type[] = [
     {
       infinite: true,
       slidesToShow: 1,
@@ -29,6 +25,7 @@ let Slider__Setting = () => {
       easing: "fade",
       adaptiveHeight: true,
       accessibility: true,
+
       responsive: [
         {
           breakpoint: 1024,
@@ -52,7 +49,64 @@ let Slider__Setting = () => {
     },
   ];
 
-  return { Hero__Slider__setting };
+  let Product__Slider__One__setting: slider_type[] = [
+    {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 5,
+      slidesToScroll: 5,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            arrows: true,
+          },
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            arrows: false,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            arrows: false,
+          },
+        },
+      ],
+    },
+  ];
+
+  let bestSeller__product__setting: slider_type[] = [
+    {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+    },
+  ];
+
+  let customer__slider__review__setting: slider_type[] = [
+    {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      arrows: true,
+    },
+  ];
+
+  return {
+    Hero__Slider__setting,
+    Product__Slider__One__setting,
+    bestSeller__product__setting,
+    customer__slider__review__setting,
+  };
 };
 
 export default Slider__Setting;
