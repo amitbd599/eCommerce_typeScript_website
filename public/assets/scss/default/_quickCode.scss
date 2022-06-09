@@ -58,6 +58,12 @@
   clear: both;
 }
 
+.aline-center {
+  align-items: center;
+}
+.justify-space-between {
+  justify-content: space-between;
+}
 /*===========================
     Background Image 
 =============================*/
@@ -76,7 +82,7 @@
   @extend %bgImgPosition;
 }
 
-@for $i from 1 through 6 {
+@for $i from 1 through 7 {
   .bgImg-#{$i} {
     background-image: url(../../images/bgImg/bgImg-#{$i}.png) !important;
   }

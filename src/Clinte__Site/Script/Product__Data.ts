@@ -300,7 +300,112 @@ const Product_Data = () => {
     },
   ];
 
-  return { mixProduct, productSlider, product };
+  // productmixedSize Data
+
+  type productmixedSize = {
+    name: string;
+    img: string;
+    categories: string;
+    link: string;
+    rate?: number;
+    price?: number;
+    brand?: string;
+  };
+
+  let productmixedSize: productmixedSize[] = [
+    {
+      name: "Math Clock  Half Sleeve T Shirt For Men",
+      img: "https://res.cloudinary.com/amitjs/image/upload/v1654759453/productMix/Se300e3f2dada482ba99208559fe98a23a_mcu7hx.jpg",
+      categories: "T Shirt",
+      link: "/",
+      rate: 3,
+      price: 60,
+      brand: "Pcnoa",
+    },
+    {
+      name: "Exclusive leather wallet money bag for men",
+      img: "https://res.cloudinary.com/amitjs/image/upload/v1654759411/productMix/23514209d11c9bd465afd6605cfb9dda_z9bryr.jpg",
+      categories: "Wallet",
+      link: "/",
+      rate: 4,
+      price: 90,
+      brand: "Synthetic",
+    },
+    {
+      name: "Stiff Belt for Men SB-B47- Black",
+      img: "/assets/images/products_Small/product-3.png",
+      categories: "Belt",
+      link: "/",
+      rate: 5,
+      price: 120,
+      brand: "Foxcon",
+    },
+    {
+      name: "Striped casual sneaker shoes for men",
+      img: "/assets/images/products_Small/product-4.png",
+      categories: "Shoes",
+      link: "/",
+      rate: 5,
+      price: 60,
+      brand: "Sneaker",
+    },
+    {
+      name: "Boys Short Pant Branded Targis",
+      img: "/assets/images/products_Small/product-5.png",
+      categories: "Pant",
+      link: "/",
+      rate: 2,
+      price: 60,
+      brand: "Adadas",
+    },
+    {
+      name: "31-in-1 Screwdriver Tool Set - Yellow",
+      img: "/assets/images/products_Small/product-6.png",
+      categories: "Screwdriver",
+      link: "/",
+      rate: 4,
+      price: 60,
+      brand: "Screw",
+    },
+    {
+      name: "HTC AT-522 Trimmer for men - Black",
+      img: "/assets/images/products_Small/product-7.png",
+      categories: "Trimmer",
+      link: "/",
+      rate: 3,
+      price: 300,
+      brand: "HTC",
+    },
+    {
+      name: "Xiaomi Redmi Buds 3 Youth Edition - Black",
+      img: "/assets/images/products_Small/product-8.png",
+      categories: "Ear Buds",
+      link: "/",
+      rate: 5,
+      price: 40,
+      brand: "Xiaomi",
+    },
+    {
+      name: "Selfie Camera Lenses - Black & Blue",
+      img: "/assets/images/products_Small/product-9.png",
+      categories: "Lenses",
+      link: "/",
+      rate: 3,
+      price: 20,
+      brand: "Macro",
+    },
+    {
+      name: "Black Half Foam Net Styles Cap for Men",
+      img: "/assets/images/products_Small/product-10.png",
+      categories: "Cap",
+      link: "/",
+      rate: 4,
+      price: 30,
+      brand: "Retro",
+    },
+  ];
+
+  return { mixProduct, productSlider, product, productmixedSize };
 };
 
 export default Product_Data;

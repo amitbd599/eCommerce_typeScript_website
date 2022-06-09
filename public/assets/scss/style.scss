@@ -63,7 +63,7 @@ STYLE SHEET INDEX END
 /****************************************************
                  Footer Styles
 *****************************************************/
-
+@import "footer/footer";
 /****************************************************
                  Page Styles
 *****************************************************/
@@ -77,6 +77,9 @@ STYLE SHEET INDEX END
 @import "Components/bestSeller__products";
 @import "Components/customer__review";
 @import "Components/trending__products";
+@import "Components/blog__section";
+@import "Components/feature__categories";
+@import "Components/subscribe__section";
 /****************************************************
                  Block Styles
 *****************************************************/
