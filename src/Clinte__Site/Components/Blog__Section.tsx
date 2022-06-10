@@ -13,7 +13,7 @@ const Blog__Section = () => {
             <Container>
               <Row>
                 <h2>Our Latest Blog</h2>
-                <Col lg={4} md={12} sm={12}>
+                <Col lg={4} md={6} sm={12}>
                   <div className="inner__section">
                     <div className="item">
                       <div className="img__file">
@@ -50,7 +50,7 @@ const Blog__Section = () => {
                     </div>
                   </div>
                 </Col>
-                <Col lg={4} md={12} sm={12}>
+                <Col lg={4} md={6} sm={12}>
                   <div className="inner__section">
                     <div className="item">
                       <div className="img__file">
@@ -87,7 +87,7 @@ const Blog__Section = () => {
                     </div>
                   </div>
                 </Col>
-                <Col lg={4} md={12} sm={12}>
+                <Col lg={4} md={6} sm={12}>
                   <div className="inner__section">
                     <div className="item">
                       <div className="img__file">

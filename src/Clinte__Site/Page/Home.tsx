@@ -41,7 +41,7 @@ const Home: React.FC = () => {
                 <Col
                   className="left__side inner__wrapper"
                   lg={6}
-                  md={6}
+                  md={12}
                   sm={12}
                 >
                   <div className="inner__body">
@@ -61,7 +61,12 @@ const Home: React.FC = () => {
                     </div>
                   </div>
                 </Col>
-                <Col className="right__side inner__wrapper" lg={6}>
+                <Col
+                  className="right__side inner__wrapper"
+                  lg={6}
+                  md={12}
+                  sm={12}
+                >
                   <div className="inner__body">
                     <div className="img__file">
                       <img
@@ -161,7 +166,7 @@ const Home: React.FC = () => {
                 </Col>
               </Row>
               <Row className="part__two">
-                <Col lg={3} md={6} sm={12}>
+                <Col lg={3} md={3} sm={6} xs={6}>
                   <div className="inner__body">
                     <img
                       src="/assets/images/instagram/instragram-1.png"
@@ -173,7 +178,7 @@ const Home: React.FC = () => {
                     </Link>
                   </div>
                 </Col>
-                <Col lg={3} md={6} sm={12}>
+                <Col lg={3} md={3} sm={6} xs={6}>
                   <div className="inner__body">
                     <img
                       src="/assets/images/instagram/instragram-2.png"
@@ -185,7 +190,7 @@ const Home: React.FC = () => {
                     </Link>
                   </div>
                 </Col>
-                <Col lg={3} md={6} sm={12}>
+                <Col lg={3} md={3} sm={6} xs={6}>
                   <div className="inner__body">
                     <img
                       src="/assets/images/instagram/instragram-3.png"
@@ -197,7 +202,7 @@ const Home: React.FC = () => {
                     </Link>
                   </div>
                 </Col>
-                <Col lg={3} md={6} sm={12}>
+                <Col lg={3} md={3} sm={6} xs={6}>
                   <div className="inner__body">
                     <img
                       src="/assets/images/instagram/instragram-4.png"

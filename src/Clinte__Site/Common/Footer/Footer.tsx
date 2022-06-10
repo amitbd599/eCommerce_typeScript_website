@@ -123,9 +123,9 @@ const Footer = () => {
                   <p>
                     © Falkon - 2022 - Developed By{" "}
                     <span>
-                      <Link to={"https://www.linkedin.com/in/amitbiswas-tm/"}>
+                      <a href="https://www.linkedin.com/in/amitbiswas-tm">
                         Amit Biswas
-                      </Link>
+                      </a>
                     </span>
                   </p>
                 </Col>

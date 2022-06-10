@@ -201,3 +201,114 @@
     }
   }
 }
+
+@media #{$md-layout-device} {
+  .footer__section {
+    padding: 60px 0;
+    background-color: var(--secondary-theme-color);
+    .wrapper {
+      .wrapper__body {
+        .part__one {
+          .inner__body {
+            margin-bottom: 40px;
+          }
+        }
+        .part__two {
+          .inner__body {
+            margin-bottom: 40px;
+          }
+        }
+        .part__three {
+          .inner__body {
+            margin-bottom: 40px;
+          }
+        }
+        .part__four {
+          .inner__body {
+            margin-bottom: 40px;
+          }
+        }
+        .footer__intro {
+          margin-top: 20px;
+          text-align: center;
+          p {
+            color: #fff;
+            a {
+              color: var(--primary-theme-color);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$sm-layout-device} {
+  .footer__section {
+    padding: 50px 0;
+    background-color: var(--secondary-theme-color);
+    .wrapper {
+      .wrapper__body {
+        .part__one {
+          .inner__body {
+            margin-bottom: 40px;
+            h2 {
+              font-size: 20px;
+            }
+            p {
+              font-size: 15px !important;
+            }
+          }
+        }
+        .part__two {
+          .inner__body {
+            margin-bottom: 40px;
+            h2 {
+              font-size: 20px;
+            }
+          }
+        }
+        .part__three {
+          .inner__body {
+            margin-bottom: 40px;
+            h2 {
+              font-size: 20px;
+            }
+          }
+        }
+        .part__four {
+          .inner__body {
+            margin-bottom: 40px;
+            h2 {
+              font-size: 20px;
+            }
+
+            p {
+              font-size: 15px !important;
+              line-height: 26px !important;
+            }
+            form {
+              input {
+                margin-top: 15px;
+              }
+              a {
+                padding: 12px 50px;
+              }
+            }
+          }
+        }
+        .footer__intro {
+          margin-top: 0;
+          text-align: center;
+          p {
+            color: #fff;
+            font-size: 16px !important;
+            a {
+              color: var(--primary-theme-color);
+            }
+          }
+        }
+      }
+    }
+  }
+}

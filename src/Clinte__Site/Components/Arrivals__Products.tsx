@@ -18,11 +18,9 @@ const Arrivals__Products = () => {
                   <div className="inner__body">
                     <h2>New Top Sales!</h2>
                     <TabList>
-                      <Tab>All</Tab>
-                      <Tab>Audio/Video</Tab>
-                      <Tab>Gaming</Tab>
-                      <Tab>Headphone</Tab>
-                      <Tab>Digital Camera</Tab>
+                      <Tab>Trending</Tab>
+                      <Tab>Free Shipping</Tab>
+                      <Tab>Discount Offer</Tab>
                     </TabList>
                   </div>
                 </Col>
@@ -30,7 +28,7 @@ const Arrivals__Products = () => {
 
               <TabPanel>
                 <Row className="part__two">
-                  <Col lg={3} className="part__two__inner__body">
+                  <Col lg={3} md={6} sm={6} className="part__two__inner__body">
                     <div className="inner__products">
                       <div className="items">
                         <div className="img__file">
@@ -76,7 +74,7 @@ const Arrivals__Products = () => {
                       </div>
                     </div>
                   </Col>{" "}
-                  <Col lg={3} className="part__two__inner__body">
+                  <Col lg={3} md={6} sm={6} className="part__two__inner__body">
                     <div className="inner__products">
                       <div className="items">
                         <div className="img__file">
@@ -122,7 +120,7 @@ const Arrivals__Products = () => {
                       </div>
                     </div>
                   </Col>{" "}
-                  <Col lg={3} className="part__two__inner__body">
+                  <Col lg={3} md={6} sm={6} className="part__two__inner__body">
                     <div className="inner__products">
                       <div className="items">
                         <div className="img__file">
@@ -168,7 +166,7 @@ const Arrivals__Products = () => {
                       </div>
                     </div>
                   </Col>{" "}
-                  <Col lg={3} className="part__two__inner__body">
+                  <Col lg={3} md={6} sm={6} className="part__two__inner__body">
                     <div className="inner__products">
                       <div className="items">
                         <div className="img__file">
@@ -214,7 +212,7 @@ const Arrivals__Products = () => {
                       </div>
                     </div>
                   </Col>{" "}
-                  <Col lg={3} className="part__two__inner__body">
+                  <Col lg={3} md={6} sm={6} className="part__two__inner__body">
                     <div className="inner__products">
                       <div className="items">
                         <div className="img__file">
@@ -260,7 +258,7 @@ const Arrivals__Products = () => {
                       </div>
                     </div>
                   </Col>{" "}
-                  <Col lg={3} className="part__two__inner__body">
+                  <Col lg={3} md={6} sm={6} className="part__two__inner__body">
                     <div className="inner__products">
                       <div className="items">
                         <div className="img__file">
@@ -310,7 +308,7 @@ const Arrivals__Products = () => {
               </TabPanel>
               <TabPanel>
                 <Row className="part__two">
-                  <Col lg={3} className="part__two__inner__body">
+                  <Col lg={3} md={6} sm={12} className="part__two__inner__body">
                     <div className="inner__products">
                       <div className="items">
                         <div className="img__file">
@@ -356,7 +354,103 @@ const Arrivals__Products = () => {
                       </div>
                     </div>
                   </Col>{" "}
-                  <Col lg={3} className="part__two__inner__body">
+                  <Col lg={3} md={6} sm={12} className="part__two__inner__body">
+                    <div className="inner__products">
+                      <div className="items">
+                        <div className="img__file">
+                          <img
+                            className="img-fluid"
+                            src="https://htmldemo.net/elehaus/elehaus/assets/images/shop/b18.jpg"
+                            alt=""
+                          />
+                        </div>
+                        <div className="text__file">
+                          <Link to={"/"} className="title">
+                            Game Triger Finger New Insulated PH-X
+                          </Link>
+                          <p className="price">
+                            <span>$160.00</span> -{" "}
+                            <span className="discount">$260.00</span>
+                          </p>
+                          <div className="rate">
+                            <MdStarRate className="icon" />
+                            <MdStarRate className="icon" />
+                            <MdStarRate className="icon" />
+                            <MdStarRate className="icon" />
+                            <MdStarRate className="icon" />
+                          </div>
+                          <div className="handbagFill">
+                            <BsHandbag />
+                          </div>
+                        </div>
+
+                        <div className="overlay__icons">
+                          <div className="overlay__icons__body">
+                            <Link to={"/"} className="icon__body">
+                              <BsHeart className="icon" />
+                            </Link>
+                            <Link to={"/"} className="icon__body">
+                              <BsShuffle className="icon" />
+                            </Link>
+                            <Link to={"/"} className="icon__body">
+                              <BsSearch className="icon" />
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Col>{" "}
+                </Row>{" "}
+              </TabPanel>
+              <TabPanel>
+                <Row className="part__two">
+                  <Col lg={3} md={6} sm={12} className="part__two__inner__body">
+                    <div className="inner__products">
+                      <div className="items">
+                        <div className="img__file">
+                          <img
+                            className="img-fluid"
+                            src="https://htmldemo.net/elehaus/elehaus/assets/images/shop/b17.jpg"
+                            alt=""
+                          />
+                        </div>
+                        <div className="text__file">
+                          <Link to={"/"} className="title">
+                            Game Triger Finger New Insulated PH-X
+                          </Link>
+                          <p className="price">
+                            <span>$160.00</span> -{" "}
+                            <span className="discount">$260.00</span>
+                          </p>
+                          <div className="rate">
+                            <MdStarRate className="icon" />
+                            <MdStarRate className="icon" />
+                            <MdStarRate className="icon" />
+                            <MdStarRate className="icon" />
+                            <MdStarRate className="icon" />
+                          </div>
+                          <div className="handbagFill">
+                            <BsHandbag />
+                          </div>
+                        </div>
+
+                        <div className="overlay__icons">
+                          <div className="overlay__icons__body">
+                            <Link to={"/"} className="icon__body">
+                              <BsHeart className="icon" />
+                            </Link>
+                            <Link to={"/"} className="icon__body">
+                              <BsShuffle className="icon" />
+                            </Link>
+                            <Link to={"/"} className="icon__body">
+                              <BsSearch className="icon" />
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Col>{" "}
+                  <Col lg={3} md={6} sm={12} className="part__two__inner__body">
                     <div className="inner__products">
                       <div className="items">
                         <div className="img__file">

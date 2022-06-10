@@ -60,19 +60,23 @@ let Slider__Setting = () => {
         {
           breakpoint: 1024,
           settings: {
-            arrows: true,
+            arrows: false,
           },
         },
         {
           breakpoint: 600,
           settings: {
             arrows: false,
+            slidesToShow: 3,
+            slidesToScroll: 3,
           },
         },
         {
           breakpoint: 480,
           settings: {
             arrows: false,
+            slidesToShow: 3,
+            slidesToScroll: 3,
           },
         },
       ],
@@ -98,6 +102,23 @@ let Slider__Setting = () => {
       slidesToShow: 3,
       slidesToScroll: 3,
       arrows: true,
+      responsive: [
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          },
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            arrows: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
     },
   ];
 

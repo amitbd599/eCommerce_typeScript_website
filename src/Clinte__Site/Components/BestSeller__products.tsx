@@ -150,9 +150,9 @@ const BestSeller__products = () => {
                                     />
                                   </div>
                                   <div className="text__file">
-                                    <p className="title">
+                                    <Link to={"/"} className="title">
                                       D-Phone Android Latest UI New XP
-                                    </p>
+                                    </Link>
                                     <p className="price">$330.00</p>
                                     <div className="rate">
                                       <BsFillStarFill className="icon" />
@@ -176,9 +176,9 @@ const BestSeller__products = () => {
                                     />
                                   </div>
                                   <div className="text__file">
-                                    <p className="title">
+                                    <Link to={"/"} className="title">
                                       D-Phone Android Latest UI New XP
-                                    </p>
+                                    </Link>
                                     <p className="price">$330.00</p>
                                     <div className="rate">
                                       <BsFillStarFill className="icon" />
@@ -202,9 +202,9 @@ const BestSeller__products = () => {
                                     />
                                   </div>
                                   <div className="text__file">
-                                    <p className="title">
+                                    <Link to={"/"} className="title">
                                       D-Phone Android Latest UI New XP
-                                    </p>
+                                    </Link>
                                     <p className="price">$330.00</p>
                                     <div className="rate">
                                       <BsFillStarFill className="icon" />
@@ -228,9 +228,9 @@ const BestSeller__products = () => {
                                     />
                                   </div>
                                   <div className="text__file">
-                                    <p className="title">
+                                    <Link to={"/"} className="title">
                                       D-Phone Android Latest UI New XP
-                                    </p>
+                                    </Link>
                                     <p className="price">$330.00</p>
                                     <div className="rate">
                                       <BsFillStarFill className="icon" />

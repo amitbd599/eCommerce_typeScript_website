@@ -18,7 +18,7 @@ const Trending__products = () => {
                 </Col>
               </Row>
               <Row className="product__intro">
-                <Col lg={3} className="part__1">
+                <Col lg={3} md={6} sm={12} className="inner__body">
                   <h2>LATEST</h2>
                   <div className="items__data">
                     {product.map((value, index) => (
@@ -36,7 +36,7 @@ const Trending__products = () => {
                     ))}
                   </div>
                 </Col>
-                <Col lg={3} className="part__1">
+                <Col lg={3} md={6} sm={12} className="inner__body">
                   <h2>BEST SELLING</h2>
                   <div className="items__data">
                     {product.map((value, index) => (
@@ -54,7 +54,7 @@ const Trending__products = () => {
                     ))}
                   </div>
                 </Col>
-                <Col lg={3} className="part__1">
+                <Col lg={3} md={6} sm={12} className="inner__body">
                   <h2>FEATURED</h2>
                   <div className="items__data">
                     {product.map((value, index) => (
@@ -72,7 +72,7 @@ const Trending__products = () => {
                     ))}
                   </div>
                 </Col>
-                <Col lg={3} className="part__1">
+                <Col lg={3} md={6} sm={12} className="inner__body">
                   <h2>TOP RATED PRODUCTS</h2>
                   <div className="items__data">
                     {product.map((value, index) => (
