@@ -186,17 +186,22 @@ const Header: React.FC = () => {
                             {item.item}
                           </Link>
 
+                          {/* Only Dropdown Items Start */}
+
                           {item.dropdown && (
                             <ul className="dropdown__items">
                               {item.dropdown?.map((dropItem: any) => (
                                 <li className="dropdown__item">
-                                  <Link className="link" to={"/"}>
+                                  <Link className="link" to={dropItem.link}>
                                     {dropItem.item}
                                   </Link>
                                 </li>
                               ))}
                             </ul>
                           )}
+
+                          {/* Mega menu Items Start */}
+
                           {item.megaMenu && (
                             <div className="megaMenu">
                               <div className="inner__megaMenu">
@@ -369,7 +374,7 @@ const Header: React.FC = () => {
                       <ul className="dropdown__items">
                         {item.dropdown?.map((dropItem: any) => (
                           <li className="dropdown__item">
-                            <Link className="link" to={"/"}>
+                            <Link className="link" to={dropItem.link}>
                               {dropItem.item}
                             </Link>
                           </li>

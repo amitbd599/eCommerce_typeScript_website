@@ -1,0 +1,103 @@
+.about__section {
+  margin-top: 50px;
+  padding: 50px 0;
+  .wrapper {
+    .wrapper__body {
+      .part__one {
+        .left__side {
+        }
+        .right__side {
+          margin-top: 30px;
+          h2 {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 52px;
+          }
+          p {
+            font-size: 16px;
+            line-height: 30px;
+            margin-top: 22px;
+          }
+          .button__mid_solid_color_black {
+            margin-top: 25px;
+            display: inline-block;
+          }
+        }
+      }
+      .part__two {
+        margin-top: 70px;
+
+        .left__side {
+          margin-top: 30px;
+          h2 {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 52px;
+          }
+          p {
+            font-size: 16px;
+            line-height: 30px;
+            margin-top: 22px;
+          }
+          ul {
+            padding-left: 0;
+            margin-top: 20px;
+            li {
+              font-size: 18px;
+              padding: 5px 0;
+              .icon {
+                margin-right: 7px;
+              }
+            }
+          }
+          .button__mid_solid_color_black {
+            margin-top: 25px;
+            display: inline-block;
+          }
+        }
+        .right__side {
+          .inner__body {
+            display: flex;
+            justify-content: end;
+          }
+        }
+      }
+      .part__three {
+        margin-top: 60px;
+        .inner__body {
+          display: flex;
+          justify-content: center;
+          .header {
+            h2 {
+              text-align: center;
+              font-size: 40px;
+              font-weight: 500;
+              .theme-text {
+                font-weight: 900;
+                color: var(--primary-theme-color);
+              }
+            }
+            .img__section {
+              margin-top: 70px;
+              .leftImg__section {
+                columns: 5;
+
+                column-gap: 15px;
+
+                img {
+                  //   width: 100%;
+                  margin-bottom: 20px;
+                }
+              }
+              .rightImg__section {
+                img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

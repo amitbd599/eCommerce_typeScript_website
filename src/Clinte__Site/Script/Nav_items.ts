@@ -14,7 +14,7 @@ const nav__Items: nav__Items[] = [
   },
   {
     item: "Mega",
-    link: "/about",
+    link: "#",
     className: "megaMenu__intro",
     megaMenu: "cd",
   },

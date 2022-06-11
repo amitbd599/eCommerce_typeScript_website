@@ -53,21 +53,22 @@ STYLE SHEET INDEX END
 /****************************************************
                  Button Styles
 *****************************************************/
-@import "Block/button";
+@import "Widget/button";
 
 /****************************************************
                  Header Styles
 *****************************************************/
-@import "header/header";
+@import "Common/header/header";
 
 /****************************************************
                  Footer Styles
 *****************************************************/
-@import "footer/footer";
+@import "Common/footer/footer";
 /****************************************************
                  Page Styles
 *****************************************************/
 @import "Page/home";
+@import "Page/about";
 
 /****************************************************
                  Components
@@ -80,8 +81,15 @@ STYLE SHEET INDEX END
 @import "Components/blog__section";
 @import "Components/feature__categories";
 @import "Components/subscribe__section";
+
 /****************************************************
-                 Block Styles
+                 Widget Styles
 *****************************************************/
 
-@import "Block/slider";
+@import "Widget/slider";
+
+/****************************************************
+                 Intro Section Styles
+*****************************************************/
+
+@import "Common/Intro__Section/Intro__Section";
