@@ -372,7 +372,7 @@
 
 .mobile__menu {
   position: relative;
-  // position: fixed;
+  // position: fixed;    ( use it for full page vh)
   overflow-y: scroll;
   height: 110vh;
   z-index: 9999;

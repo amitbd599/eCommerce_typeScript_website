@@ -162,3 +162,229 @@
     }
   }
 }
+
+@media #{$md-layout-device} {
+  .about__section {
+    margin-top: 50px;
+    padding: 30px 0;
+    .wrapper {
+      .wrapper__body {
+        .part__one {
+          .left__side {
+            .inner__body {
+              text-align: center;
+            }
+          }
+        }
+        .part__two {
+          .left__side {
+            order: 2;
+          }
+          .right__side {
+            .inner__body {
+              display: flex;
+              justify-content: center;
+            }
+          }
+        }
+        .part__three {
+          padding: 50px 0;
+          margin-top: 20px;
+          .inner__body {
+            h2 {
+              margin-bottom: 30px;
+            }
+            .team__items {
+              .img__file {
+                margin-bottom: 30px;
+                .text__file {
+                  .inner__text {
+                    margin-top: 10px;
+                    h3 {
+                      font-size: 16px;
+                    }
+                    p {
+                      font-size: 12px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .part__four {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+}
+@media #{$sm-layout-device} {
+  .about__section {
+    // margin-top: 50px;
+    padding: 30px 0;
+    .wrapper {
+      .wrapper__body {
+        .part__one {
+          // .left__side {
+          // }
+          .right__side {
+            // margin-top: 30px;
+            h2 {
+              font-size: 22px;
+              font-weight: 700;
+              line-height: 30px;
+            }
+            p {
+              font-size: 16px !important;
+              line-height: 30px !important;
+              margin-top: 22px;
+            }
+            // .button__mid_solid_color_black {
+            //   margin-top: 25px;
+            //   display: inline-block;
+            // }
+          }
+        }
+        .part__two {
+          margin-top: 30px;
+
+          .left__side {
+            order: 2;
+            // margin-top: 30px;
+            h2 {
+              font-size: 22px;
+              font-weight: 700;
+              line-height: 30px;
+            }
+            p {
+              font-size: 16px !important;
+              line-height: 30px !important;
+              margin-top: 22px;
+            }
+            // ul {
+            //   padding-left: 0;
+            //   margin-top: 20px;
+            //   li {
+            //     font-size: 18px;
+            //     padding: 5px 0;
+            //     .icon {
+            //       margin-right: 7px;
+            //     }
+            //   }
+            // }
+            // .button__mid_solid_color_black {
+            //   margin-top: 25px;
+            //   display: inline-block;
+            // }
+          }
+          .right__side {
+            margin-top: 30px;
+            .inner__body {
+              justify-content: center;
+            }
+          }
+        }
+        .part__three {
+          padding: 60px 0;
+          .inner__body {
+            h2 {
+              font-size: 40px;
+              // font-weight: 700;
+              // margin-bottom: 30px;
+            }
+            .team__items {
+              // overflow: hidden;
+              .img__file {
+                margin-bottom: 20px;
+                // cursor: pointer;
+                // overflow: hidden;
+                // position: relative;
+                // border-radius: 10px;
+                // img {
+                // }
+                .text__file {
+                  // position: absolute;
+                  // bottom: 0;
+                  // left: 0;
+                  // z-index: 9;
+                  // background: #333333ad;
+                  // width: 100%;
+                  height: 45%;
+                  // transform: translateY(101%);
+                  // transition: all 0.3s linear;
+                  .inner__text {
+                    margin-top: 5px;
+                    // margin-left: 15px;
+                    h3 {
+                      font-size: 15px;
+                      // font-weight: 600;
+                      // color: var(--color-white);
+                    }
+                    p {
+                      font-size: 14px;
+                      margin-top: -10px;
+                      color: var(--color-white);
+                    }
+                    .icon__file {
+                      .icon {
+                        margin-right: 5px;
+                        font-size: 20px;
+                        color: var(--color-white);
+                        transition: all 0.3s;
+
+                        &:hover {
+                          opacity: 0.8;
+                          transform: translateY(2px);
+                        }
+                      }
+                    }
+                  }
+                }
+                &:hover .text__file {
+                  transform: translateY(0);
+                }
+              }
+            }
+          }
+        }
+        .part__four {
+          margin-top: 60px;
+          .inner__body {
+            display: flex;
+            justify-content: center;
+            .header {
+              h2 {
+                text-align: center;
+                font-size: 40px;
+                font-weight: 500;
+                .theme-text {
+                  font-weight: 900;
+                  color: var(--primary-theme-color);
+                }
+              }
+              .img__section {
+                margin-top: 70px;
+                .leftImg__section {
+                  columns: 5;
+
+                  column-gap: 15px;
+
+                  img {
+                    //   width: 100%;
+                    margin-bottom: 20px;
+                  }
+                }
+                .rightImg__section {
+                  img {
+                    width: 100%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

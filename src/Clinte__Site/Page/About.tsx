@@ -15,7 +15,6 @@ import Intro__Section from "../Common/IntroSection/Intro__Section";
 import Meta_Data from "../Common/Meta_Data";
 import Product_Data from "../Script/Product__Data";
 import Team__Data from "../Script/Team__Data";
-
 const About: React.FC = () => {
   const { productImgFile } = Product_Data();
 
@@ -166,7 +165,7 @@ const About: React.FC = () => {
                       <div className="team__items">
                         <Row>
                           {Team__Data.map((value, index) => (
-                            <Col lg={3} md={4} sm={6}>
+                            <Col lg={3} md={4} sm={6} xs={6}>
                               <div className="img__file">
                                 <img
                                   className="img-fluid"
@@ -212,7 +211,7 @@ const About: React.FC = () => {
                       </h2>
                       <div className="img__section">
                         <Row>
-                          <Col lg={12} md={6} sm={12}>
+                          <Col>
                             <div className="leftImg__section">
                               {productImgFile.map((value, index) => (
                                 <img
