@@ -53,6 +53,10 @@ const nav__Items: nav__Items[] = [
         item: "About",
         link: "/about",
       },
+      {
+        item: "Account",
+        link: "/account",
+      },
     ],
   },
 

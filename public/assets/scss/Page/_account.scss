@@ -1,0 +1,110 @@
+.account__section {
+  padding: 100px 0;
+
+  .wrapper {
+    .wrapper__body {
+      .left__side {
+        .inner__body {
+          .react-tabs__tab-list {
+            // ul
+            // border: 1px solid #ddd;
+            border: none;
+            .react-tabs__tab {
+              // li
+
+              border: 1px solid #ddd;
+              border-bottom: none;
+              display: block;
+              position: initial;
+              font-size: 16px;
+              font-weight: 600;
+              padding: 10px 20px;
+              transition: all 0.1s linear;
+              &:hover {
+                background: var(--secondary-theme-color);
+                color: var(--color-white);
+                border: 1px solid var(--secondary-theme-color);
+                border-bottom: none;
+              }
+
+              &:last-child {
+                border-bottom: 1px solid #ddd;
+              }
+              &.react-tabs__tab--selected {
+                background: var(--secondary-theme-color);
+                color: var(--color-white);
+                border-radius: 0;
+                border: 1px solid var(--secondary-theme-color);
+                border-bottom: none;
+                &:last-child {
+                  border: 1px solid var(--secondary-theme-color);
+                }
+              }
+            }
+          }
+        }
+      }
+      .right__side {
+        .inner__body {
+          .react-tabs__tab-panel {
+            display: block !important;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s linear;
+            &.react-tabs__tab-panel--selected {
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+
+          .dashBoard__body {
+            border: 1px solid #ddd;
+            padding: 35px 50px;
+            .header {
+              h3 {
+                font-size: 22px;
+                font-weight: 700;
+                margin-bottom: 10px;
+                border-bottom: 2px dashed #ddd;
+                padding-bottom: 16px;
+              }
+              p {
+                font-size: 18px;
+              }
+            }
+            .body {
+              margin-top: 30px;
+              display: flex;
+              .img__file {
+                border: 1px solid #ddd;
+                padding: 10px;
+                height: 112px;
+                border-radius: 10px;
+                img {
+                  width: 80px;
+                  height: 80px;
+                }
+              }
+              .text__file {
+                ul {
+                  li {
+                    padding: 3px 0;
+                    font-size: 15px;
+                    font-weight: 600;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .data__table {
+          padding: 20px;
+          border: 1px solid #ddd;
+          table {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}

@@ -14,12 +14,10 @@ const Hero__Slider: React.FC = () => {
       <div className="wrapper">
         <div className="wrapper__body">
           <Slider {...Hero__Slider__setting[0]}>
-            <div className="slider__inner_one bgImg-5">
+            <div className="slider__inner_one bgImg-9">
               <div className="inner__body">
                 <div className="text__info ">
-                  <h2 className="">
-                    1Score An Extra 60% Off Your Entire Order
-                  </h2>
+                  <h2 className="">Score An Extra 60% Off Your Entire Order</h2>
                   <h3>Get Awesome Product</h3>
                   <div className="btn">
                     <Link to={"/"} className="button__mid_border_color_white">
