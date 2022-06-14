@@ -66,7 +66,7 @@ const nav__Items: nav__Items[] = [
   },
   {
     item: "Contact",
-    link: "/",
+    link: "/contact",
   },
 ];
 

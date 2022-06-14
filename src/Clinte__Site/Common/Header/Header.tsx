@@ -182,7 +182,7 @@ const Header: React.FC = () => {
                           }
                           key={index}
                         >
-                          <Link className="link" to={"/"}>
+                          <Link className="link" to={item.link}>
                             {item.item}
                           </Link>
 
