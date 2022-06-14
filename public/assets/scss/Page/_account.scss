@@ -18,7 +18,7 @@
               position: initial;
               font-size: 16px;
               font-weight: 600;
-              padding: 10px 20px;
+              padding: 15px 20px;
               transition: all 0.1s linear;
               &:hover {
                 background: var(--secondary-theme-color);
@@ -45,6 +45,7 @@
         }
       }
       .right__side {
+        padding-left: 35px;
         .inner__body {
           .react-tabs__tab-panel {
             display: block !important;
@@ -102,6 +103,219 @@
           border: 1px solid #ddd;
           table {
             border: none;
+          }
+        }
+        .edit__profile {
+          .inner__body {
+            .header__text {
+              font-size: 22px;
+              font-weight: 600;
+              margin-bottom: 20px;
+              .icon {
+                margin-right: 7px;
+                color: #666666;
+              }
+            }
+            form {
+              .form__text {
+                .top__section {
+                  margin-bottom: 15px;
+                  display: flex;
+                  .form__input {
+                    p {
+                      font-size: 16px;
+                      color: #666666;
+                    }
+                    input {
+                      border-radius: 5px;
+                      padding: 0 12px;
+                    }
+                    width: 50%;
+                    &:nth-child(1) {
+                      margin-right: 10px;
+                    }
+                    &:nth-child(2) {
+                      margin-left: 10px;
+                    }
+                  }
+                }
+
+                .last__section {
+                  .form__input {
+                    &:nth-child(1) {
+                      margin-bottom: 15px;
+                      p {
+                        font-size: 16px;
+                        color: #666666;
+                      }
+                      span {
+                        font-size: 12px;
+                        color: #666666;
+                      }
+                      input {
+                        border-radius: 5px;
+                        padding: 0 12px;
+                      }
+                    }
+                    &:nth-child(2) {
+                      margin-bottom: 40px;
+                      p {
+                        font-size: 16px;
+                        color: #666666;
+                      }
+                      span {
+                        font-size: 12px;
+                        color: #666666;
+                      }
+                      input {
+                        border-radius: 5px;
+                        padding: 0 12px;
+                      }
+                    }
+                    &:nth-child(3) {
+                      margin-bottom: 15px;
+                      h2 {
+                        font-size: 20px;
+                        font-weight: 700;
+                      }
+                      p {
+                        font-size: 16px;
+                        color: #666666;
+                      }
+                      span {
+                        font-size: 12px;
+                        color: #666666;
+                      }
+                      input {
+                        border-radius: 5px;
+                        padding: 0 12px;
+                      }
+                    }
+                    &:nth-child(4) {
+                      margin-bottom: 15px;
+
+                      p {
+                        font-size: 16px;
+                        color: #666666;
+                      }
+                      span {
+                        font-size: 12px;
+                        color: #666666;
+                      }
+                      input {
+                        border-radius: 5px;
+                        padding: 0 12px;
+                      }
+                    }
+                    &:nth-child(5) {
+                      margin-bottom: 15px;
+
+                      p {
+                        font-size: 16px;
+                        color: #666666;
+                      }
+                      span {
+                        font-size: 12px;
+                        color: #666666;
+                      }
+                      input {
+                        border-radius: 5px;
+                        padding: 0 12px;
+                      }
+                    }
+                  }
+                  .button__mid_solid_color_black {
+                    display: inline-block;
+                    border-radius: 5px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$md-layout-device} {
+  .account__section {
+    padding: 60px 0;
+
+    .wrapper {
+      .wrapper__body {
+        .left__side {
+          margin-bottom: 50px;
+        }
+        .right__side {
+          padding-left: calc(var(--bs-gutter-x) * 0.5);
+        }
+      }
+    }
+  }
+}
+@media #{$sm-layout-device} {
+  .account__section {
+    padding: 60px 0;
+
+    .wrapper {
+      .wrapper__body {
+        .left__side {
+          margin-bottom: 40px;
+        }
+        .right__side {
+          padding-left: calc(var(--bs-gutter-x) * 0.5);
+          .inner__body {
+            .dashBoard__body {
+              border: 1px solid #ddd;
+              padding: 30px 10px;
+              .header {
+                p {
+                  font-size: 16px !important;
+                }
+              }
+              .body {
+                .text__file {
+                  ul {
+                    li {
+                      font-size: 14px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .data__table {
+            padding: 15px;
+            td {
+              font-size: 14px !important;
+              line-height: 18px;
+
+              &:nth-child(2) {
+                width: 35%;
+              }
+            }
+          }
+          .top__section {
+            margin-bottom: 15px;
+            display: block !important;
+            .form__input {
+              p {
+                font-size: 16px;
+                color: #666666;
+              }
+              input {
+                border-radius: 5px;
+                padding: 0 12px;
+              }
+              width: 100% !important;
+              &:nth-child(1) {
+                margin-right: 0 !important;
+              }
+              &:nth-child(2) {
+                margin-left: 0 !important;
+              }
+            }
           }
         }
       }

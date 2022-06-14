@@ -5,6 +5,9 @@ import Intro__Section from "../Common/IntroSection/Intro__Section";
 import Meta_Data from "../Common/Meta_Data";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Footer from "../Common/Footer/Footer";
+import { FaCloudDownloadAlt } from "react-icons/fa";
+import { MdManageAccounts } from "react-icons/md";
+import { Link } from "react-router-dom";
 const Account: React.FC = () => {
   return (
     <>
@@ -33,19 +36,18 @@ const Account: React.FC = () => {
             <Tabs>
               <Container>
                 <Row>
-                  <Col lg={3} md={6} className="left__side">
+                  <Col lg={3} md={12} className="left__side">
                     <div className="inner__body">
                       <TabList>
                         <Tab>Profile Info</Tab>
                         <Tab>Orders</Tab>
                         <Tab>Download</Tab>
-                        <Tab>Account Details</Tab>
                         <Tab>Edit Profile</Tab>
                         <Tab>Logout</Tab>
                       </TabList>
                     </div>
                   </Col>
-                  <Col lg={9} md={6} className="right__side">
+                  <Col lg={9} md={12} className="right__side">
                     <div className="inner__body">
                       <TabPanel>
                         <div className="dashBoard__body">
@@ -118,6 +120,120 @@ const Account: React.FC = () => {
                               <td>view</td>
                             </tr>
                           </table>
+                        </div>
+                      </TabPanel>
+                      <TabPanel>
+                        <div className="data__table">
+                          <table>
+                            <tr>
+                              <th>Product</th>
+                              <th>Date</th>
+                              <th>Expire</th>
+                              <th>Download</th>
+                            </tr>
+                            <tr>
+                              <td>Microsoft Product key 2022 edition</td>
+                              <td>10-5-2022</td>
+                              <td>20-6-2023</td>
+                              <td>
+                                <FaCloudDownloadAlt className="mr-5" /> Download
+                                File
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Microsoft Product key 2022 edition</td>
+                              <td>10-5-2022</td>
+                              <td>20-6-2023</td>
+                              <td>
+                                <FaCloudDownloadAlt className="mr-5" /> Download
+                                File
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Microsoft Product key 2022 edition</td>
+                              <td>10-5-2022</td>
+                              <td>20-6-2023</td>
+                              <td>
+                                <FaCloudDownloadAlt className="mr-5" /> Download
+                                File
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </TabPanel>
+                      <TabPanel>
+                        <div className="edit__profile">
+                          <div className="inner__body">
+                            <h2 className="header__text">
+                              {" "}
+                              <MdManageAccounts className="icon" /> Account
+                              Details
+                            </h2>
+
+                            <form action="">
+                              <div className="form__text">
+                                <div className="top__section">
+                                  <div className="form__input">
+                                    <p>First name *</p>
+                                    <input type="text" placeholder="John" />
+                                  </div>
+                                  <div className="form__input ">
+                                    <p>Last name *</p>
+                                    <input type="text" placeholder="Doe" />
+                                  </div>
+                                </div>
+
+                                <div className="last__section">
+                                  <div className="form__input">
+                                    <p>Display name *</p>
+                                    <input type="text" placeholder="John Doe" />
+                                    <span>
+                                      This will be how your name will be
+                                      displayed in the account section and in
+                                      reviews
+                                    </span>
+                                  </div>
+
+                                  <div className="form__input">
+                                    <p>Email address *</p>
+                                    <input
+                                      type="text"
+                                      placeholder="John@gmail.com"
+                                    />
+                                  </div>
+                                  <div className="form__input">
+                                    <h2>Password change</h2>
+                                    <p>
+                                      Current Password leave blank to leave
+                                      unchanged
+                                    </p>
+
+                                    <input type="password" placeholder="" />
+                                  </div>
+                                  <div className="form__input">
+                                    <p>
+                                      New Password leave blank to leave
+                                      unchanged
+                                    </p>
+
+                                    <input type="password" placeholder="" />
+                                  </div>
+                                  <div className="form__input">
+                                    <p>Confirm Password</p>
+
+                                    <input type="password" placeholder="" />
+                                  </div>
+
+                                  <button
+                                    type="submit"
+                                    className="button__mid_solid_color_black"
+                                  >
+                                    Save Changes
+                                  </button>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
                         </div>
                       </TabPanel>
                     </div>
