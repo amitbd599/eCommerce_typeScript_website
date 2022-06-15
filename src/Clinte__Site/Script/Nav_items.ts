@@ -61,6 +61,10 @@ const nav__Items: nav__Items[] = [
         item: "FAQs",
         link: "/faqs",
       },
+      {
+        item: "Error",
+        link: "/error",
+      },
     ],
   },
 
