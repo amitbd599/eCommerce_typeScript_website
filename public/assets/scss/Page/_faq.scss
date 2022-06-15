@@ -1,0 +1,101 @@
+.FAQs {
+  padding: 100px 0;
+  .wrapper {
+    .wrapper__body {
+      .part__one {
+        .inner__body {
+          text-align: center;
+          h2 {
+            font-size: 22px;
+            font-weight: 800;
+          }
+        }
+      }
+      .part__two {
+        .accordion {
+          border: transparent;
+          .accordion__item {
+            margin-bottom: 12px;
+            border: transparent;
+            .accordion__heading {
+              .accordion__button {
+                font-weight: 700;
+              }
+            }
+            .accordion__panel {
+              border: 1px solid #f4f4f4;
+              border-top: none;
+              p {
+                color: #666;
+              }
+            }
+          }
+        }
+        .header {
+          text-align: center;
+          margin-top: 45px;
+          h2 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$sm-layout-device} {
+  .FAQs {
+    padding: 50px 0;
+    .wrapper {
+      .wrapper__body {
+        .part__one {
+          .inner__body {
+            text-align: center;
+            h2 {
+              font-size: 22px;
+              font-weight: 800;
+              margin-bottom: -2px;
+            }
+            p {
+              font-size: 15px;
+              color: #666;
+            }
+          }
+        }
+        .part__two {
+          .accordion {
+            border: transparent;
+            .accordion__item {
+              margin-bottom: 12px;
+              border: transparent;
+              .accordion__heading {
+                .accordion__button {
+                  font-weight: 700;
+                }
+              }
+              .accordion__panel {
+                border: 1px solid #f4f4f4;
+                border-top: none;
+                p {
+                  // color: #666;
+                  font-size: 15px !important;
+                }
+              }
+            }
+          }
+          .header {
+            // text-align: center;
+            margin-top: 25px;
+            h2 {
+              font-size: 22px;
+              font-weight: 800;
+              margin-bottom: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

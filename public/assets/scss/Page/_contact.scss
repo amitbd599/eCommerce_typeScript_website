@@ -1,5 +1,6 @@
 .contact__section {
   margin-top: 60px;
+  margin-bottom: 60px;
   padding: 50px 0;
   .wrapper {
     .wrapper__body {
@@ -34,6 +35,131 @@
               font-size: 15px;
               color: #666;
               margin-top: -10px;
+            }
+          }
+        }
+      }
+      .part__three {
+        margin-top: 110px;
+        .left__side {
+          h2 {
+            font-size: 25px;
+            font-weight: 800;
+            margin-bottom: 30px;
+          }
+          .accordion {
+            border: none !important;
+          }
+          .accordion__item {
+            margin-bottom: 8px !important;
+            border: 1px solid #ddd;
+            font-weight: 700;
+            p {
+              font-size: 16px;
+              font-weight: normal;
+              color: #666;
+            }
+          }
+          .accordion__button {
+            background-color: #f5f5f5;
+            color: var(--secondary-theme-color);
+          }
+        }
+        .right__side {
+          h2 {
+            font-size: 25px;
+            font-weight: 800;
+            margin-bottom: 30px;
+          }
+          form {
+            .form__text {
+              margin-bottom: 16px;
+              p {
+                font-size: 16px;
+                color: #666;
+              }
+              input {
+                border-radius: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$md-layout-device} {
+  .contact__section {
+    margin-top: 30px;
+    padding: 50px 0;
+    .wrapper {
+      .wrapper__body {
+        .part__one {
+          margin-bottom: 50px;
+        }
+        .part__two {
+          .inner__body {
+            margin-bottom: 30px;
+          }
+        }
+        .part__three {
+          margin-top: 80px;
+          .left__side {
+            margin-bottom: 40px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$sm-layout-device} {
+  .contact__section {
+    margin-top: 0px;
+    .wrapper {
+      .wrapper__body {
+        .part__one {
+          margin-bottom: 50px;
+
+          p {
+            font-size: 16px !important;
+          }
+        }
+        .part__two {
+          .inner__body {
+            margin-bottom: 30px;
+
+            p {
+              font-size: 15px !important;
+              color: #666;
+              margin-top: -10px;
+            }
+            // }
+          }
+        }
+        .part__three {
+          margin-top: 80px;
+          .left__side {
+            margin-bottom: 40px;
+
+            .accordion__item {
+              p {
+                font-size: 15px !important;
+              }
+            }
+          }
+          .right__side {
+            h2 {
+              margin-bottom: 20px;
+            }
+            form {
+              .form__text {
+                margin-bottom: 14px;
+                p {
+                  font-size: 16px !important;
+                }
+              }
             }
           }
         }

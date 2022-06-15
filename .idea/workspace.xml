@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a12eeef0-7301-4fbb-a34b-22100133b479" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/scss/Page/_account.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/scss/Page/_account.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/scss/Page/_contact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/scss/Page/_contact.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/scss/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clinte__Site/Page/Account.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clinte__Site/Page/Account.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clinte__Site/Page/Contact.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clinte__Site/Page/Contact.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clinte__Site/Script/Nav_items.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clinte__Site/Script/Nav_items.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2AcL25IuNhWOJ2JDMlWA7xZmcls" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a12eeef0-7301-4fbb-a34b-22100133b479" name="Changes" comment="" />
+      <created>1655303720706</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1655303720706</updated>
+      <workItem from="1655303727310" duration="66000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

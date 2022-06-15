@@ -76,19 +76,19 @@ const Header: React.FC = () => {
                   <div className="inner__show">
                     <ul className="dropdown__inner_one">
                       <li>
-                        <Link to="/">About</Link>
+                        <Link to="/about">About</Link>
                       </li>
                       <li>
                         <Link to="/">Our Stores</Link>
                       </li>
                       <li>
-                        <Link to="/">Blog</Link>
+                        <Link to="/blog">Blog</Link>
                       </li>
                       <li>
-                        <Link to="/">Contact</Link>
+                        <Link to="/contact">Contact</Link>
                       </li>
                       <li>
-                        <Link to="/">FAQ</Link>
+                        <Link to="/faqs">FAQ</Link>
                       </li>
                       <li>
                         <Link to="/">
@@ -342,7 +342,10 @@ const Header: React.FC = () => {
             )}
           </div>
           <div className="logo__section">
-            <img src={logo[0].img} alt="" />
+            <Link to={"/"}>
+              {" "}
+              <img src={logo[0].img} alt="" />
+            </Link>
           </div>
           <div className="cart__section">
             <BsFillCartFill className="icon" />
@@ -366,7 +369,7 @@ const Header: React.FC = () => {
                     }
                     key={index}
                   >
-                    <Link className="link" to={"/"}>
+                    <Link className="link" to={item.link}>
                       {item.item}
                     </Link>
 
