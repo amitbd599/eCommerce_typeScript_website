@@ -65,6 +65,10 @@ const nav__Items: nav__Items[] = [
         item: "Error",
         link: "/error",
       },
+      {
+        item: "Coming Soon",
+        link: "/coming-soon",
+      },
     ],
   },
 
