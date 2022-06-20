@@ -69,6 +69,10 @@ const nav__Items: nav__Items[] = [
         item: "Coming Soon",
         link: "/coming-soon",
       },
+      {
+        item: "Cart",
+        link: "/cart",
+      },
     ],
   },
 

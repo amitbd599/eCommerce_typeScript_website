@@ -66,7 +66,7 @@ const ComingSoon: React.FC = () => {
                     </div>
                     <div className="time__zoon">
                       <Countdown
-                        date={Date.now() + 2592000000}
+                        date={Date.now() + 904800520}
                         renderer={renderer}
                       />
                     </div>
