@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./Clinte__Site/Page/About";
 import Account from "./Clinte__Site/Page/Account";
 import Cart from "./Clinte__Site/Page/Cart";
+import Checkout from "./Clinte__Site/Page/Checkout";
 import ComingSoon from "./Clinte__Site/Page/ComingSoon";
 import Contact from "./Clinte__Site/Page/Contact";
 import Error from "./Clinte__Site/Page/Error";
@@ -22,6 +23,7 @@ const App: React.FC = () => {
           <Route path="/faqs" element={<Faq />}></Route>
           <Route path="/coming-soon" element={<ComingSoon />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
+          <Route path="/checkout" element={<Checkout />}></Route>
 
           <Route path="*" element={<Error />}></Route>
         </Routes>

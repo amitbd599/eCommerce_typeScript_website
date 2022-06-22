@@ -42,6 +42,10 @@ const nav__Items: nav__Items[] = [
         link: "/cart",
       },
       {
+        item: "Checkout",
+        link: "/checkout",
+      },
+      {
         item: "Blog",
         link: "/blog",
       },
