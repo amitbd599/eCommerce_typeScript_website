@@ -9,10 +9,25 @@ import Meta_Data from "../Common/Meta_Data";
 import Update__cartValue from "../Components/Update__cartValue";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import Select from "react-select";
 const Cart: React.FC = () => {
   const productData = [
     { id: 1, title: "CLASSIC SIMPLE BACKPACK", price: 50 },
     { id: 2, title: "Smart Watch", price: 150 },
+  ];
+
+  const area = [
+    { value: "United States", label: "United States" },
+    { value: "Brazil", label: "Brazil" },
+    { value: "Colombia", label: "Colombia" },
+    { value: "Mexico", label: "Mexico" },
+    { value: "Canada", label: "Canada" },
+  ];
+  const city = [
+    { value: "California", label: "California" },
+    { value: "Ohaio", label: "Ohaio" },
+    { value: "Haiti", label: "Haiti" },
+    { value: "Cuba", label: "Cuba" },
   ];
 
   return (
@@ -43,6 +58,7 @@ const Cart: React.FC = () => {
               <Row>
                 <Col lg={8} className="left__side">
                   <div className="inner__body">
+                    {/* Product Show start */}
                     <table>
                       <thead>
                         <tr>
@@ -59,17 +75,63 @@ const Cart: React.FC = () => {
                         })}
                       </tbody>
                     </table>
+                    {/* Product Show End */}
+                    <hr className="d-md-block d-none" />
+                    {/* Middle Button Section start */}
+
+                    <div className="meddle__section">
+                      <div className="leftButton">
+                        <Link
+                          to={"/"}
+                          className="button__mid_solid_color_black"
+                        >
+                          CONTINUE SHOPPING
+                        </Link>
+                      </div>
+                      <div className="rightButton">
+                        <Link
+                          to={"/"}
+                          className="button__mid_border_color_gray"
+                        >
+                          CLEAR CART
+                        </Link>
+                        <Link
+                          to={"/"}
+                          className="button__mid_border_color_gray"
+                        >
+                          UPDATE CART
+                        </Link>
+                      </div>
+                    </div>
+                    {/* Middle Button Section End */}
+                    {/* Coupon section start */}
+                    <div className="coupon__section">
+                      <h3>COUPON DISCOUNT</h3>
+                      <input
+                        type="text"
+                        placeholder="Enter coupon code here..."
+                      />
+
+                      <Link to={"/"} className="button__mid_solid_color_black">
+                        APPLY COUPON
+                      </Link>
+                    </div>
+
+                    {/* Coupon section End */}
                   </div>
                 </Col>
                 <Col lg={4} className="right__side">
                   <div className="inner__body">
-                    <h2 className="header__text">CART TOTALS</h2>
-                    <div className="d-flex justify-content-between align-items-center">
+                    <h2 className="header__text">Cart Totals</h2>
+                    <hr />
+                    <div className="total__price d-flex justify-content-between align-items-center">
                       <h5>Subtotal</h5>
                       <h5>$100.00</h5>
                     </div>
+                    <hr />
                     <div className="shipping">
                       <h2>Shipping</h2>
+
                       <div className="items">
                         <div className="customInput">
                           <input
@@ -100,28 +162,64 @@ const Cart: React.FC = () => {
                         </div>
                       </div>
                     </div>
-                    <h2>Shipping to CA.</h2>
-                    <div className="custom-select">
-                      <select>
-                        <option value="0">United States</option>
-                        <option value="1">Brazil</option>
-                        <option value="2">Colombia</option>
-                        <option value="3">Mexico</option>
-                        <option value="4">Canada</option>
-                      </select>
+
+                    <div className="custom__select__body">
+                      <h2>Shipping to CA.</h2>
+                      <div className="custom__select">
+                        <Select
+                          options={area}
+                          defaultValue={area[1]}
+                          styles={{
+                            option: (styles) => ({
+                              ...styles,
+                              ":active": {
+                                ...styles[":active"],
+                                backgroundColor: "#ddd",
+                              },
+                            }),
+                          }}
+                          theme={(theme) => ({
+                            ...theme,
+                            borderRadius: 5,
+                            border: "none",
+                            colors: {
+                              ...theme.colors,
+                              primary25: "#ddd",
+                              primary: "black",
+                            },
+                          })}
+                        />
+                      </div>
+                      <div className="custom__select">
+                        <Select
+                          options={city}
+                          defaultValue={city[1]}
+                          styles={{
+                            option: (styles) => ({
+                              ...styles,
+                              ":active": {
+                                ...styles[":active"],
+                                backgroundColor: "#ddd",
+                              },
+                            }),
+                          }}
+                          theme={(theme) => ({
+                            ...theme,
+                            borderRadius: 5,
+                            border: "none",
+                            colors: {
+                              ...theme.colors,
+                              primary25: "#ddd",
+                              primary: "black",
+                            },
+                          })}
+                        />
+                      </div>
                     </div>
-                    <div className="custom-select">
-                      <select>
-                        <option value="0">California</option>
-                        <option value="1">Ohaio</option>
-                        <option value="2">Haiti</option>
-                        <option value="3"> Cuba</option>
-                      </select>
-                    </div>
-                    <div className="custom-select">
+                    <div className="input__town">
                       <input type="text" placeholder="Town / City" />
                     </div>
-                    <div className="custom-select">
+                    <div className="input__zip">
                       <input type="text" placeholder="ZIP" />
                     </div>
                     <div>
@@ -130,9 +228,9 @@ const Cart: React.FC = () => {
                       </Link>
                     </div>
                     <hr />
-                    <div>
-                      <p>Total</p>
-                      <p>$100.00</p>
+                    <div className="total__price d-flex justify-content-between align-items-center">
+                      <h5>Total</h5>
+                      <h5>$100.00</h5>
                     </div>
                     <div>
                       <Link to={"/"} className="button__mid_solid_color_black">

@@ -18,10 +18,23 @@
   padding: 10px 40px;
   font-size: 15px;
   color: var(--color-white) !important;
-  display: block;
   transition: all 0.2s;
   &:hover {
     background-color: var(--color-white) !important;
     color: var(--secondary-theme-color) !important;
+  }
+}
+.button__mid_border_color_gray {
+  border: 2px solid #eee;
+  background-color: var(--color-white);
+  padding: 10px 20px;
+  font-size: 15px;
+  color: var(--secondary-theme-color) !important;
+  margin-top: 22px;
+  display: block;
+  transition: all 0.1s;
+  &:hover {
+    background-color: #e1e1e1;
+    border-color: #e1e1e1;
   }
 }

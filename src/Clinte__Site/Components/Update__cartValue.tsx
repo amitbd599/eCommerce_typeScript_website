@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import { GrClose } from "react-icons/gr";
+import { MdClose } from "react-icons/md";
 
 const Update__cartValue = ({ value }: any) => {
   const [hold, setHold] = useState(0);
@@ -22,6 +23,7 @@ const Update__cartValue = ({ value }: any) => {
             src="/assets/images/products_Small/product-11.png"
             alt=""
           />
+          <MdClose className="close__button" />
         </div>
 
         <p className="pl-15">{value.title}</p>
@@ -39,11 +41,6 @@ const Update__cartValue = ({ value }: any) => {
         </div>
       </th>
       <th className="text-center">$40.00</th>
-      <th className="text-center">
-        <button>
-          <GrClose />
-        </button>
-      </th>
     </tr>
   );
 };

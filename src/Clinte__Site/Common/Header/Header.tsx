@@ -347,7 +347,7 @@ const Header: React.FC = () => {
               <img src={logo[0].img} alt="" />
             </Link>
           </div>
-          <div className="cart__section">
+          <div className="cart__Count">
             <BsFillCartFill className="icon" />
             <span className="cart__item">0</span>
           </div>

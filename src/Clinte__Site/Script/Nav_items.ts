@@ -39,7 +39,7 @@ const nav__Items: nav__Items[] = [
       },
       {
         item: "Cart Page",
-        link: "/cart-page",
+        link: "/cart",
       },
       {
         item: "Blog",
@@ -68,10 +68,6 @@ const nav__Items: nav__Items[] = [
       {
         item: "Coming Soon",
         link: "/coming-soon",
-      },
-      {
-        item: "Cart",
-        link: "/cart",
       },
     ],
   },

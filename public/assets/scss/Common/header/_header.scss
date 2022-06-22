@@ -371,9 +371,10 @@
 ===========================*/
 
 .mobile__menu {
-  position: relative;
-  // position: fixed;    ( use it for full page vh)
-  overflow-y: scroll;
+  // position: relative;
+  position: fixed;
+  top: 0;
+  overflow-y: scroll !important;
   height: 110vh;
   z-index: 9999;
   background: #ddd;
@@ -401,7 +402,7 @@
         cursor: pointer;
       }
     }
-    .cart__section {
+    .cart__Count {
       position: relative;
       .icon {
         font-size: 40px;
@@ -508,5 +509,6 @@
     height: 100px;
     visibility: visible;
     opacity: 1;
+    overflow-y: hidden !important;
   }
 }
