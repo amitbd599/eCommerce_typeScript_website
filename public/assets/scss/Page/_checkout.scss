@@ -108,6 +108,169 @@
           }
         }
       }
+      .right__side {
+        position: relative;
+        .inner__body {
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          padding: 30px 20px;
+          .header__text {
+            font-size: 22px;
+            font-weight: 700;
+          }
+          .total__price {
+            .item {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              p {
+                color: #666;
+                font-size: 15px;
+              }
+            }
+          }
+          .subtotal__count {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: -12px !important;
+            p {
+              color: #666;
+              font-size: 15px;
+            }
+          }
+          .shipping {
+            margin-top: 15px;
+            margin-bottom: 20px;
+            h2 {
+              font-size: 18px;
+              font-weight: 600;
+              margin-bottom: 10px;
+            }
+            .items {
+              .customInput {
+                margin-bottom: 10px;
+                position: relative;
+                input {
+                  position: absolute;
+                  width: auto;
+                  opacity: 0;
+                  z-index: -1;
+
+                  &.custom-control-input:checked ~ label::after {
+                    transition: all 0.2s;
+                    color: #fff;
+                    background-color: #333;
+                    border: 1px solid #333 !important;
+                  }
+                }
+                label {
+                  position: relative;
+                  padding-left: 25px;
+                  color: #666;
+                  &::after {
+                    position: absolute;
+                    top: 3px;
+                    left: 0;
+                    width: 20px;
+                    color: #fff;
+                    height: 20px;
+                    border: 1px solid #ddd !important;
+                    background-color: #fff;
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    content: "\f00c";
+                    padding: 0px;
+                    padding-left: 2px;
+                    font-size: 13px;
+                  }
+                }
+              }
+            }
+          }
+          .Total__count {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 14px 0;
+            margin-top: -12px !important;
+            p {
+              font-size: 16px;
+              font-weight: 700;
+            }
+          }
+          .payment__methods {
+            p {
+              font-size: 16px;
+              font-weight: 700;
+            }
+          }
+
+          .button__mid_solid_color_black {
+            display: inline-block;
+          }
+          .payment__block {
+            margin-top: 30px;
+            .accordion {
+              border: none;
+              .accordion__item {
+                border: none;
+                margin-bottom: 18px;
+                .accordion__heading {
+                  .accordion__button {
+                    background-color: #fff;
+                    display: contents;
+                    font-size: 15px;
+                    .inner__head {
+                      position: relative;
+                      &::after {
+                        position: absolute;
+                        content: "";
+                        width: 12px;
+                        background: #333;
+                        height: 12px;
+                        left: 4px;
+                        top: 5px;
+                        border-radius: 50%;
+                        visibility: hidden;
+                        opacity: 0;
+                      }
+                      &::before {
+                        position: absolute;
+                        content: "";
+                        border: 1px solid #ddd;
+                        width: 20px;
+                        height: 20px;
+                        left: 0;
+                        top: 1px;
+                        border-radius: 50%;
+                      }
+                    }
+                    .text {
+                      padding-left: 32px;
+                    }
+                    &::before {
+                      display: none;
+                    }
+                    &[aria-expanded="true"] {
+                      .inner__head::after {
+                        visibility: visible;
+                        opacity: 1;
+                      }
+                    }
+                  }
+                }
+                .accordion__panel {
+                  padding: 5px 33px;
+                  p {
+                    color: #666;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

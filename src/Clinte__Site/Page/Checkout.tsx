@@ -6,6 +6,14 @@ import Intro__Section from "../Common/IntroSection/Intro__Section";
 import Meta_Data from "../Common/Meta_Data";
 import Select from "react-select";
 import { Link } from "react-router-dom";
+import { IoMdClose } from "react-icons/io";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from "react-accessible-accordion";
 const options = [
   { value: "chocolate", label: "Chocolate" },
   { value: "strawberry", label: "Strawberry" },
@@ -271,6 +279,155 @@ const Checkout: React.FC = () => {
                         <textarea name="" id="" cols={20} rows={6}></textarea>
                       </div>
                       {/* order Note End */}
+                    </div>
+                  </div>
+                </Col>
+
+                <Col lg={5} className="right__side">
+                  <div className="inner__body">
+                    <h2 className="header__text">Cart Totals</h2>
+                    <hr />
+                    <div className="total__price ">
+                      <div className="item">
+                        <p>
+                          Palm Print Jacket{" "}
+                          <span>
+                            <IoMdClose />
+                          </span>{" "}
+                          1
+                        </p>
+                        <p>$200</p>
+                      </div>
+                      <div className="item">
+                        <p>
+                          Brown Backpack{" "}
+                          <span>
+                            <IoMdClose />
+                          </span>{" "}
+                          1
+                        </p>
+                        <p>$230</p>
+                      </div>
+                    </div>
+                    <hr />
+                    <div className="subtotal__count">
+                      <p>Subtotal :</p>
+                      <p>$ 430</p>
+                    </div>
+                    <div className="shipping">
+                      <h2>Shipping</h2>
+
+                      <div className="items">
+                        <div className="customInput">
+                          <input
+                            type="radio"
+                            id="free-shipping"
+                            className="custom-control-input"
+                            name="shipping"
+                          />
+                          <label htmlFor="free-shipping">Free Shipping</label>
+                        </div>
+                        <div className="customInput">
+                          <input
+                            type="radio"
+                            id="Local-Pickup"
+                            className="custom-control-input"
+                            name="shipping"
+                          />
+                          <label htmlFor="Local-Pickup">Local Pickup</label>
+                        </div>
+                        <div className="customInput">
+                          <input
+                            type="radio"
+                            id="Flat-rate"
+                            className="custom-control-input"
+                            name="shipping"
+                          />
+                          <label htmlFor="Flat-rate">Flat rate</label>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                    <div className="Total__count">
+                      <p>Total :</p>
+                      <p>$ 430</p>
+                    </div>
+                    {/* <div className="payment__methods">
+                      <p>Shipping to CA.</p>
+                    </div> */}
+
+                    <div className="payment__block">
+                      <Accordion allowZeroExpanded>
+                        <AccordionItem>
+                          <AccordionItemHeading>
+                            <AccordionItemButton>
+                              <span className="inner__head"> </span>
+                              <span className="text">
+                                {" "}
+                                Direct Bank Transfor
+                              </span>
+                            </AccordionItemButton>
+                          </AccordionItemHeading>
+                          <AccordionItemPanel>
+                            <p>
+                              Make your payment directly into our bank account.
+                              Please use your Order ID as the payment reference.
+                              Your order will not be shipped until the funds
+                              have cleared in our account.
+                            </p>
+                          </AccordionItemPanel>
+                        </AccordionItem>
+                        <AccordionItem>
+                          <AccordionItemHeading>
+                            <AccordionItemButton>
+                              <span className="inner__head"> </span>
+                              <span className="text">
+                                {" "}
+                                Direct Bank Transfor
+                              </span>
+                            </AccordionItemButton>
+                          </AccordionItemHeading>
+                          <AccordionItemPanel>
+                            <p>
+                              Please send a check to Store Name, Store Street,
+                              Store Town, Store State / County, Store Postcode.
+                            </p>
+                          </AccordionItemPanel>
+                        </AccordionItem>
+                        <AccordionItem>
+                          <AccordionItemHeading>
+                            <AccordionItemButton>
+                              <span className="inner__head"> </span>
+                              <span className="text"> Cash on delivery</span>
+                            </AccordionItemButton>
+                          </AccordionItemHeading>
+                          <AccordionItemPanel>
+                            <p>Pay with cash upon delivery.</p>
+                          </AccordionItemPanel>
+                        </AccordionItem>
+                        <AccordionItem>
+                          <AccordionItemHeading>
+                            <AccordionItemButton>
+                              <span className="inner__head"> </span>
+                              <span className="text">
+                                {" "}
+                                Paypal <a href="#">What is PayPal?</a>
+                              </span>
+                            </AccordionItemButton>
+                          </AccordionItemHeading>
+                          <AccordionItemPanel>
+                            <p>
+                              Please send a check to Store Name, Store Street,
+                              Store Town, Store State / County, Store Postcode.
+                            </p>
+                          </AccordionItemPanel>
+                        </AccordionItem>
+                      </Accordion>
+                    </div>
+                    <div>
+                      <Link to={"/"} className="button__mid_solid_color_black">
+                        PLACE ORDER
+                      </Link>
                     </div>
                   </div>
                 </Col>
