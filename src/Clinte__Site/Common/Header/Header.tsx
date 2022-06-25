@@ -311,7 +311,9 @@ const Header: React.FC = () => {
                             </div>
                           </div>
                         </li>
-                        <li>LOGIN</li>
+                        <li>
+                          <Link to={"/login-register"}>LOGIN</Link>
+                        </li>
                         <li className="cart__total">
                           CART / <span>$0.00</span>{" "}
                           <BsFillCartFill className="icon" />

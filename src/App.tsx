@@ -10,6 +10,7 @@ import Contact from "./Clinte__Site/Page/Contact";
 import Error from "./Clinte__Site/Page/Error";
 import Faq from "./Clinte__Site/Page/Faq";
 import Home from "./Clinte__Site/Page/Home";
+import Login__Register from "./Clinte__Site/Page/Login__Register";
 
 const App: React.FC = () => {
   return (
@@ -18,12 +19,15 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/about" element={<About />}></Route>
-          <Route path="/account" element={<Account />}></Route>
+
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/faqs" element={<Faq />}></Route>
           <Route path="/coming-soon" element={<ComingSoon />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/checkout" element={<Checkout />}></Route>
+
+          <Route path="/account" element={<Account />}></Route>
+          <Route path="/login-register" element={<Login__Register />}></Route>
 
           <Route path="*" element={<Error />}></Route>
         </Routes>

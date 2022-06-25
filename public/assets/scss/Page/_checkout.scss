@@ -2,6 +2,9 @@
   margin: 100px 0;
   .wrapper {
     .wrapper__body {
+      .row {
+        --bs-gutter-x: 60px;
+      }
       .left__side {
         .inner__body {
           .login__source {
@@ -264,6 +267,140 @@
                   padding: 5px 33px;
                   p {
                     color: #666;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ========= min-width:768px & max-width:991px =========
+
+@media #{$md-layout-device} {
+  .checkout {
+    margin: 100px 0;
+    .wrapper {
+      .wrapper__body {
+        .row {
+          --bs-gutter-x: 60px;
+        }
+
+        .right__side {
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+}
+
+// ========= min-width:0px & max-width:575px  =========
+
+@media #{$sm-layout-device} {
+  .checkout {
+    margin: 80px 0;
+    .wrapper {
+      .wrapper__body {
+        .row {
+          --bs-gutter-x: 1.5rem;
+        }
+        .left__side {
+          .inner__body {
+            .login__source {
+              p {
+                font-size: 15px !important;
+              }
+            }
+            .billing__address {
+              .main__address {
+                form {
+                  .form__group {
+                    margin-bottom: 6px;
+                    .leftGroup {
+                      margin-right: 10px;
+                      width: 50%;
+                      p {
+                        font-size: 14px !important;
+                      }
+                    }
+                    .rightGroup {
+                      p {
+                        font-size: 14px !important;
+                      }
+                    }
+                    .singleGroup {
+                      p {
+                        font-size: 14px !important;
+                      }
+                    }
+                  }
+                }
+              }
+              .different__address {
+              }
+              .orderNote {
+                p {
+                  color: #666;
+                  font-size: 14px !important;
+                }
+              }
+            }
+          }
+        }
+        .right__side {
+          margin-top: 60px;
+          .inner__body {
+            .total__price {
+              .item {
+                p {
+                  font-size: 15px !important;
+                }
+              }
+            }
+            .subtotal__count {
+              p {
+                font-size: 15px !important;
+              }
+            }
+            .shipping {
+              .items {
+                .customInput {
+                  label {
+                    position: relative;
+                    padding-left: 25px;
+                    color: #666;
+                    &::after {
+                      font-size: 13px !important;
+                    }
+                  }
+                }
+              }
+            }
+            .Total__count {
+              p {
+                font-size: 16px !important;
+              }
+            }
+            .payment__methods {
+              p {
+                font-size: 16px !important;
+              }
+            }
+
+            .button__mid_solid_color_black {
+              display: inline-block;
+            }
+            .payment__block {
+              margin-top: 30px;
+              .accordion {
+                .accordion__item {
+                  .accordion__panel {
+                    p {
+                      font-size: 15px !important;
+                    }
                   }
                 }
               }
