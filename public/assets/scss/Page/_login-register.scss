@@ -122,3 +122,63 @@
     }
   }
 }
+
+// ========= min-width:768px & max-width:991px =========
+
+@media #{$md-layout-device} {
+  .login-register {
+    margin: 100px 0;
+    .wrapper {
+      .wrapper__body {
+        .row {
+          .right__side {
+            padding-left: calc(var(--bs-gutter-x) * 0.5);
+            margin-top: 65px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ========= min-width:0px & max-width:575px  =========
+@media #{$sm-layout-device} {
+  .login-register {
+    margin: 100px 0;
+    .wrapper {
+      .wrapper__body {
+        .row {
+          .left__side {
+            .inner__body {
+              padding-right: 0;
+              .header__text {
+                p {
+                  font-size: 16px !important;
+                }
+              }
+            }
+          }
+          .right__side {
+            margin-top: 65px;
+            padding-left: calc(var(--bs-gutter-x) * 0.5);
+            .header__text {
+              p {
+                font-size: 16px !important;
+              }
+            }
+            form {
+              p {
+                font-size: 15px !important;
+              }
+            }
+          }
+          .intro__box {
+            p {
+              font-size: 16px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
