@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { BsCalendarDate, BsEyeFill, BsSearch } from "react-icons/bs";
 import { Link } from "react-router-dom";
+
 import Footer from "../Common/Footer/Footer";
 import Header from "../Common/Header/Header";
 import Intro__Section from "../Common/IntroSection/Intro__Section";
 import Meta_Data from "../Common/Meta_Data";
+import Calendar from "react-calendar";
 
 type dataType = {
   title?: string;
@@ -60,6 +62,7 @@ let data: dataType[] = [
 ];
 
 const Blog: React.FC = () => {
+  const [value, onChange] = useState(new Date());
   return (
     <>
       {/* Helmet Intro Start */}
@@ -125,6 +128,37 @@ const Blog: React.FC = () => {
                         </div>
                       </div>
                     ))}
+
+                    {/* Pagination */}
+                    <div className="pagination">
+                      <div className="pagination__inner">
+                        <ul>
+                          <li>
+                            <Link to={"/"}>Prev</Link>
+                          </li>
+                          <li className="active">
+                            {" "}
+                            <Link to={"/"}>1</Link>
+                          </li>
+                          <li>
+                            {" "}
+                            <Link to={"/"}>2</Link>
+                          </li>
+                          <li>
+                            {" "}
+                            <Link to={"/"}>3</Link>
+                          </li>
+                          <li>
+                            {" "}
+                            <Link to={"/"}>4</Link>
+                          </li>
+                          <li>
+                            {" "}
+                            <Link to={"/"}>Next</Link>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </Col>
                 <Col lg={3} className="right__side">
@@ -204,6 +238,22 @@ const Blog: React.FC = () => {
                         <Link to={"/"}>Fashion</Link>
                         <Link to={"/"}>Style</Link>
                         <Link to={"/"}>Travel</Link>
+                      </div>
+                    </div>
+
+                    <div className="block">
+                      <h2>Custom Block</h2>
+                      <p>
+                        Sed pretium, ligula sollicitudin laoreet viverra, tortor
+                        libero sodales leo, eget blandit nunc tortor eu nibh.
+                        Suspendisse potenti.Sed egstas, ant at vulputate
+                        volutpat, uctus metus libero eu augue, vitae luctus
+                      </p>
+                    </div>
+                    <div className="calendar">
+                      <h2>Calendar</h2>
+                      <div>
+                        <Calendar onChange={onChange} value={value} />
                       </div>
                     </div>
                   </div>
