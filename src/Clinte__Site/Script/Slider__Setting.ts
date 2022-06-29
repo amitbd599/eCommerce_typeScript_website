@@ -1,4 +1,6 @@
 let Slider__Setting = () => {
+  // Type of Slider...
+
   type slider_type = {
     infinite?: boolean;
     slidesToShow?: number;
@@ -14,6 +16,8 @@ let Slider__Setting = () => {
     initialSlide?: number;
     autoplay?: boolean;
   };
+
+  // Slider Setting...
 
   let Hero__Slider__setting: slider_type[] = [
     {
@@ -122,11 +126,40 @@ let Slider__Setting = () => {
     },
   ];
 
+  let single__blogPage__slider__setting: slider_type[] = [
+    {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      arrows: true,
+      responsive: [
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          },
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            arrows: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+    },
+  ];
+
   return {
     Hero__Slider__setting,
     Product__Slider__One__setting,
     bestSeller__product__setting,
     customer__slider__review__setting,
+    single__blogPage__slider__setting,
   };
 };
 

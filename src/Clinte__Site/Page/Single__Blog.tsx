@@ -1,14 +1,28 @@
 /* eslint-disable react/jsx-pascal-case */
 import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { BsCheckAll, BsSearch } from "react-icons/bs";
-import { FaCommentDots } from "react-icons/fa";
+import {
+  BsArrowLeft,
+  BsArrowRight,
+  BsCheckAll,
+  BsSearch,
+} from "react-icons/bs";
+
 import { Link } from "react-router-dom";
 import Header from "../Common/Header/Header";
 import Intro__Section from "../Common/IntroSection/Intro__Section";
 import Meta_Data from "../Common/Meta_Data";
 import Calendar from "react-calendar";
 import Footer from "../Common/Footer/Footer";
+import {
+  FaCommentDots,
+  FaFacebookF,
+  FaLinkedinIn,
+  FaMediumM,
+  FaTwitter,
+} from "react-icons/fa";
+import Slider from "react-slick";
+import Slider__Setting from "../Script/Slider__Setting";
 
 type dataType = {
   title?: string;
@@ -63,6 +77,7 @@ let data: dataType[] = [
 ];
 const Single__Blog: React.FC = () => {
   const [value, onChange] = useState(new Date());
+  const { single__blogPage__slider__setting } = Slider__Setting();
   return (
     <>
       {/* Helmet Intro Start */}
@@ -232,6 +247,16 @@ const Single__Blog: React.FC = () => {
                               </li>
                             </ul>
                           </div>
+                          <br />
+                          <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Delectus quasi, quae obcaecati atque iure modi
+                            facilis tenetur et. Repellat eos consectetur omnis
+                            suscipit architecto distinctio ab velit delectus
+                            numquam perspiciatis. Quam labore quos iste earum
+                            dolorem ex nisi, sit ipsum similique harum minima
+                            error vero maxime, velit provident facere officiis!
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -251,11 +276,334 @@ const Single__Blog: React.FC = () => {
                     </div>
                     {/* Tag Box End*/}
 
+                    {/* Social Share Start */}
+                    <div className="social__share">
+                      <div className="social__Share__inner">
+                        <ul>
+                          <li>
+                            <Link to={"/"} className="FaFacebookF">
+                              <FaFacebookF />
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to={"/"} className="FaTwitter">
+                              <FaTwitter />
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to={"/"} className="FaLinkedinIn">
+                              <FaLinkedinIn />
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to={"/"} className="FaMediumM">
+                              <FaMediumM />
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    {/* Social Share End */}
+
+                    {/* More post by Admin start */}
+                    <div className="more__admin__post">
+                      <div className="more__admin__post_inner">
+                        <div className="img__file">
+                          <img
+                            src="/assets/images/client/client-7.jpg"
+                            alt=""
+                          />
+                        </div>
+                        <div className="text__file">
+                          <div className="author__option">
+                            <div className="author">
+                              {" "}
+                              <h3>Amit Biswas</h3> <span>(Author)</span>
+                            </div>
+                            <span className="more__post">
+                              <Link to={"/"}>More Post This Author ....</Link>
+                            </span>
+                          </div>
+                          <div className="post__details">
+                            <p>
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Assumenda, et placeat nulla earum adipisci
+                              porro, ducimus aliquid dolorem veritatis qui ab,
+                              vero incidunt. Dolorem aliquid minima nam totam
+                              soluta, est iusto laborum excepturi error, illo
+                              nobis, consectetur eveniet? Blanditiis,
+                              laboriosam.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {/* More post by Admin End */}
+
+                    {/* Previous and Next post type Start */}
+                    <div className="prev__next__post">
+                      <div className="prev__next__post__inner">
+                        <div className="prev__post">
+                          <div className="post__intro">
+                            <span>
+                              {" "}
+                              <BsArrowLeft className="icon" />
+                            </span>
+                            <Link to={"/"}>PREVIOUS POST</Link>
+                          </div>
+                        </div>
+                        <div className="next__post">
+                          <div className="post__intro">
+                            <Link to={"/"}>NEXT POST</Link>
+                            <span>
+                              {" "}
+                              <BsArrowRight className="icon" />
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {/* Previous and Next post type End */}
+
+                    <hr />
+
                     {/* Related Post Start */}
-                    <div className="related__post"></div>
+                    <div className="related__post">
+                      <div className="related__post__inner">
+                        <h2>Related Posts</h2>
+                        <Slider {...single__blogPage__slider__setting[0]}>
+                          <div className="slider__item">
+                            <div className="img__file">
+                              <img
+                                className="img-fluid"
+                                src="/assets/images/blog/blog-11.png"
+                                alt=""
+                              />
+                            </div>
+                            <div className="author__date">
+                              <span>by</span>
+                              <Link to={"/"} className="mr-5 ml-5">
+                                Amit Biswas
+                              </Link>
+                              <span>22-6-2022</span>
+                            </div>
+                            <div className="header">
+                              <h2>
+                                ASHEYWR Women Fitness Bras Push Up Elastic
+                                Beauty Back Knitted
+                              </h2>
+                            </div>
+                            <div className="link">
+                              <Link to={"/"}>Read More</Link>
+                              <BsArrowRight className="icon" />
+                            </div>
+                          </div>
+                          <div className="slider__item">
+                            <div className="img__file">
+                              <img
+                                className="img-fluid"
+                                src="/assets/images/blog/blog-12.png"
+                                alt=""
+                              />
+                            </div>
+                            <div className="author__date">
+                              <span>by</span>
+                              <Link to={"/"} className="mr-5 ml-5">
+                                Amit Biswas
+                              </Link>
+                              <span>22-6-2022</span>
+                            </div>
+                            <div className="header">
+                              <h2>
+                                ASHEYWR Women Fitness Bras Push Up Elastic
+                                Beauty Back Knitted
+                              </h2>
+                            </div>
+                            <div className="link">
+                              <Link to={"/"}>Read More</Link>
+                              <BsArrowRight className="icon" />
+                            </div>
+                          </div>
+                          <div className="slider__item">
+                            <div className="img__file">
+                              <img
+                                className="img-fluid"
+                                src="/assets/images/blog/blog-13.png"
+                                alt=""
+                              />
+                            </div>
+                            <div className="author__date">
+                              <span>by</span>
+                              <Link to={"/"} className="mr-5 ml-5">
+                                Amit Biswas
+                              </Link>
+                              <span>22-6-2022</span>
+                            </div>
+                            <div className="header">
+                              <h2>
+                                ASHEYWR Women Fitness Bras Push Up Elastic
+                                Beauty Back Knitted
+                              </h2>
+                            </div>
+                            <div className="link">
+                              <Link to={"/"}>Read More</Link>
+                              <BsArrowRight className="icon" />
+                            </div>
+                          </div>
+                        </Slider>
+                      </div>
+                    </div>
                     {/* Related Post End */}
+
+                    <hr />
+
+                    {/* Comment Box Start */}
+                    <div className="comment__box">
+                      <div className="comment__box__inner">
+                        <div className="comment__items__body">
+                          <h2>3 Comments</h2>
+
+                          {/* Comment item */}
+                          <div className="comment__items">
+                            <div className="comment__item">
+                              <div className="img__file">
+                                <img
+                                  src="/assets/images/client/client-2.png"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="text__file">
+                                <div className="author__date">
+                                  <span className="author">Alex Dico</span>
+                                  <span className="date">(22-6-2022)</span>
+                                </div>
+                                <div className="comment__text">
+                                  <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Vero eveniet ab sed
+                                    molestias dignissimos sit quaerat similique
+                                    aliquid, ipsam a.
+                                  </p>
+                                </div>
+                                <div className="reply">
+                                  <Link to={"/"}>Reply</Link>
+                                  <BsArrowRight className="icon" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Reply Zoon */}
+
+                          <div className="reply__zoon">
+                            <div className="reply__zoon__items">
+                              <div className="reply__zoon__item">
+                                <div className="img__file">
+                                  <img
+                                    src="/assets/images/client/client-7.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                                <div className="text__file">
+                                  <div className="author__date">
+                                    <span className="author">Amit Biswas</span>
+                                    <span className="date">(22-6-2022)</span>
+                                  </div>
+                                  <div className="comment__text">
+                                    <p>
+                                      Lorem ipsum dolor sit amet consectetur
+                                      adipisicing elit. Vero eveniet ab sed
+                                      molestias dignissimos sit quaerat
+                                      similique aliquid, ipsam a.
+                                    </p>
+                                  </div>
+                                  <div className="reply">
+                                    <Link to={"/"}>Reply</Link>
+                                    <BsArrowRight className="icon" />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Comment item */}
+                          <div className="comment__items">
+                            <div className="comment__item">
+                              <div className="img__file">
+                                <img
+                                  src="/assets/images/client/client-4.png"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="text__file">
+                                <div className="author__date">
+                                  <span className="author">Maria Niro</span>
+                                  <span className="date">(28-6-2022)</span>
+                                </div>
+                                <div className="comment__text">
+                                  <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Vero eveniet ab sed
+                                    molestias dignissimos sit quaerat similique
+                                    aliquid, ipsam a.
+                                  </p>
+                                </div>
+                                <div className="reply">
+                                  <Link to={"/"}>Reply</Link>
+                                  <BsArrowRight className="icon" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <hr />
+                      {/* Comment Form */}
+                      <div className="comment__form">
+                        <div className="comment__form__inner">
+                          <h2>Leave a Reply</h2>
+                          <p>
+                            Your email address will not be published. Required
+                            fields are marked
+                          </p>
+                          <form action="">
+                            <div className="name__email__box">
+                              <input
+                                type="text"
+                                className="name"
+                                placeholder="Your Name *"
+                              />
+                              <input
+                                type="email"
+                                className="email"
+                                placeholder="Your Email *"
+                              />
+                            </div>
+                            <div className="text__area">
+                              <textarea
+                                placeholder="Write a Comment ..."
+                                name=""
+                                id=""
+                                cols={30}
+                                rows={10}
+                              ></textarea>
+                            </div>
+                            <div className="submit">
+                              <button
+                                type="submit"
+                                className="button__mid_solid_color_black"
+                              >
+                                Submit
+                              </button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    {/* Comment Box End */}
                   </div>
                 </Col>
+
                 <Col lg={3} className="right__side">
                   <div className="inner__body">
                     <div className="search__box">
