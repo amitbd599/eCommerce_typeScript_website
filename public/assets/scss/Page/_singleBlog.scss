@@ -632,3 +632,219 @@
     }
   }
 }
+
+// ========= min-width:768px & max-width:991px =========
+
+@media #{$md-layout-device} {
+  .single_blog {
+    margin: 100px 0;
+    .wrapper {
+      .wrapper__body {
+        .left__side {
+          .inner__body {
+            // Related Post
+            .related__post {
+              margin-bottom: 40px; //----
+            }
+          }
+        }
+        .right__side {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// ========= min-width:0px & max-width:575px  =========
+
+@media #{$sm-layout-device} {
+  .single_blog {
+    margin: 50px 0;
+    .wrapper {
+      .wrapper__body {
+        .left__side {
+          .inner__body {
+            padding-right: 0;
+            // Blog Body Design
+            .blog__body {
+              .author__box {
+                margin-top: 15px;
+                p {
+                  font-size: 14px !important;
+                }
+              }
+              .main__text__body {
+                .header__text {
+                  margin-top: 20px;
+                }
+                .des {
+                  margin-top: 20px;
+                  p {
+                    color: #666;
+                    font-size: 15px !important;
+                  }
+                  .img__file {
+                    margin: 30px 0;
+                    columns: 3;
+                  }
+                  .listData {
+                    ul {
+                      padding: 0;
+                    }
+                  }
+                }
+              }
+            }
+            .tag__box {
+              margin-top: 30px;
+              .tag__box__inner {
+                display: flex;
+                align-items: center;
+                span {
+                  margin-right: 10px;
+                  color: #666;
+                }
+                a {
+                  margin-bottom: 10px;
+                }
+              }
+            }
+
+            // More post by Admin ...
+            .more__admin__post {
+              background: #f8f8f8;
+              padding: 30px 10px;
+              .more__admin__post_inner {
+                display: flex;
+                justify-content: space-between;
+                .text__file {
+                  .author__option {
+                    display: block;
+                    .author {
+                      display: flex;
+                      h3 {
+                        font-size: 18px;
+                        font-weight: 600;
+                        margin-right: 10px;
+                      }
+                      span {
+                        color: #666;
+                      }
+                    }
+                    .more__post {
+                      a {
+                        font-size: 14px !important;
+                      }
+                    }
+                  }
+                  .post__details {
+                    margin-top: 10px;
+                    p {
+                      font-size: 15px !important;
+                    }
+                  }
+                }
+              }
+            }
+
+            // Related Post
+            .related__post {
+              margin-bottom: 40px;
+            }
+            // Comment Box
+            .comment__box {
+              margin-top: 30px;
+              .comment__box__inner {
+                // Comment item...
+                .comment__items__body {
+                  h2 {
+                    font-size: 20px;
+                  }
+                  .comment__items {
+                    margin-top: 35px;
+                    .comment__item {
+                      .text__file {
+                        .author__date {
+                          .author {
+                            font-size: 18px;
+                          }
+                          .date {
+                            font-size: 12px;
+                          }
+                        }
+                        .comment__text {
+                          p {
+                            font-size: 15px !important;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                // Reply Zoon ...
+
+                .reply__zoon {
+                  margin-left: 40px;
+                  h2 {
+                    font-size: 22px;
+                    font-weight: 700;
+                  }
+                  .reply__zoon__items {
+                    .reply__zoon__item {
+                      .text__file {
+                        .author__date {
+                          .author {
+                            font-size: 18px;
+                          }
+                          .date {
+                            font-size: 12px;
+                          }
+                        }
+                        .comment__text {
+                          p {
+                            font-size: 15px !important;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              // Comment Form
+              .comment__form {
+                margin-top: 50px;
+                .comment__form__inner {
+                  h2 {
+                    font-size: 22px;
+                    font-weight: 700;
+                  }
+                  p {
+                    font-size: 14px !important;
+                  }
+                  form {
+                    .name__email__box {
+                      display: block;
+                      input {
+                        font-size: 14px !important;
+                      }
+                      .name {
+                        margin-right: 0;
+                      }
+                      .email {
+                        margin-left: 0;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .right__side {
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -128,7 +128,7 @@ let Slider__Setting = () => {
 
   let single__blogPage__slider__setting: slider_type[] = [
     {
-      dots: false,
+      dots: true,
       infinite: true,
       speed: 500,
       slidesToShow: 3,

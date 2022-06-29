@@ -329,10 +329,7 @@ const Single__Blog: React.FC = () => {
                               Lorem ipsum dolor sit amet consectetur adipisicing
                               elit. Assumenda, et placeat nulla earum adipisci
                               porro, ducimus aliquid dolorem veritatis qui ab,
-                              vero incidunt. Dolorem aliquid minima nam totam
-                              soluta, est iusto laborum excepturi error, illo
-                              nobis, consectetur eveniet? Blanditiis,
-                              laboriosam.
+                              vero incidunt.
                             </p>
                           </div>
                         </div>
@@ -372,6 +369,84 @@ const Single__Blog: React.FC = () => {
                       <div className="related__post__inner">
                         <h2>Related Posts</h2>
                         <Slider {...single__blogPage__slider__setting[0]}>
+                          <div className="slider__item">
+                            <div className="img__file">
+                              <img
+                                className="img-fluid"
+                                src="/assets/images/blog/blog-11.png"
+                                alt=""
+                              />
+                            </div>
+                            <div className="author__date">
+                              <span>by</span>
+                              <Link to={"/"} className="mr-5 ml-5">
+                                Amit Biswas
+                              </Link>
+                              <span>22-6-2022</span>
+                            </div>
+                            <div className="header">
+                              <h2>
+                                ASHEYWR Women Fitness Bras Push Up Elastic
+                                Beauty Back Knitted
+                              </h2>
+                            </div>
+                            <div className="link">
+                              <Link to={"/"}>Read More</Link>
+                              <BsArrowRight className="icon" />
+                            </div>
+                          </div>
+                          <div className="slider__item">
+                            <div className="img__file">
+                              <img
+                                className="img-fluid"
+                                src="/assets/images/blog/blog-12.png"
+                                alt=""
+                              />
+                            </div>
+                            <div className="author__date">
+                              <span>by</span>
+                              <Link to={"/"} className="mr-5 ml-5">
+                                Amit Biswas
+                              </Link>
+                              <span>22-6-2022</span>
+                            </div>
+                            <div className="header">
+                              <h2>
+                                ASHEYWR Women Fitness Bras Push Up Elastic
+                                Beauty Back Knitted
+                              </h2>
+                            </div>
+                            <div className="link">
+                              <Link to={"/"}>Read More</Link>
+                              <BsArrowRight className="icon" />
+                            </div>
+                          </div>
+                          <div className="slider__item">
+                            <div className="img__file">
+                              <img
+                                className="img-fluid"
+                                src="/assets/images/blog/blog-13.png"
+                                alt=""
+                              />
+                            </div>
+                            <div className="author__date">
+                              <span>by</span>
+                              <Link to={"/"} className="mr-5 ml-5">
+                                Amit Biswas
+                              </Link>
+                              <span>22-6-2022</span>
+                            </div>
+                            <div className="header">
+                              <h2>
+                                ASHEYWR Women Fitness Bras Push Up Elastic
+                                Beauty Back Knitted
+                              </h2>
+                            </div>
+                            <div className="link">
+                              <Link to={"/"}>Read More</Link>
+                              <BsArrowRight className="icon" />
+                            </div>
+                          </div>
                           <div className="slider__item">
                             <div className="img__file">
                               <img
