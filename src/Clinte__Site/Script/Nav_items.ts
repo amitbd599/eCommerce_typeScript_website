@@ -23,6 +23,16 @@ const nav__Items: nav__Items[] = [
     link: "/shop",
     className: "shop",
     shop: "cdf",
+    dropdown: [
+      {
+        item: "Product ",
+        link: "/product",
+      },
+      {
+        item: "Single Product ",
+        link: "/single-product",
+      },
+    ],
   },
   {
     item: "Page",
@@ -45,14 +55,7 @@ const nav__Items: nav__Items[] = [
         item: "Checkout",
         link: "/checkout",
       },
-      {
-        item: "Blog",
-        link: "/blog",
-      },
-      {
-        item: "Single Blog",
-        link: "/single-blog",
-      },
+
       {
         item: "About",
         link: "/about",
@@ -82,7 +85,17 @@ const nav__Items: nav__Items[] = [
 
   {
     item: "Blog",
-    link: "/",
+    link: "",
+    dropdown: [
+      {
+        item: "Blog ",
+        link: "/blog",
+      },
+      {
+        item: "Single Blog ",
+        link: "/single-blog",
+      },
+    ],
   },
   {
     item: "Contact",

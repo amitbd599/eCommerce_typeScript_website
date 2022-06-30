@@ -392,7 +392,7 @@ const Single__Blog: React.FC = () => {
                             </div>
                             <div className="link">
                               <Link to={"/"}>Read More</Link>
-                              <BsArrowRight className="icon" />
+                              <BsArrowRight className="icon ml-5" />
                             </div>
                           </div>
                           <div className="slider__item">
@@ -418,7 +418,7 @@ const Single__Blog: React.FC = () => {
                             </div>
                             <div className="link">
                               <Link to={"/"}>Read More</Link>
-                              <BsArrowRight className="icon" />
+                              <BsArrowRight className="icon ml-5" />
                             </div>
                           </div>
                           <div className="slider__item">
@@ -444,7 +444,7 @@ const Single__Blog: React.FC = () => {
                             </div>
                             <div className="link">
                               <Link to={"/"}>Read More</Link>
-                              <BsArrowRight className="icon" />
+                              <BsArrowRight className="icon ml-5" />
                             </div>
                           </div>
                           <div className="slider__item">
@@ -470,7 +470,7 @@ const Single__Blog: React.FC = () => {
                             </div>
                             <div className="link">
                               <Link to={"/"}>Read More</Link>
-                              <BsArrowRight className="icon" />
+                              <BsArrowRight className="icon ml-5" />
                             </div>
                           </div>
                           <div className="slider__item">
@@ -496,7 +496,7 @@ const Single__Blog: React.FC = () => {
                             </div>
                             <div className="link">
                               <Link to={"/"}>Read More</Link>
-                              <BsArrowRight className="icon" />
+                              <BsArrowRight className="icon ml-5" />
                             </div>
                           </div>
                           <div className="slider__item">
@@ -522,7 +522,7 @@ const Single__Blog: React.FC = () => {
                             </div>
                             <div className="link">
                               <Link to={"/"}>Read More</Link>
-                              <BsArrowRight className="icon" />
+                              <BsArrowRight className="icon ml-5" />
                             </div>
                           </div>
                         </Slider>

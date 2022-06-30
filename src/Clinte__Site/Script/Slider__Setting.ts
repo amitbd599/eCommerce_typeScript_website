@@ -146,6 +146,7 @@ let Slider__Setting = () => {
           breakpoint: 767,
           settings: {
             arrows: false,
+            dot: false,
             slidesToShow: 1,
             slidesToScroll: 1,
           },
