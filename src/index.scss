@@ -13,10 +13,13 @@
 @import "~@fortawesome/fontawesome-free/scss/solid";
 @import "~@fortawesome/fontawesome-free/scss/v4-shims";
 
+// Plugin
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 @import "react-calendar/dist/Calendar.css";
 @import "react-accessible-accordion/dist/fancy-example.css";
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
+@import "swiper/css";
 
 // SCSS Style Add
 @import "/public/assets/scss/style.scss";

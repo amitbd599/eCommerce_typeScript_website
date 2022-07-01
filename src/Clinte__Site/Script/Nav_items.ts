@@ -20,7 +20,7 @@ const nav__Items: nav__Items[] = [
   },
   {
     item: "Shop",
-    link: "/shop",
+    link: "#",
     className: "shop",
     shop: "cdf",
     dropdown: [
@@ -85,7 +85,8 @@ const nav__Items: nav__Items[] = [
 
   {
     item: "Blog",
-    link: "",
+    link: "#",
+    className: "pageItem",
     dropdown: [
       {
         item: "Blog ",

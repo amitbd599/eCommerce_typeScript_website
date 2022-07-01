@@ -365,14 +365,12 @@ const Header: React.FC = () => {
                 {nav__Items.map((item, index) => (
                   <li
                     className={
-                      item.className
-                        ? `nav__item ${item.className}`
-                        : `nav__item`
+                      item.className ? `nav__item pageItem` : `nav__item`
                     }
                     key={index}
                   >
                     <Link className="link" to={item.link}>
-                      {item.item}
+                      {item.item}1
                     </Link>
 
                     {item.dropdown && (
