@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import Slider from "react-slick";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { Link } from "react-router-dom";
 import Header from "../Common/Header/Header";
@@ -11,6 +10,18 @@ import Category from "../Script/Category";
 import Select from "react-select";
 import ImageGallery from "react-image-gallery";
 import { BiMinus, BiPlus } from "react-icons/bi";
+import Footer from "../Common/Footer/Footer";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaMediumM,
+  FaTwitter,
+  FaWhatsapp,
+} from "react-icons/fa";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { MdOutlineDone } from "react-icons/md";
+import { BsFillStarFill } from "react-icons/bs";
 
 const images = [
   {
@@ -107,7 +118,7 @@ const DropdownCategory1 = ({ value }: any) => {
 
 // Main Product Components
 
-const Product = () => {
+const Single__Product = () => {
   // Increase And Decrease Vale Set
   const [value, setValue] = useState(0);
   const IncreaseValue = () => {
@@ -164,13 +175,15 @@ const Product = () => {
                   <div className="inner">
                     <Row>
                       <Col lg={6}>
-                        <div className="img__file">
-                          <ImageGallery
-                            items={images}
-                            showFullscreenButton={true}
-                            showPlayButton={false}
-                            showNav={false}
-                          />
+                        <div className="display__img">
+                          <div className="img__file">
+                            <ImageGallery
+                              items={images}
+                              showFullscreenButton={true}
+                              showPlayButton={false}
+                              showNav={false}
+                            />
+                          </div>
                         </div>
                       </Col>
                       <Col lg={6}>
@@ -295,6 +308,9 @@ const Product = () => {
                             <div className="counter__cart__inner"></div>
                           </div>
                         </div>
+
+                        {/* Counter cart__section */}
+
                         <div className="count__product">
                           <div className="count__product__inner">
                             <button className="BiMinus" onClick={DecreaseValue}>
@@ -318,6 +334,214 @@ const Product = () => {
                             </Link>
                           </div>
                         </div>
+
+                        {/* Product Tag and category */}
+                        <div className="tag__category__section">
+                          <div className="tag__category__section__inner">
+                            <div className="tag__category__box">
+                              <p>SKU : N/A</p>
+                              <p>
+                                Category: <Link to={"/"}>Shoes</Link>
+                              </p>
+                              <p>
+                                Tags:<Link to={"/"}>Shoes</Link> ,
+                                <Link to={"/"}>Diesel</Link> ,
+                                <Link to={"/"}>shoe</Link>
+                              </p>
+                            </div>
+                            <div className="social__share">
+                              <div className="social__share__inner">
+                                <Link to={"/"}>
+                                  <FaFacebookF />
+                                </Link>
+
+                                <Link to={"/"}>
+                                  <FaTwitter />
+                                </Link>
+
+                                <Link to={"/"}>
+                                  <FaLinkedinIn />
+                                </Link>
+
+                                <Link to={"/"}>
+                                  <FaWhatsapp />
+                                </Link>
+
+                                <Link to={"/"}>
+                                  <FaInstagram />
+                                </Link>
+
+                                <Link to={"/"}>
+                                  <FaMediumM />
+                                </Link>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </Col>
+                    </Row>
+
+                    <Row>
+                      <Col>
+                        {/* Description and Review section */}
+                        <div className="description__review__section">
+                          <div className="description__review__section__inner">
+                            <Tabs className="description__review__section_tabs">
+                              <TabList>
+                                <Tab>DESCRIPTION</Tab>
+                                <Tab>ADDITIONAL INFORMATION</Tab>
+                                <Tab>VENDOR INFO</Tab>
+                                <Tab>REVIEWS (0)</Tab>
+                              </TabList>
+
+                              <TabPanel className="tabPanel__description">
+                                <div className="tabPanel__description__inner ">
+                                  <h3>Details</h3>
+
+                                  <p>
+                                    Lorem ipsum dolor, sit amet consectetur
+                                    adipisicing elit. Numquam doloribus
+                                    similique temporibus itaque asperiores illo
+                                    deleniti et esse eos voluptate optio libero
+                                    architecto minus ex, voluptates sequi quis
+                                    amet laudantium, nulla nihil error voluptas
+                                    vel nam. Nulla et ipsam omnis temporibus
+                                    consectetur similique pariatur officiis,
+                                    neque tenetur repellendus doloremque
+                                    tempore.
+                                  </p>
+                                  <p>
+                                    Lorem ipsum dolor, sit amet consectetur
+                                    adipisicing elit. Numquam doloribus
+                                    similique temporibus itaque asperiores illo
+                                    deleniti et esse eos voluptate optio libero
+                                    architecto minus ex, voluptates sequi quis
+                                    amet laudantium, nulla nihil error voluptas
+                                    vel nam. Nulla et ipsam omnis temporibus
+                                    consectetur similique pariatur officiis,
+                                    neque tenetur repellendus doloremque
+                                    tempore.
+                                  </p>
+
+                                  <ul className="mt-20">
+                                    <li>
+                                      {" "}
+                                      <MdOutlineDone className="mr-5" />
+                                      Nunc nec porttitor turpis. In eu risus
+                                      enim. In vitae mollis elit.
+                                    </li>
+                                    <li>
+                                      {" "}
+                                      <MdOutlineDone className="mr-5" />
+                                      Vivamus finibus vel mauris ut vehicula.
+                                    </li>
+                                    <li>
+                                      {" "}
+                                      <MdOutlineDone className="mr-5" />
+                                      Nullam a magna porttitor, dictum risus
+                                      nec, faucibus sapien.
+                                    </li>
+                                  </ul>
+                                </div>
+                              </TabPanel>
+                              <TabPanel className="tabPanel__information">
+                                <div className="tabPanel__information__inner">
+                                  <ul>
+                                    <li>
+                                      <span>Model</span>
+                                      <span>D-Phone Android Latest</span>
+                                    </li>
+                                    <li>
+                                      <span>Color</span>
+                                      <span>Black, Blue, Green</span>
+                                    </li>
+                                    <li>
+                                      <span>Size</span>
+                                      <span>SM, MD, XL, XXL</span>
+                                    </li>
+                                    <li>
+                                      <span>Guarantee Time</span>
+                                      <span>12 Months</span>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </TabPanel>
+                              <TabPanel className="tabPanel__vendor__info">
+                                <div className="pane__vendor__info__inner">
+                                  <div className="info__part">
+                                    <div className="img__file">
+                                      <img
+                                        className="img-fluid"
+                                        src="/assets/images/client/client-7.png"
+                                        alt=""
+                                      />
+                                    </div>
+                                    <div className="details">
+                                      <h3>Amit Biswas</h3>
+                                      <div className="star__icon">
+                                        <span>
+                                          <BsFillStarFill />
+                                          <BsFillStarFill />
+                                          <BsFillStarFill />
+                                          <BsFillStarFill />
+                                          <BsFillStarFill />
+                                        </span>
+                                        <span>(38 Reviews)</span>
+                                      </div>
+                                      {/* <ul>
+                                        <li>
+                                          <span>Store Name:</span>
+                                          <span>Apple Intro</span>
+                                        </li>
+                                        <li>
+                                          <span>Address:</span>
+                                          <span>
+                                            Steven Street, El Carjon, CA 92020,
+                                            United States (US)
+                                          </span>
+                                        </li>
+                                        <li>
+                                          <span>Phone:</span>
+                                          <span>+88 12345678</span>
+                                        </li>
+                                        <li>
+                                          <span>Email:</span>
+                                          <span>info@gmail.com</span>
+                                        </li>
+                                      </ul> */}
+
+                                      <div className="intro__data">
+                                        <div className="intro__data__inner">
+                                          <div className="items">
+                                            <p>Store Name:</p>
+                                            <p>Apple Intro</p>
+                                          </div>
+                                          <div className="items">
+                                            <p>Address:</p>
+                                            <p>Steven Street, El Carjon, CA 92020,
+                                              United States (US)</p>
+                                          </div>
+                                          <div className="items">
+                                            <p>Phone:</p>
+                                            <p>+88 12345678</p>
+                                          </div>
+                                          <div className="items">
+                                            <p>Email:</p>
+                                            <p>info@gmail.com</p>
+                                          </div>
+                                        </div>
+
+                                        <Link className="button__mid_solid_color_black" to={"/"}>VISIT STORE</Link>
+
+                                      </div>
+
+                                    </div>
+                                  </div>
+                                </div>
+                              </TabPanel>
+                            </Tabs>
+                          </div>
+                        </div>
                       </Col>
                     </Row>
                   </div>
@@ -328,8 +552,12 @@ const Product = () => {
         </div>
       </section>
       {/* Product Page End */}
+
+      {/* Footer start */}
+      <Footer />
+      {/* Footer End */}
     </>
   );
 };
 
-export default Product;
+export default Single__Product;

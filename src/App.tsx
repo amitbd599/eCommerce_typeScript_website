@@ -12,8 +12,8 @@ import Error from "./Clinte__Site/Page/Error";
 import Faq from "./Clinte__Site/Page/Faq";
 import Home from "./Clinte__Site/Page/Home";
 import Login__Register from "./Clinte__Site/Page/Login__Register";
-import Product from "./Clinte__Site/Page/Product";
 import Single__Blog from "./Clinte__Site/Page/Single__Blog";
+import Single__Product from "./Clinte__Site/Page/Single__Product";
 
 const App: React.FC = () => {
   return (
@@ -29,7 +29,7 @@ const App: React.FC = () => {
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/blog" element={<Blog />}></Route>
           <Route path="/single-blog" element={<Single__Blog />}></Route>
-          <Route path="/product" element={<Product />}></Route>
+          <Route path="/single-product" element={<Single__Product />}></Route>
 
           <Route path="/checkout" element={<Checkout />}></Route>
 
