@@ -21,7 +21,12 @@ import {
 } from "react-icons/fa";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { MdOutlineDone } from "react-icons/md";
-import { BsFillStarFill } from "react-icons/bs";
+import { BsFillStarFill, BsStar, BsStarHalf } from "react-icons/bs";
+import ProgressBar from "@ramonak/react-progress-bar";
+import { Rating } from 'react-simple-star-rating'
+
+
+
 
 const images = [
   {
@@ -129,6 +134,13 @@ const Single__Product = () => {
       setValue(value - 1);
     }
   };
+
+  // Catch Rating value
+  const [rating, setRating] = useState(0)
+  const handleRating = (rate: number) => {
+    setRating(rate)
+
+  }
   return (
     <>
       {/* Helmet Intro Start */}
@@ -477,7 +489,7 @@ const Single__Product = () => {
                                       />
                                     </div>
                                     <div className="details">
-                                      <h3>Amit Biswas</h3>
+                                      <h3>Moni Biswas</h3>
                                       <div className="star__icon">
                                         <span>
                                           <BsFillStarFill />
@@ -488,27 +500,6 @@ const Single__Product = () => {
                                         </span>
                                         <span>(38 Reviews)</span>
                                       </div>
-                                      {/* <ul>
-                                        <li>
-                                          <span>Store Name:</span>
-                                          <span>Apple Intro</span>
-                                        </li>
-                                        <li>
-                                          <span>Address:</span>
-                                          <span>
-                                            Steven Street, El Carjon, CA 92020,
-                                            United States (US)
-                                          </span>
-                                        </li>
-                                        <li>
-                                          <span>Phone:</span>
-                                          <span>+88 12345678</span>
-                                        </li>
-                                        <li>
-                                          <span>Email:</span>
-                                          <span>info@gmail.com</span>
-                                        </li>
-                                      </ul> */}
 
                                       <div className="intro__data">
                                         <div className="intro__data__inner">
@@ -537,6 +528,200 @@ const Single__Product = () => {
 
                                     </div>
                                   </div>
+                                </div>
+                              </TabPanel>
+                              <TabPanel className="tabpanel__customer__reviewer">
+                                <div className="tabpanel__customer__reviewer__inner">
+
+                                  <Row>
+                                    <Col className="rating__section" lg={5}>
+                                      <div className="rating__section__inner">
+                                        <div className="rating__header">
+                                          <div className="rate">
+                                            <h2>4.3</h2>
+                                          </div>
+                                          <div className="rate__info">
+                                            <span>Average Rating</span>
+                                            <div className="star__icon">
+                                              <span>
+                                                <BsFillStarFill />
+                                                <BsFillStarFill />
+                                                <BsFillStarFill />
+                                                <BsFillStarFill />
+                                                <BsFillStarFill />
+                                              </span>
+                                              <span className="ml-5">(38 Reviews)</span>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div className="rating__footer">
+                                          <div className="recommended">
+                                            <p>
+                                              <span>66.8%</span>
+                                              <span>Recommended
+                                                <span className="text">(2 of 3)</span>
+                                              </span>
+                                            </p>
+                                          </div>
+                                        </div>
+                                        <div className="rating__details">
+                                          <div className="rating__details__inner">
+                                            <div className="star__icon">
+                                              <span>
+                                                <BsFillStarFill className="BsFillStarFill" />
+                                                <BsFillStarFill className="BsFillStarFill" />
+                                                <BsFillStarFill className="BsFillStarFill" />
+                                                <BsFillStarFill className="BsFillStarFill" />
+                                                <BsFillStarFill className="BsFillStarFill" />
+                                              </span>
+                                            </div>
+                                            <div className="progressbar">
+                                              <ProgressBar completed={80} height="10px"
+                                                bgColor="#999999"
+                                                baseBgColor="#EEEEEE"
+                                                isLabelVisible={false}
+                                              />
+                                            </div>
+
+                                            <div className="label">
+                                              <span>80%</span>
+                                            </div>
+
+                                          </div>
+
+
+
+                                          <div className="rating__details__inner">
+                                            <div className="star__icon">
+                                              <span>
+                                                <BsFillStarFill className="BsFillStarFill" />
+                                                <BsFillStarFill className="BsFillStarFill" />
+                                                <BsFillStarFill className="BsFillStarFill" />
+                                                <BsFillStarFill className="BsFillStarFill" />
+                                                <BsFillStarFill className="BsFillStarFillGray" />
+                                              </span>
+                                            </div>
+                                            <div className="progressbar">
+                                              <ProgressBar completed={60} height="10px"
+                                                bgColor="#999999"
+                                                baseBgColor="#EEEEEE"
+                                                isLabelVisible={false}
+                                              />
+                                            </div>
+
+                                            <div className="label">
+                                              <span>60%</span>
+                                            </div>
+
+                                          </div>
+
+                                          <div className="rating__details__inner">
+                                            <div className="star__icon">
+                                              <span>
+                                                <BsFillStarFill className="BsFillStarFill" />
+                                                <BsFillStarFill className="BsFillStarFill" />
+                                                <BsFillStarFill className="BsFillStarFill" />
+                                                <BsFillStarFill className="BsFillStarFillGray" />
+                                                <BsFillStarFill className="BsFillStarFillGray" />
+                                              </span>
+                                            </div>
+                                            <div className="progressbar">
+                                              <ProgressBar completed={40} height="10px"
+                                                bgColor="#999999"
+                                                baseBgColor="#EEEEEE"
+                                                isLabelVisible={false}
+                                              />
+                                            </div>
+
+                                            <div className="label">
+                                              <span>40%</span>
+                                            </div>
+
+                                          </div>
+                                          <div className="rating__details__inner">
+                                            <div className="star__icon">
+                                              <span>
+                                                <BsFillStarFill className="BsFillStarFill" />
+                                                <BsFillStarFill className="BsFillStarFill" />
+                                                <BsFillStarFill className="BsFillStarFillGray" />
+                                                <BsFillStarFill className="BsFillStarFillGray" />
+                                                <BsFillStarFill className="BsFillStarFillGray" />
+                                              </span>
+                                            </div>
+                                            <div className="progressbar">
+                                              <ProgressBar completed={20} height="10px"
+                                                bgColor="#999999"
+                                                baseBgColor="#EEEEEE"
+                                                isLabelVisible={false}
+                                              />
+                                            </div>
+
+                                            <div className="label">
+                                              <span>20%</span>
+                                            </div>
+
+                                          </div>
+                                          <div className="rating__details__inner">
+                                            <div className="star__icon">
+                                              <span>
+                                                <BsFillStarFill className="BsFillStarFill" />
+                                                <BsFillStarFill className="BsFillStarFillGray" />
+                                                <BsFillStarFill className="BsFillStarFillGray" />
+                                                <BsFillStarFill className="BsFillStarFillGray" />
+                                                <BsFillStarFill className="BsFillStarFillGray" />
+                                              </span>
+                                            </div>
+                                            <div className="progressbar">
+                                              <ProgressBar completed={20} height="10px"
+                                                bgColor="#999999"
+                                                baseBgColor="#EEEEEE"
+                                                isLabelVisible={false}
+                                              />
+                                            </div>
+
+                                            <div className="label">
+                                              <span>20%</span>
+                                            </div>
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </Col>
+
+
+
+                                    <Col className="submit__review__section">
+                                      <div className="submit__review__section__inner">
+                                        <div className="header">
+                                          <h2>Submit Your Review</h2>
+                                          <p>Your email address will not be published. Required fields are marked *</p>
+                                        </div>
+                                        <div className="rate__post">
+                                          <span>Your Rating Of This Product :
+                                          </span>
+                                          <span className="rating">
+                                            <Rating onClick={handleRating} ratingValue={rating} />
+                                          </span>
+                                        </div>
+                                        <div className="form__section">
+                                          <form action="">
+                                            <textarea placeholder="Write Your Review Here..." name="" id="" cols={30} rows={6}></textarea>
+                                            <div className="input__filed">
+                                              <input type="text" placeholder="Your Name" />
+                                              <input type="email" placeholder="Your Email" />
+
+                                            </div>
+                                            <div className="checkbox">
+                                              <input type="checkbox" name="" id="saveInfo" />
+                                              <label htmlFor="saveInfo">Save my name, email, and website in this browser for the next time I comment.</label>
+
+                                            </div>
+                                            <Link to={'/'} className="button__mid_solid_color_black">SUBMIT REVIEW</Link>
+                                          </form>
+                                        </div>
+                                      </div>
+                                    </Col>
+                                  </Row>
                                 </div>
                               </TabPanel>
                             </Tabs>
