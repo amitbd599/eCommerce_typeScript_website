@@ -1,0 +1,91 @@
+.wishlist__page {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  .wrapper {
+    .wrapper__body {
+      .section__one {
+        .header__text {
+          margin-top: 38px;
+          margin-bottom: 40px;
+          h2 {
+            font-size: 26px;
+            font-weight: 700;
+          }
+        }
+      }
+      .section__two {
+        .table__section {
+          overflow-x: auto;
+
+          table {
+            border: none;
+            thead {
+              border-bottom: 1px solid #ddd;
+              tr {
+                th {
+                  padding: 20px 0;
+                  span {
+                    font-size: 16px;
+                    font-weight: 700 !important;
+                  }
+                  .product__name {
+                  }
+                }
+              }
+            }
+            tbody {
+              tr {
+                td {
+                  padding-top: 40px;
+                }
+                .product-thumbnail {
+                  .img__file {
+                    img {
+                      max-width: 100px;
+                    }
+                    .product__name {
+                      margin-left: 25px;
+                      font-size: 16px;
+                      color: #666;
+                      transition: all 0.2s;
+                      font-weight: 600;
+                      &:hover {
+                        color: var(--primary-theme-color);
+                      }
+                    }
+                  }
+                }
+                .product-price {
+                  span {
+                    font-size: 16px;
+                    color: #666;
+                  }
+                }
+                .product-stock-status {
+                  span {
+                    font-size: 16px;
+                    &.in__stock {
+                      color: rgb(0, 180, 39);
+                    }
+                    &.out__stock {
+                      color: rgb(207, 24, 0);
+                    }
+                  }
+                }
+                .action {
+                  width: 330px;
+                  .button__mid_border_color_gray,
+                  .button__mid_solid_color_black {
+                    display: inline;
+                    padding: 10px 25px;
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

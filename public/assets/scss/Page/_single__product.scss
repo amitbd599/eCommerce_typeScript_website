@@ -101,6 +101,67 @@
             }
           }
         }
+        .product__sidebar__widget__card {
+          margin-top: 60px;
+          .product__sidebar__widget__card__inner {
+            padding: 30px 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            .items {
+              display: flex;
+              margin-bottom: 15px;
+              .icon {
+                margin-right: 15px;
+                svg {
+                  font-size: 30px;
+                  color: var(--secondary-theme-color);
+                }
+              }
+              .text {
+                h4 {
+                  font-size: 15px;
+                  font-weight: 700;
+                  margin-bottom: 0px;
+                }
+                p {
+                  font-size: 13px;
+                  color: #666;
+                }
+              }
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+        .product__sidebar__widget__img {
+          margin-top: 40px;
+          height: 220px;
+          background-size: cover;
+          background-position: center center;
+          border-radius: 5px;
+          position: relative;
+          .product__sidebar__widget__img__inner {
+            position: absolute;
+            top: 77%;
+            left: 72%;
+            transform: translate(-50%, -50%);
+
+            .hotLink {
+              font-size: 65px;
+              font-weight: 900;
+              color: var(--color-white);
+              sup {
+                font-size: 30px;
+                margin-left: 5px;
+              }
+              sub {
+                font-size: 30px;
+                left: -25px;
+              }
+            }
+          }
+        }
       }
 
       .right__side {
@@ -339,6 +400,7 @@
           }
 
           .description__review__section {
+            padding-left: 25px;
             .description__review__section__inner {
               margin-top: 100px;
 
@@ -354,8 +416,9 @@
                     position: relative;
                     top: -1px;
                     color: #666;
-                    font-size: 13px;
+                    font-size: 14px;
                     font-weight: 600;
+                    padding: 6px 0px;
 
                     &.react-tabs__tab--selected {
                       border: none;
@@ -369,6 +432,17 @@
                     }
                   }
                 }
+              }
+
+              .react-tabs__tab-panel {
+                display: block;
+                visibility: hidden;
+                opacity: 0;
+                transition: all 0.3s;
+              }
+              .react-tabs__tab-panel--selected {
+                visibility: visible;
+                opacity: 1;
               }
 
               .tabPanel__description {
@@ -662,6 +736,7 @@
             }
           }
           .more__product__body {
+            padding-left: 25px;
             .part__one {
               margin-top: 45px;
               .more__product {

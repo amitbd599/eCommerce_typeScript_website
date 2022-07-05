@@ -18,7 +18,7 @@
 .none {
   display: none;
 }
- 
+
 .hidden {
   visibility: hidden;
 }
@@ -82,7 +82,7 @@
   @extend %bgImgPosition;
 }
 
-@for $i from 1 through 9 {
+@for $i from 1 through 10 {
   .bgImg-#{$i} {
     background-image: url(../../images/bgImg/bgImg-#{$i}.png) !important;
   }
