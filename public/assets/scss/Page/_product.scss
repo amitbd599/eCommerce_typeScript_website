@@ -661,6 +661,160 @@
               }
             }
           }
+          .more__product__body {
+            .part__one {
+              margin-top: 45px;
+              .more__product {
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 20px;
+                .more__product__inner {
+                  .header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    h2 {
+                      font-size: 25px;
+                      font-weight: 700;
+                    }
+                    a {
+                      color: #666;
+                      font-size: 16px;
+                      transition: all 0.2s;
+                      font-weight: 700;
+                      &:hover {
+                        color: var(--primary-theme-color);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .part__two {
+              margin-top: 30px;
+              .part__two__inner__body {
+                margin-bottom: 30px;
+                .inner__products {
+                  .items {
+                    border: 1px solid #dddddda3;
+                    border-radius: 10px;
+                    padding: 20px;
+                    overflow: hidden;
+                    position: relative;
+                    .img__file {
+                      overflow: hidden;
+                      img {
+                        transition: all 0.3s linear;
+                      }
+                    }
+                    .text__file {
+                      .title {
+                        font-size: 15px;
+                        line-height: 22px;
+                        display: block;
+                        font-weight: 600;
+                        padding-bottom: 8px;
+                        transition: all 0.1s linear;
+                        color: var(--secondary-theme-color);
+                        &:hover {
+                          color: var(--primary-theme-color);
+                        }
+                      }
+                      .price {
+                        font-size: 17px;
+                        font-weight: 600;
+                        color: var(--primary-theme-color);
+                        .discount {
+                          color: #a9a9a9;
+                          text-decoration: line-through;
+                          text-decoration-color: rgb(163 163 163);
+                        }
+                      }
+                      .rate {
+                        .icon {
+                          color: #ff9923;
+                          font-weight: 900;
+                          font-size: 18px;
+                        }
+                      }
+                      .handbagFill {
+                        position: absolute;
+                        bottom: 32px;
+                        right: 27px;
+                        font-size: 28px;
+                        color: rgb(193 193 193);
+                        transition: all 0.3s linear;
+                        cursor: pointer;
+                        &:hover {
+                          color: var(--primary-theme-color);
+                        }
+                      }
+                    }
+                    .overlay__icons {
+                      position: absolute;
+                      top: 14px;
+                      right: 14px;
+                      .overlay__icons__body {
+                        .icon__body {
+                          background: #dddddd8a;
+                          width: 40px;
+                          border-radius: 50%;
+                          height: 40px;
+                          display: block;
+                          position: relative;
+                          margin-bottom: 5px;
+                          visibility: hidden;
+                          opacity: 0;
+                          overflow: hidden;
+                          transform: translateY(-10px);
+
+                          &:nth-child(1) {
+                            transition: all 0.2s linear;
+                          }
+                          &:nth-child(2) {
+                            transition: all 0.3s linear;
+                          }
+                          &:nth-child(3) {
+                            transition: all 0.4s linear;
+                          }
+                          .icon {
+                            font-size: 16px;
+                            color: rgb(160, 160, 160);
+                            position: absolute;
+
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                          }
+                          &:hover {
+                            background-color: var(--primary-theme-color);
+                            .icon {
+                              color: var(--color-white);
+                            }
+                          }
+                        }
+                      }
+                    }
+                    &:hover {
+                      .overlay__icons {
+                        .overlay__icons__body {
+                          .icon__body {
+                            visibility: visible;
+                            opacity: 1;
+                            transform: translateY(0);
+                          }
+                        }
+                      }
+                    }
+                  }
+                  &:hover {
+                    .img__file img {
+                      transform: scale(110%);
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -808,6 +962,23 @@
                 }
               }
             }
+            .more__product__body {
+              .part__one {
+                margin-top: 45px;
+                .more__product {
+                  border-bottom: 1px solid #ddd;
+                  padding-bottom: 20px;
+                  .more__product__inner {
+                    .header {
+                      h2 {
+                        font-size: 20px;
+                        font-weight: 700;
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -874,6 +1045,14 @@
 
               .variable__items {
                 margin-top: 20px;
+              }
+            }
+            .count__product {
+              .text {
+                .button__mid_solid_color_black {
+                  padding: 10px 30px;
+                  font-size: 16px;
+                }
               }
             }
 
@@ -1021,6 +1200,134 @@
                             }
                           }
                         }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .more__product__body {
+              .part__one {
+                margin-top: 45px;
+                .more__product {
+                  border-bottom: 1px solid #ddd;
+                  padding-bottom: 20px;
+                  .more__product__inner {
+                    .header {
+                      display: block;
+                      h2 {
+                        font-size: 18px;
+                        margin-bottom: 20px;
+                      }
+                    }
+                  }
+                }
+              }
+              .part__two {
+                margin-top: 30px;
+                .part__two__inner__body {
+                  margin-bottom: 30px;
+                  .inner__products {
+                    .items {
+                      border: 1px solid #dddddda3;
+                      border-radius: 10px;
+                      padding: 20px;
+                      overflow: hidden;
+                      position: relative;
+                      .img__file {
+                        overflow: hidden;
+                        img {
+                          transition: all 0.3s linear;
+                        }
+                      }
+                      .text__file {
+                        .title {
+                          font-size: 16px !important;
+                        }
+                        .price {
+                          font-size: 17px !important;
+                        }
+                        .rate {
+                          .icon {
+                            color: #ff9923;
+                            font-weight: 900;
+                            font-size: 18px;
+                          }
+                        }
+                        .handbagFill {
+                          position: absolute;
+                          bottom: 32px;
+                          right: 27px;
+                          font-size: 28px;
+                          color: rgb(193 193 193);
+                          transition: all 0.3s linear;
+                          cursor: pointer;
+                          &:hover {
+                            color: var(--primary-theme-color);
+                          }
+                        }
+                      }
+                      .overlay__icons {
+                        position: absolute;
+                        top: 14px;
+                        right: 14px;
+                        .overlay__icons__body {
+                          .icon__body {
+                            background: #dddddd8a;
+                            width: 40px;
+                            border-radius: 50%;
+                            height: 40px;
+                            display: block;
+                            position: relative;
+                            margin-bottom: 5px;
+                            visibility: hidden;
+                            opacity: 0;
+                            overflow: hidden;
+                            transform: translateY(-10px);
+
+                            &:nth-child(1) {
+                              transition: all 0.2s linear;
+                            }
+                            &:nth-child(2) {
+                              transition: all 0.3s linear;
+                            }
+                            &:nth-child(3) {
+                              transition: all 0.4s linear;
+                            }
+                            .icon {
+                              font-size: 16px;
+                              color: rgb(160, 160, 160);
+                              position: absolute;
+
+                              top: 50%;
+                              left: 50%;
+                              transform: translate(-50%, -50%);
+                            }
+                            &:hover {
+                              background-color: var(--primary-theme-color);
+                              .icon {
+                                color: var(--color-white);
+                              }
+                            }
+                          }
+                        }
+                      }
+                      &:hover {
+                        .overlay__icons {
+                          .overlay__icons__body {
+                            .icon__body {
+                              visibility: visible;
+                              opacity: 1;
+                              transform: translateY(0);
+                            }
+                          }
+                        }
+                      }
+                    }
+                    &:hover {
+                      .img__file img {
+                        transform: scale(110%);
                       }
                     }
                   }
