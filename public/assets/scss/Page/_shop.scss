@@ -1,0 +1,92 @@
+.shop {
+  .wrapper {
+    .wrapper__body {
+      .filter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+        span {
+          font-size: 16px;
+          &:first-child {
+            font-weight: 700;
+          }
+          &:last-child {
+            cursor: pointer;
+          }
+        }
+      }
+      .accordion__body {
+        .accordion {
+          border: none;
+          .accordion__item {
+            border: none;
+            .accordion__heading {
+              .accordion__button {
+                background: #fff;
+                padding: 10px 0px;
+                position: relative;
+                font-size: 18px;
+                font-weight: 600;
+                border-bottom: 1px solid #ddd;
+                &::before {
+                  display: none;
+                }
+                svg {
+                  font-size: 17px;
+                  position: absolute;
+                  right: -3px;
+                  top: 16px;
+                }
+                &[aria-expanded="true"] {
+                  .icons__BsPlus {
+                    visibility: hidden;
+                    transition: all 0.2s linear;
+                    transform: rotate(90deg);
+                  }
+                }
+                &[aria-expanded="false"] {
+                  .icons__BiMinus {
+                    transition: all 0.2s linear;
+                    transform: rotate(90deg);
+                    visibility: hidden;
+                  }
+                }
+              }
+            }
+            .accordion__panel {
+              padding: 5px 0px;
+              opacity: 1;
+              max-height: 600px;
+              transition: all 0.4s ease-out;
+              &[hidden] {
+                display: block !important;
+                opacity: 0 !important;
+                max-height: 0px !important;
+                transition: all 0.4s !important;
+                ul {
+                  visibility: hidden;
+                }
+              }
+              ul {
+                padding: 0;
+                li {
+                  padding: 4px 0;
+                  a,
+                  span {
+                    color: #666;
+                    font-size: 16px;
+                    transition: all 0.2s;
+                    &:hover {
+                      color: var(--secondary-theme-color);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

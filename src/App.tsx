@@ -12,6 +12,7 @@ import Error from "./Clinte__Site/Page/Error";
 import Faq from "./Clinte__Site/Page/Faq";
 import Home from "./Clinte__Site/Page/Home";
 import Login__Register from "./Clinte__Site/Page/Login__Register";
+import ShopPage from "./Clinte__Site/Page/ShopPage";
 import Single__Blog from "./Clinte__Site/Page/Single__Blog";
 import Single__Product from "./Clinte__Site/Page/Single__Product";
 import Wishlist from "./Clinte__Site/Page/Wishlist";
@@ -30,6 +31,7 @@ const App: React.FC = () => {
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/blog" element={<Blog />}></Route>
           <Route path="/single-blog" element={<Single__Blog />}></Route>
+          <Route path="/shop" element={<ShopPage />}></Route>
           <Route path="/single-product" element={<Single__Product />}></Route>
           <Route path="/wishlist" element={<Wishlist />}></Route>
 

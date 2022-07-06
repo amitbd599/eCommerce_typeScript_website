@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { IoMdClose } from "react-icons/io";
 import { Link } from "react-router-dom";
 import Footer from "../Common/Footer/Footer";
 import Header from "../Common/Header/Header";
@@ -29,7 +30,9 @@ const Wishlist: React.FC = () => {
       {/* Intro Section End */}
 
       {/* Top Category Product Slider Start */}
-      <Product__Slider__One />
+      <section className="wishlist__page__product__Slider__One">
+        <Product__Slider__One />
+      </section>
       {/* Top Category Product Slider End */}
 
       {/* Wishlist Body Start*/}
@@ -72,12 +75,15 @@ const Wishlist: React.FC = () => {
                             <div className="img__file">
                               <img
                                 className="img-fluid"
-                                src="https://portotheme.com/html/wolmart/assets/images/shop/7-1.jpg"
+                                src="https://res.cloudinary.com/amitjs/image/upload/v1654985925/Ecommerce%20Product%20Img-%20Important/HTB12ExXQwHqK1RjSZFgq6y7JXXax_rzcy1b.jpg"
                                 alt=""
                               />
                               <Link to={"/"} className="product__name">
                                 Handmade Ring
                               </Link>
+                              <span className="close__icon">
+                                <IoMdClose />
+                              </span>
                             </div>
                           </td>
                           <td className="product-price">
@@ -101,12 +107,15 @@ const Wishlist: React.FC = () => {
                             <div className="img__file">
                               <img
                                 className="img-fluid"
-                                src="https://portotheme.com/html/wolmart/assets/images/shop/7-1.jpg"
+                                src="https://res.cloudinary.com/amitjs/image/upload/v1654985766/Ecommerce%20Product%20Img-%20Important/Ha0a6d0ca3c924d71b34c410ec73ea45cJ_iunk01.webp"
                                 alt=""
                               />
                               <Link to={"/"} className="product__name">
                                 Handmade Ring
                               </Link>
+                              <span className="close__icon">
+                                <IoMdClose />
+                              </span>
                             </div>
                           </td>
                           <td className="product-price">
@@ -115,6 +124,38 @@ const Wishlist: React.FC = () => {
                           <td className="product-stock-status">
                             {/* <span className="in__stock"> In Stock</span> */}
                             <span className="out__stock"> Out Stock</span>
+                          </td>
+                          <td className="action">
+                            <span className="button__mid_border_color_gray mr-20">
+                              QUICK VIEW
+                            </span>
+                            <span className="button__mid_solid_color_black">
+                              ADD TO CART
+                            </span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td className="product-thumbnail">
+                            <div className="img__file">
+                              <img
+                                className="img-fluid"
+                                src="https://res.cloudinary.com/amitjs/image/upload/v1654983754/Ecommerce%20Product%20Img-%20Important/Hdf29ae4a95ed4354956d22d96dfee6faZ_ts6cg5.webp"
+                                alt=""
+                              />
+                              <Link to={"/"} className="product__name">
+                                Handmade Ring
+                              </Link>
+                              <span className="close__icon">
+                                <IoMdClose />
+                              </span>
+                            </div>
+                          </td>
+                          <td className="product-price">
+                            <span> $55.00</span>
+                          </td>
+                          <td className="product-stock-status">
+                            <span className="in__stock"> In Stock</span>
+                            {/* <span className='out__stock'> In Stock</span> */}
                           </td>
                           <td className="action">
                             <span className="button__mid_border_color_gray mr-20">

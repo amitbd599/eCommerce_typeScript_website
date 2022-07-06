@@ -277,7 +277,7 @@
     }
   }
 }
- 
+
 // ========= min-width:768px & max-width:991px =========
 
 @media #{$md-layout-device} {
@@ -297,7 +297,7 @@
   }
 }
 
-// ========= min-width:0px & max-width:575px  =========
+// ========= min-width:0px & max-width:767px  =========
 
 @media #{$sm-layout-device} {
   .checkout {

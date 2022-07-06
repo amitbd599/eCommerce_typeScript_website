@@ -25,8 +25,8 @@ const nav__Items: nav__Items[] = [
     shop: "cdf",
     dropdown: [
       {
-        item: "Product ",
-        link: "/product",
+        item: "Shop ",
+        link: "/shop",
       },
       {
         item: "Single Product ",

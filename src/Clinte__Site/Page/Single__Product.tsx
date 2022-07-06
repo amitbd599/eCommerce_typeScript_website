@@ -42,39 +42,33 @@ import { Rating } from "react-simple-star-rating";
 const images = [
   {
     original:
-      "https://fzi4k1gk2dw3t0fqy18sw8qi-wpengine.netdna-ssl.com/wp-content/uploads/2013/08/282004-0286_1-510x649.jpeg",
+      "https://res.cloudinary.com/amitjs/image/upload/v1657115984/Ecommerce%20Product%20Img-%20Important/image_51_ccciqi.png",
     thumbnail:
-      "https://fzi4k1gk2dw3t0fqy18sw8qi-wpengine.netdna-ssl.com/wp-content/uploads/2013/08/282004-0286_1-510x649.jpeg",
+      "https://res.cloudinary.com/amitjs/image/upload/v1657115984/Ecommerce%20Product%20Img-%20Important/image_51_ccciqi.png",
   },
   {
     original:
-      "https://fzi4k1gk2dw3t0fqy18sw8qi-wpengine.netdna-ssl.com/wp-content/uploads/2013/08/282004-0046_2-510x649.jpeg",
+      "https://res.cloudinary.com/amitjs/image/upload/v1657115985/Ecommerce%20Product%20Img-%20Important/image_52_sfnypl.png",
     thumbnail:
-      "https://fzi4k1gk2dw3t0fqy18sw8qi-wpengine.netdna-ssl.com/wp-content/uploads/2013/08/282004-0046_2-510x649.jpeg",
+      "https://res.cloudinary.com/amitjs/image/upload/v1657115985/Ecommerce%20Product%20Img-%20Important/image_52_sfnypl.png",
   },
   {
     original:
-      "https://fzi4k1gk2dw3t0fqy18sw8qi-wpengine.netdna-ssl.com/wp-content/uploads/2013/08/282004-0001_3-510x649.jpeg",
+      "https://res.cloudinary.com/amitjs/image/upload/v1657115985/Ecommerce%20Product%20Img-%20Important/image_53_dqtgqc.png",
     thumbnail:
-      "https://fzi4k1gk2dw3t0fqy18sw8qi-wpengine.netdna-ssl.com/wp-content/uploads/2013/08/282004-0001_3-510x649.jpeg",
+      "https://res.cloudinary.com/amitjs/image/upload/v1657115985/Ecommerce%20Product%20Img-%20Important/image_53_dqtgqc.png",
   },
   {
     original:
-      "https://fzi4k1gk2dw3t0fqy18sw8qi-wpengine.netdna-ssl.com/wp-content/uploads/2013/08/282004-0286_1-510x649.jpeg",
+      "https://res.cloudinary.com/amitjs/image/upload/v1657115983/Ecommerce%20Product%20Img-%20Important/image_54_m2g3zl.png",
     thumbnail:
-      "https://fzi4k1gk2dw3t0fqy18sw8qi-wpengine.netdna-ssl.com/wp-content/uploads/2013/08/282004-0286_1-510x649.jpeg",
+      "https://res.cloudinary.com/amitjs/image/upload/v1657115983/Ecommerce%20Product%20Img-%20Important/image_54_m2g3zl.png",
   },
   {
     original:
-      "https://fzi4k1gk2dw3t0fqy18sw8qi-wpengine.netdna-ssl.com/wp-content/uploads/2013/08/282004-0046_2-510x649.jpeg",
+      "https://res.cloudinary.com/amitjs/image/upload/v1657115983/Ecommerce%20Product%20Img-%20Important/image_55_zh046u.png",
     thumbnail:
-      "https://fzi4k1gk2dw3t0fqy18sw8qi-wpengine.netdna-ssl.com/wp-content/uploads/2013/08/282004-0046_2-510x649.jpeg",
-  },
-  {
-    original:
-      "https://fzi4k1gk2dw3t0fqy18sw8qi-wpengine.netdna-ssl.com/wp-content/uploads/2013/08/282004-0001_3-510x649.jpeg",
-    thumbnail:
-      "https://fzi4k1gk2dw3t0fqy18sw8qi-wpengine.netdna-ssl.com/wp-content/uploads/2013/08/282004-0001_3-510x649.jpeg",
+      "https://res.cloudinary.com/amitjs/image/upload/v1657115983/Ecommerce%20Product%20Img-%20Important/image_55_zh046u.png",
   },
 ];
 const size = [
@@ -135,7 +129,7 @@ const DropdownCategory1 = ({ value }: any) => {
 // Main Product Components
 
 const Single__Product = () => {
-  // Increase And Decrease Vale Set
+  //! Increase And Decrease Vale Set
   const [value, setValue] = useState(0);
   const IncreaseValue = () => {
     setValue(value + 1);
@@ -146,7 +140,7 @@ const Single__Product = () => {
     }
   };
 
-  // Catch Rating value
+  //! Catch Rating value
   const [rating, setRating] = useState(0);
   const handleRating = (rate: number) => {
     setRating(rate);

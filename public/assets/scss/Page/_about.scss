@@ -162,7 +162,7 @@
     }
   }
 }
-
+// ========= min-width:768px & max-width:991px =========
 @media #{$md-layout-device} {
   .about__section {
     margin-top: 50px;
@@ -219,6 +219,8 @@
     }
   }
 }
+
+// ========= min-width:0px & max-width:767px  =========
 @media #{$sm-layout-device} {
   .about__section {
     // margin-top: 50px;
