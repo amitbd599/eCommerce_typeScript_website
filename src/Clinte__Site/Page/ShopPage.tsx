@@ -12,18 +12,30 @@ import {
   AccordionItemPanel,
 } from "react-accessible-accordion";
 import { Link } from "react-router-dom";
-
+import Select from "react-select";
 import Category from "../Script/Category";
 import Footer from "../Common/Footer/Footer";
-import { FaMinus, FaPlus } from "react-icons/fa";
+import { FaAlignJustify, FaList, FaMinus, FaPlus } from "react-icons/fa";
+import { MdMenu, MdStarRate } from "react-icons/md";
+import { BsHandbag, BsHeart, BsSearch, BsShuffle } from "react-icons/bs";
+import ShopProduct from "../Script/ShopProduct";
+const size = [
+  { value: "Default sorting", label: "Default sorting" },
+  { value: "Popularity", label: "Popularity" },
+  { value: "Average rating", label: "Average rating" },
+  { value: "Sort by latest", label: "Sort by latest" },
+  { value: "Price low to high", label: "Price low to high" },
+  { value: "Price high to low", label: "Price high to low" },
+];
+const show = [
+  { value: "Show 6", label: "Show 6 " },
+  { value: "Show 12", label: "Show 12 " },
+  { value: "Show 20", label: "Show 12" },
+  { value: "Show 25", label: "Show 25" },
+  { value: "Show 30", label: "Show 30" },
+];
 
 const ShopPage: React.FC = () => {
-  var item = document.querySelector(".item");
-  var items = document.querySelector(".items");
-  item?.addEventListener("click", () => {
-    items?.classList.add("active");
-  });
-
   return (
     <Fragment>
       {/* Helmet Intro Start */}
@@ -56,7 +68,7 @@ const ShopPage: React.FC = () => {
           <div className="wrapper__body">
             <Container>
               <Row>
-                <Col lg={3}>
+                <Col lg={3} className="left__side">
                   <div className="filter">
                     <span>Filter :</span>
                     <span>Clean All</span>
@@ -79,9 +91,6 @@ const ShopPage: React.FC = () => {
                         <AccordionItemPanel>
                           <ul className="items__body">
                             {Category.map((value, index) => (
-                              // <li key={index}>
-                              //   <Link to={"/"}>{value.category}</Link>
-                              // </li>
                               <li key={index}>
                                 <Link to={"/"}>{value.category}</Link>
                               </li>
@@ -243,6 +252,198 @@ const ShopPage: React.FC = () => {
                       </AccordionItem>
                     </Accordion>
                   </div>
+                </Col>
+                <Col lg={9} className="right__side">
+                  {/* Sort Filter Start */}
+                  <div className="sort__intro">
+                    <div className="sort__intro__inner">
+                      <div className="sort__title">
+                        <span>Sort By :</span>
+                      </div>
+                      <div className="select__data__left">
+                        <Select
+                          className="select__size"
+                          defaultValue={size[0]}
+                          options={size}
+                          styles={{
+                            option: (provided, state) => ({
+                              ...provided,
+                              borderBottom: "1px solid #ddd",
+                              color: state.isSelected ? "#fff" : "#666",
+                              background: state.isSelected ? "#252525" : "#fff",
+                              cursor: "pointer",
+                              margin: "0px",
+                              height: "40px",
+                              fontSize: "15px",
+                              ":active": {
+                                backgroundColor: "#ddd",
+                                cursor: "pointer",
+                              },
+                            }),
+                            singleValue: (provided, state) => ({
+                              ...provided,
+                              color: "#666",
+
+                              fontSize: "15px",
+                            }),
+                            control: (styles) => ({
+                              ...styles,
+                              backgroundColor: "#ffffff",
+                              padding: "0px 0px",
+                              margin: "0px 0px",
+
+                              ":focus-within": {
+                                ...styles[":focus-within"],
+                                border: "1px solid #ddd",
+                                boxShadow: "none",
+                              },
+                            }),
+                            menuList: (styles) => ({
+                              ...styles,
+                              margin: "0px",
+                              padding: "0px",
+                            }),
+                            noOptionsMessage: (styles) => ({
+                              ...styles,
+                              background: "red",
+                              color: "#fff",
+                            }),
+                          }}
+                        />
+                      </div>
+                    </div>
+                    <div className="sort__intro__inner">
+                      <div className="sort__title">
+                        <span>Show Items :</span>
+                      </div>
+                      <div className="select__data__right">
+                        <Select
+                          className="select__size"
+                          defaultValue={show[0]}
+                          options={show}
+                          styles={{
+                            option: (provided, state) => ({
+                              ...provided,
+                              borderBottom: "1px solid #ddd",
+                              color: state.isSelected ? "#fff" : "#666",
+                              background: state.isSelected ? "#252525" : "#fff",
+                              cursor: "pointer",
+                              margin: "0px",
+                              height: "40px",
+                              fontSize: "15px",
+                              ":active": {
+                                backgroundColor: "#ddd",
+                                cursor: "pointer",
+                              },
+                            }),
+                            singleValue: (provided, state) => ({
+                              ...provided,
+                              color: "#666",
+
+                              fontSize: "15px",
+                            }),
+                            control: (styles) => ({
+                              ...styles,
+                              backgroundColor: "#ffffff",
+                              padding: "0px 0px",
+                              margin: "0px 0px",
+
+                              ":focus-within": {
+                                ...styles[":focus-within"],
+                                border: "1px solid #ddd",
+                                boxShadow: "none",
+                              },
+                            }),
+                            menuList: (styles) => ({
+                              ...styles,
+                              margin: "0px",
+                              padding: "0px",
+                            }),
+                            noOptionsMessage: (styles) => ({
+                              ...styles,
+                              background: "red",
+                              color: "#fff",
+                            }),
+                          }}
+                        />
+                      </div>
+                      <div className="icon__section">
+                        <span>
+                          <FaAlignJustify />
+                        </span>
+                        <span>
+                          <FaList />
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Sort Filter End */}
+
+                  {/* Product items Show start Here */}
+                  <div className="product__items">
+                    <div className="product__items__inner">
+                      <Row>
+                        {ShopProduct.map((value: any, index: any) => (
+                          <Col
+                            key={index}
+                            lg={4}
+                            md={6}
+                            sm={6}
+                            className="part__two__inner__body"
+                          >
+                            <div className="inner__products">
+                              <div className="items">
+                                <div className="img__file">
+                                  <img
+                                    className="img-fluid"
+                                    src={value.img}
+                                    alt=""
+                                  />
+                                </div>
+                                <div className="text__file">
+                                  <Link
+                                    to={"/single-product"}
+                                    className="title"
+                                  >
+                                    {value.name?.slice(0, 50)} ...
+                                  </Link>
+                                  <p className="price">
+                                    <span>{value.price}</span> -{" "}
+                                    <span className="discount">$260.00</span>
+                                  </p>
+                                  <div className="rate">
+                                    <MdStarRate className="icon" />
+                                    <MdStarRate className="icon" />
+                                    <MdStarRate className="icon" />
+                                    <MdStarRate className="icon" />
+                                    <MdStarRate className="icon" />
+                                  </div>
+                                  <div className="handbagFill">
+                                    <BsHandbag />
+                                  </div>
+                                </div>
+
+                                <div className="overlay__icons">
+                                  <div className="overlay__icons__body">
+                                    <Link to={"/"} className="icon__body">
+                                      <BsHeart className="icon" />
+                                    </Link>
+                                    <Link to={"/"} className="icon__body">
+                                      <BsShuffle className="icon" />
+                                    </Link>
+                                    <Link to={"/"} className="icon__body">
+                                      <BsSearch className="icon" />
+                                    </Link>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </Col>
+                        ))}
+                      </Row>
+                    </div>
+                  </div>
+                  {/* Product items Show End Here */}
                 </Col>
               </Row>
             </Container>

@@ -345,6 +345,9 @@
                     border: 1px solid #ddd;
                     border-radius: 50%;
                     color: #666;
+                    svg {
+                      margin-top: -3px;
+                    }
 
                     &:nth-child(1) {
                       &:hover {
