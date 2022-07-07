@@ -15,10 +15,15 @@ import { Link } from "react-router-dom";
 
 import Category from "../Script/Category";
 import Footer from "../Common/Footer/Footer";
-import { BsPlus } from "react-icons/bs";
-import { BiMinus } from "react-icons/bi";
 import { FaMinus, FaPlus } from "react-icons/fa";
+
 const ShopPage: React.FC = () => {
+  var item = document.querySelector(".item");
+  var items = document.querySelector(".items");
+  item?.addEventListener("click", () => {
+    items?.classList.add("active");
+  });
+
   return (
     <Fragment>
       {/* Helmet Intro Start */}
@@ -72,8 +77,11 @@ const ShopPage: React.FC = () => {
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                          <ul>
+                          <ul className="items__body">
                             {Category.map((value, index) => (
+                              // <li key={index}>
+                              //   <Link to={"/"}>{value.category}</Link>
+                              // </li>
                               <li key={index}>
                                 <Link to={"/"}>{value.category}</Link>
                               </li>
@@ -92,21 +100,26 @@ const ShopPage: React.FC = () => {
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                          <ul>
+                          <ul className="items__body">
                             <li>
-                              <Link to={"/"}>$0.00 - $100.00</Link>
+                              <input type="checkbox" name="" id="price_0" />
+                              <label htmlFor="price_0">$0.00 - $100.00</label>
                             </li>
                             <li>
-                              <Link to={"/"}>$100.00 - $200.00</Link>
+                              <input type="checkbox" name="" id="price_1" />
+                              <label htmlFor="price_1">$100.00 - $200.00</label>
                             </li>
                             <li>
-                              <Link to={"/"}>$200.00 - $300.00</Link>
+                              <input type="checkbox" name="" id="price_2" />
+                              <label htmlFor="price_2">$200.00 - $300.00</label>
                             </li>
                             <li>
-                              <Link to={"/"}>$300.00 - $500.00</Link>
+                              <input type="checkbox" name="" id="price_3" />
+                              <label htmlFor="price_3">$300.00 - $500.00</label>
                             </li>
                             <li>
-                              <Link to={"/"}>$500.00+</Link>
+                              <input type="checkbox" name="" id="price_4" />
+                              <label htmlFor="price_4">$500.00</label>
                             </li>
                           </ul>
                         </AccordionItemPanel>
@@ -122,18 +135,22 @@ const ShopPage: React.FC = () => {
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                          <ul>
+                          <ul className="items__body">
                             <li>
-                              <span>Extra Large</span>
+                              <input type="checkbox" name="" id="ExtraLarge" />
+                              <label htmlFor="ExtraLarge">Extra Large</label>
                             </li>
                             <li>
-                              <span>Large</span>
+                              <input type="checkbox" name="" id="Large" />
+                              <label htmlFor="Large">Large</label>
                             </li>
                             <li>
-                              <span>Medium</span>
+                              <input type="checkbox" name="" id="Medium" />
+                              <label htmlFor="Medium">Medium</label>
                             </li>
                             <li>
-                              <span>Small</span>
+                              <input type="checkbox" name="" id="Small" />
+                              <label htmlFor="Small">Small</label>
                             </li>
                           </ul>
                         </AccordionItemPanel>
@@ -149,30 +166,38 @@ const ShopPage: React.FC = () => {
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                          <ul>
+                          <ul className="items__body">
                             <li>
-                              <span>Fenty Beauty</span>
+                              <input type="checkbox" name="" id="FentyBeauty" />
+                              <label htmlFor="FentyBeauty">Fenty Beauty</label>
                             </li>
                             <li>
-                              <span>Orvis</span>
+                              <input type="checkbox" name="" id="Orvis" />
+                              <label htmlFor="Orvis">Orvis</label>
                             </li>
                             <li>
-                              <span>Bedding</span>
+                              <input type="checkbox" name="" id="Bedding" />
+                              <label htmlFor="Bedding">Bedding</label>
                             </li>
                             <li>
-                              <span>Swarovski</span>
+                              <input type="checkbox" name="" id="Swarovski" />
+                              <label htmlFor="Swarovski">Swarovski</label>
                             </li>
                             <li>
-                              <span>Target</span>
+                              <input type="checkbox" name="" id="Target" />
+                              <label htmlFor="Target">Target</label>
                             </li>
                             <li>
-                              <span>Dove</span>
+                              <input type="checkbox" name="" id="Dove" />
+                              <label htmlFor="Dove">Dove</label>
                             </li>
                             <li>
-                              <span>Michaels</span>
+                              <input type="checkbox" name="" id="Michaels" />
+                              <label htmlFor="Michaels">Michaels</label>
                             </li>
                             <li>
-                              <span>Patagonia</span>
+                              <input type="checkbox" name="" id="Patagonia" />
+                              <label htmlFor="Patagonia">Patagonia</label>
                             </li>
                           </ul>
                         </AccordionItemPanel>
@@ -188,27 +213,30 @@ const ShopPage: React.FC = () => {
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                          <ul>
+                          <ul className="items__body">
                             <li>
-                              <span>Brown</span>
+                              <input type="checkbox" name="" id="Brown" />
+                              <label htmlFor="Brown">Brown</label>
                             </li>
                             <li>
-                              <span>Black</span>
+                              <input type="checkbox" name="" id="Black" />
+                              <label htmlFor="Black">Black</label>
                             </li>
                             <li>
-                              <span>Blue</span>
+                              <input type="checkbox" name="" id="Blue" />
+                              <label htmlFor="Blue">Blue</label>
                             </li>
                             <li>
-                              <span>Green</span>
+                              <input type="checkbox" name="" id="Green" />
+                              <label htmlFor="Green">Green</label>
                             </li>
                             <li>
-                              <span>Orange</span>
+                              <input type="checkbox" name="" id="Grey" />
+                              <label htmlFor="Grey">Grey</label>
                             </li>
                             <li>
-                              <span>Grey</span>
-                            </li>
-                            <li>
-                              <span>Yellow</span>
+                              <input type="checkbox" name="" id="Yellow" />
+                              <label htmlFor="Yellow">Yellow</label>
                             </li>
                           </ul>
                         </AccordionItemPanel>

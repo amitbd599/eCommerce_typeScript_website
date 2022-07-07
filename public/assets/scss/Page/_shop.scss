@@ -68,12 +68,93 @@
                   visibility: hidden;
                 }
               }
-              ul {
+              // ul {
+              //   padding: 0;
+              //   li {
+              //     padding: 4px 0;
+              //     a,
+              //     span {
+              //       color: #666;
+              //       font-size: 16px;
+              //       transition: all 0.2s;
+              //       &:hover {
+              //         color: var(--secondary-theme-color);
+              //       }
+              //     }
+
+              //     span {
+              //       color: red;
+              //       position: relative;
+              //       padding-left: 24px;
+              //       &::after {
+              //         position: absolute;
+              //         content: "";
+              //         width: 16px;
+              //         height: 16px;
+              //         border: 1px solid red;
+              //         left: 0;
+              //         top: 2px;
+              //       }
+              //       &.active {
+              //         &::after {
+              //           background: #666;
+              //         }
+              //       }
+              //     }
+              //   }
+              // }
+
+              .items__body {
                 padding: 0;
                 li {
                   padding: 4px 0;
-                  a,
-                  span {
+                  input {
+                    width: auto;
+                    height: auto;
+                    display: none;
+                    position: relative;
+                    &:checked ~ label {
+                      color: var(--secondary-theme-color);
+                      font-weight: 500;
+                      &::after {
+                        transition: all 0.2s;
+                        color: #fff;
+                        background-color: #333;
+                        border: 1px solid #333 !important;
+                      }
+                    }
+                  }
+                  label {
+                    position: relative;
+                    padding-left: 24px;
+                    cursor: pointer;
+                    color: #666;
+                    font-size: 16px;
+                    transition: all 0.2s;
+                    &:hover {
+                      color: var(--secondary-theme-color);
+                    }
+                    &::after {
+                      position: absolute;
+                      top: 4px;
+                      left: 0;
+                      width: 18px;
+                      color: #fff;
+                      height: 18px;
+                      border: 1px solid #ddd !important;
+                      background-color: #fff;
+                      font-family: "Font Awesome 5 Free";
+                      font-weight: 900;
+                      content: "\f00c";
+                      padding: 0px;
+                      padding-left: 1px;
+                      font-size: 13px;
+                    }
+                  }
+                  a {
+                    position: relative;
+                    padding-left: 0;
+                    cursor: pointer;
                     color: #666;
                     font-size: 16px;
                     transition: all 0.2s;
