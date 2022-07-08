@@ -399,6 +399,11 @@ const ShopPage: React.FC = () => {
                                     src={value.img}
                                     alt=""
                                   />
+                                  <img
+                                    className="img-fluid"
+                                    src={value.imgThum}
+                                    alt=""
+                                  />
                                 </div>
                                 <div className="text__file">
                                   <Link
