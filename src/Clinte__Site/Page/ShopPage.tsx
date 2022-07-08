@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Header from "../Common/Header/Header";
 import Intro__Section from "../Common/IntroSection/Intro__Section";
@@ -16,9 +16,12 @@ import Select from "react-select";
 import Category from "../Script/Category";
 import Footer from "../Common/Footer/Footer";
 import { FaAlignJustify, FaList, FaMinus, FaPlus } from "react-icons/fa";
-import { MdMenu, MdStarRate } from "react-icons/md";
+import { MdStarRate } from "react-icons/md";
 import { BsHandbag, BsHeart, BsSearch, BsShuffle } from "react-icons/bs";
 import ShopProduct from "../Script/ShopProduct";
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
+
 const size = [
   { value: "Default sorting", label: "Default sorting" },
   { value: "Popularity", label: "Popularity" },
@@ -36,6 +39,14 @@ const show = [
 ];
 
 const ShopPage: React.FC = () => {
+  const marks = {
+    0: "10",
+    20: "80",
+    40: "100",
+    60: "200",
+    80: "250",
+    100: "1000",
+  };
   return (
     <Fragment>
       {/* Helmet Intro Start */}
@@ -131,6 +142,20 @@ const ShopPage: React.FC = () => {
                               <label htmlFor="price_4">$500.00</label>
                             </li>
                           </ul>
+                          <div className="price__filter__slider">
+                            <h2>FILTER BY PRICE</h2>
+
+                            <Slider
+                              range
+                              min={0}
+                              marks={marks}
+                              step={null}
+                              defaultValue={[0, 20]}
+                              allowCross={false}
+                              pushable
+                              draggableTrack
+                            />
+                          </div>
                         </AccordionItemPanel>
                       </AccordionItem>
                       <AccordionItem uuid="c">
@@ -414,7 +439,9 @@ const ShopPage: React.FC = () => {
                                   </Link>
                                   <p className="price">
                                     <span>{value.price}</span> -{" "}
-                                    <span className="discount">$260.00</span>
+                                    <span className="discount">
+                                      ${value.discount}
+                                    </span>
                                   </p>
                                   <div className="rate">
                                     <MdStarRate className="icon" />
@@ -447,7 +474,27 @@ const ShopPage: React.FC = () => {
                         ))}
                       </Row>
                     </div>
+                    <div className="product__items__pagination">
+                      <div className="product__items__pagination__inner">
+                        <div className="left__side">
+                          <span>
+                            Showing <span>1-12 </span> of <span>60</span>{" "}
+                            Products
+                          </span>
+                        </div>
+                        <div className="right__side">
+                          <Link to={"/"}> Prev</Link>
+                          <Link to={"/"} className="active">
+                            1
+                          </Link>
+                          <Link to={"/"}>2</Link>
+                          <Link to={"/"}>3</Link>
+                          <Link to={"/"}>Next</Link>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+
                   {/* Product items Show End Here */}
                 </Col>
               </Row>

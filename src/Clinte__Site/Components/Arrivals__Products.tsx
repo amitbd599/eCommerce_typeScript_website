@@ -5,8 +5,11 @@ import "react-tabs/style/react-tabs.css";
 import { MdStarRate } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { BsHandbag, BsHeart, BsSearch, BsShuffle } from "react-icons/bs";
-
+import ShopProduct from "../Script/ShopProduct";
 const Arrivals__Products = () => {
+  const Trending = ShopProduct.slice(0, 8);
+  const freeShipping = ShopProduct.slice(8, 16);
+  const discountProduct = ShopProduct.slice(16, 20);
   return (
     <section className="arrivals__Products">
       <div className="wrapper">
@@ -28,474 +31,185 @@ const Arrivals__Products = () => {
 
               <TabPanel>
                 <Row className="part__two">
-                  <Col lg={3} md={6} sm={6} className="part__two__inner__body">
-                    <div className="inner__products">
-                      <div className="items">
-                        <div className="img__file">
-                          <img
-                            className="img-fluid"
-                            src="https://htmldemo.net/elehaus/elehaus/assets/images/shop/b16.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div className="text__file">
-                          <Link to={"/"} className="title">
-                            Game Triger Finger New Insulated PH-X
-                          </Link>
-                          <p className="price">
-                            <span>$160.00</span> -{" "}
-                            <span className="discount">$260.00</span>
-                          </p>
-                          <div className="rate">
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
+                  {freeShipping.map((value, index) => (
+                    <Col
+                      key={index}
+                      lg={3}
+                      md={6}
+                      sm={6}
+                      className="part__two__inner__body"
+                    >
+                      <div className="inner__products">
+                        <div className="items">
+                          <div className="img__file">
+                            <img className="img-fluid" src={value.img} alt="" />
+                            <img
+                              className="img-fluid"
+                              src={value.imgThum}
+                              alt=""
+                            />
                           </div>
-                          <div className="handbagFill">
-                            <BsHandbag />
+                          <div className="text__file">
+                            <Link to={"/single-product"} className="title">
+                              {value.name?.slice(0, 50)} ...
+                            </Link>
+                            <p className="price">
+                              <span>{value.price}</span> -{" "}
+                              <span className="discount">
+                                ${value.discount}
+                              </span>
+                            </p>
+                            <div className="rate">
+                              <MdStarRate className="icon" />
+                              <MdStarRate className="icon" />
+                              <MdStarRate className="icon" />
+                              <MdStarRate className="icon" />
+                              <MdStarRate className="icon" />
+                            </div>
+                            <div className="handbagFill">
+                              <BsHandbag />
+                            </div>
                           </div>
-                        </div>
 
-                        <div className="overlay__icons">
-                          <div className="overlay__icons__body">
-                            <Link to={"/"} className="icon__body">
-                              <BsHeart className="icon" />
-                            </Link>
-                            <Link to={"/"} className="icon__body">
-                              <BsShuffle className="icon" />
-                            </Link>
-                            <Link to={"/"} className="icon__body">
-                              <BsSearch className="icon" />
-                            </Link>
+                          <div className="overlay__icons">
+                            <div className="overlay__icons__body">
+                              <Link to={"/"} className="icon__body">
+                                <BsHeart className="icon" />
+                              </Link>
+                              <Link to={"/"} className="icon__body">
+                                <BsShuffle className="icon" />
+                              </Link>
+                              <Link to={"/"} className="icon__body">
+                                <BsSearch className="icon" />
+                              </Link>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </Col>{" "}
-                  <Col lg={3} md={6} sm={6} className="part__two__inner__body">
-                    <div className="inner__products">
-                      <div className="items">
-                        <div className="img__file">
-                          <img
-                            className="img-fluid"
-                            src="https://htmldemo.net/elehaus/elehaus/assets/images/shop/b16.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div className="text__file">
-                          <Link to={"/"} className="title">
-                            Game Triger Finger New Insulated PH-X
-                          </Link>
-                          <p className="price">
-                            <span>$160.00</span> -{" "}
-                            <span className="discount">$260.00</span>
-                          </p>
-                          <div className="rate">
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                          </div>
-                          <div className="handbagFill">
-                            <BsHandbag />
-                          </div>
-                        </div>
-
-                        <div className="overlay__icons">
-                          <div className="overlay__icons__body">
-                            <Link to={"/"} className="icon__body">
-                              <BsHeart className="icon" />
-                            </Link>
-                            <Link to={"/"} className="icon__body">
-                              <BsShuffle className="icon" />
-                            </Link>
-                            <Link to={"/"} className="icon__body">
-                              <BsSearch className="icon" />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Col>{" "}
-                  <Col lg={3} md={6} sm={6} className="part__two__inner__body">
-                    <div className="inner__products">
-                      <div className="items">
-                        <div className="img__file">
-                          <img
-                            className="img-fluid"
-                            src="https://htmldemo.net/elehaus/elehaus/assets/images/shop/b16.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div className="text__file">
-                          <Link to={"/"} className="title">
-                            Game Triger Finger New Insulated PH-X
-                          </Link>
-                          <p className="price">
-                            <span>$160.00</span> -{" "}
-                            <span className="discount">$260.00</span>
-                          </p>
-                          <div className="rate">
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                          </div>
-                          <div className="handbagFill">
-                            <BsHandbag />
-                          </div>
-                        </div>
-
-                        <div className="overlay__icons">
-                          <div className="overlay__icons__body">
-                            <Link to={"/"} className="icon__body">
-                              <BsHeart className="icon" />
-                            </Link>
-                            <Link to={"/"} className="icon__body">
-                              <BsShuffle className="icon" />
-                            </Link>
-                            <Link to={"/"} className="icon__body">
-                              <BsSearch className="icon" />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Col>{" "}
-                  <Col lg={3} md={6} sm={6} className="part__two__inner__body">
-                    <div className="inner__products">
-                      <div className="items">
-                        <div className="img__file">
-                          <img
-                            className="img-fluid"
-                            src="https://htmldemo.net/elehaus/elehaus/assets/images/shop/b16.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div className="text__file">
-                          <Link to={"/"} className="title">
-                            Game Triger Finger New Insulated PH-X
-                          </Link>
-                          <p className="price">
-                            <span>$160.00</span> -{" "}
-                            <span className="discount">$260.00</span>
-                          </p>
-                          <div className="rate">
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                          </div>
-                          <div className="handbagFill">
-                            <BsHandbag />
-                          </div>
-                        </div>
-
-                        <div className="overlay__icons">
-                          <div className="overlay__icons__body">
-                            <Link to={"/"} className="icon__body">
-                              <BsHeart className="icon" />
-                            </Link>
-                            <Link to={"/"} className="icon__body">
-                              <BsShuffle className="icon" />
-                            </Link>
-                            <Link to={"/"} className="icon__body">
-                              <BsSearch className="icon" />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Col>{" "}
-                  <Col lg={3} md={6} sm={6} className="part__two__inner__body">
-                    <div className="inner__products">
-                      <div className="items">
-                        <div className="img__file">
-                          <img
-                            className="img-fluid"
-                            src="https://htmldemo.net/elehaus/elehaus/assets/images/shop/b16.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div className="text__file">
-                          <Link to={"/"} className="title">
-                            Game Triger Finger New Insulated PH-X
-                          </Link>
-                          <p className="price">
-                            <span>$160.00</span> -{" "}
-                            <span className="discount">$260.00</span>
-                          </p>
-                          <div className="rate">
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                          </div>
-                          <div className="handbagFill">
-                            <BsHandbag />
-                          </div>
-                        </div>
-
-                        <div className="overlay__icons">
-                          <div className="overlay__icons__body">
-                            <Link to={"/"} className="icon__body">
-                              <BsHeart className="icon" />
-                            </Link>
-                            <Link to={"/"} className="icon__body">
-                              <BsShuffle className="icon" />
-                            </Link>
-                            <Link to={"/"} className="icon__body">
-                              <BsSearch className="icon" />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Col>{" "}
-                  <Col lg={3} md={6} sm={6} className="part__two__inner__body">
-                    <div className="inner__products">
-                      <div className="items">
-                        <div className="img__file">
-                          <img
-                            className="img-fluid"
-                            src="https://htmldemo.net/elehaus/elehaus/assets/images/shop/b16.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div className="text__file">
-                          <Link to={"/"} className="title">
-                            Game Triger Finger New Insulated PH-X
-                          </Link>
-                          <p className="price">
-                            <span>$160.00</span> -{" "}
-                            <span className="discount">$260.00</span>
-                          </p>
-                          <div className="rate">
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                          </div>
-                          <div className="handbagFill">
-                            <BsHandbag />
-                          </div>
-                        </div>
-
-                        <div className="overlay__icons">
-                          <div className="overlay__icons__body">
-                            <Link to={"/"} className="icon__body">
-                              <BsHeart className="icon" />
-                            </Link>
-                            <Link to={"/"} className="icon__body">
-                              <BsShuffle className="icon" />
-                            </Link>
-                            <Link to={"/"} className="icon__body">
-                              <BsSearch className="icon" />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Col>{" "}
+                    </Col>
+                  ))}
                 </Row>{" "}
               </TabPanel>
               <TabPanel>
                 <Row className="part__two">
-                  <Col lg={3} md={6} sm={12} className="part__two__inner__body">
-                    <div className="inner__products">
-                      <div className="items">
-                        <div className="img__file">
-                          <img
-                            className="img-fluid"
-                            src="https://htmldemo.net/elehaus/elehaus/assets/images/shop/b17.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div className="text__file">
-                          <Link to={"/"} className="title">
-                            Game Triger Finger New Insulated PH-X
-                          </Link>
-                          <p className="price">
-                            <span>$160.00</span> -{" "}
-                            <span className="discount">$260.00</span>
-                          </p>
-                          <div className="rate">
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
+                  {Trending.map((value, index) => (
+                    <Col
+                      key={index}
+                      lg={3}
+                      md={6}
+                      sm={6}
+                      className="part__two__inner__body"
+                    >
+                      <div className="inner__products">
+                        <div className="items">
+                          <div className="img__file">
+                            <img className="img-fluid" src={value.img} alt="" />
+                            <img
+                              className="img-fluid"
+                              src={value.imgThum}
+                              alt=""
+                            />
                           </div>
-                          <div className="handbagFill">
-                            <BsHandbag />
+                          <div className="text__file">
+                            <Link to={"/single-product"} className="title">
+                              {value.name?.slice(0, 50)} ...
+                            </Link>
+                            <p className="price">
+                              <span>{value.price}</span> -{" "}
+                              <span className="discount">
+                                ${value.discount}
+                              </span>
+                            </p>
+                            <div className="rate">
+                              <MdStarRate className="icon" />
+                              <MdStarRate className="icon" />
+                              <MdStarRate className="icon" />
+                              <MdStarRate className="icon" />
+                              <MdStarRate className="icon" />
+                            </div>
+                            <div className="handbagFill">
+                              <BsHandbag />
+                            </div>
                           </div>
-                        </div>
 
-                        <div className="overlay__icons">
-                          <div className="overlay__icons__body">
-                            <Link to={"/"} className="icon__body">
-                              <BsHeart className="icon" />
-                            </Link>
-                            <Link to={"/"} className="icon__body">
-                              <BsShuffle className="icon" />
-                            </Link>
-                            <Link to={"/"} className="icon__body">
-                              <BsSearch className="icon" />
-                            </Link>
+                          <div className="overlay__icons">
+                            <div className="overlay__icons__body">
+                              <Link to={"/"} className="icon__body">
+                                <BsHeart className="icon" />
+                              </Link>
+                              <Link to={"/"} className="icon__body">
+                                <BsShuffle className="icon" />
+                              </Link>
+                              <Link to={"/"} className="icon__body">
+                                <BsSearch className="icon" />
+                              </Link>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </Col>{" "}
-                  <Col lg={3} md={6} sm={12} className="part__two__inner__body">
-                    <div className="inner__products">
-                      <div className="items">
-                        <div className="img__file">
-                          <img
-                            className="img-fluid"
-                            src="https://htmldemo.net/elehaus/elehaus/assets/images/shop/b18.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div className="text__file">
-                          <Link to={"/"} className="title">
-                            Game Triger Finger New Insulated PH-X
-                          </Link>
-                          <p className="price">
-                            <span>$160.00</span> -{" "}
-                            <span className="discount">$260.00</span>
-                          </p>
-                          <div className="rate">
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                          </div>
-                          <div className="handbagFill">
-                            <BsHandbag />
-                          </div>
-                        </div>
-
-                        <div className="overlay__icons">
-                          <div className="overlay__icons__body">
-                            <Link to={"/"} className="icon__body">
-                              <BsHeart className="icon" />
-                            </Link>
-                            <Link to={"/"} className="icon__body">
-                              <BsShuffle className="icon" />
-                            </Link>
-                            <Link to={"/"} className="icon__body">
-                              <BsSearch className="icon" />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Col>{" "}
+                    </Col>
+                  ))}
                 </Row>{" "}
               </TabPanel>
               <TabPanel>
                 <Row className="part__two">
-                  <Col lg={3} md={6} sm={12} className="part__two__inner__body">
-                    <div className="inner__products">
-                      <div className="items">
-                        <div className="img__file">
-                          <img
-                            className="img-fluid"
-                            src="https://htmldemo.net/elehaus/elehaus/assets/images/shop/b17.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div className="text__file">
-                          <Link to={"/"} className="title">
-                            Game Triger Finger New Insulated PH-X
-                          </Link>
-                          <p className="price">
-                            <span>$160.00</span> -{" "}
-                            <span className="discount">$260.00</span>
-                          </p>
-                          <div className="rate">
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
+                  {discountProduct.map((value, index) => (
+                    <Col
+                      key={index}
+                      lg={3}
+                      md={6}
+                      sm={6}
+                      className="part__two__inner__body"
+                    >
+                      <div className="inner__products">
+                        <div className="items">
+                          <div className="img__file">
+                            <img className="img-fluid" src={value.img} alt="" />
+                            <img
+                              className="img-fluid"
+                              src={value.imgThum}
+                              alt=""
+                            />
                           </div>
-                          <div className="handbagFill">
-                            <BsHandbag />
+                          <div className="text__file">
+                            <Link to={"/single-product"} className="title">
+                              {value.name?.slice(0, 50)} ...
+                            </Link>
+                            <p className="price">
+                              <span>{value.price}</span> -{" "}
+                              <span className="discount">
+                                ${value.discount}
+                              </span>
+                            </p>
+                            <div className="rate">
+                              <MdStarRate className="icon" />
+                              <MdStarRate className="icon" />
+                              <MdStarRate className="icon" />
+                              <MdStarRate className="icon" />
+                              <MdStarRate className="icon" />
+                            </div>
+                            <div className="handbagFill">
+                              <BsHandbag />
+                            </div>
                           </div>
-                        </div>
 
-                        <div className="overlay__icons">
-                          <div className="overlay__icons__body">
-                            <Link to={"/"} className="icon__body">
-                              <BsHeart className="icon" />
-                            </Link>
-                            <Link to={"/"} className="icon__body">
-                              <BsShuffle className="icon" />
-                            </Link>
-                            <Link to={"/"} className="icon__body">
-                              <BsSearch className="icon" />
-                            </Link>
+                          <div className="overlay__icons">
+                            <div className="overlay__icons__body">
+                              <Link to={"/"} className="icon__body">
+                                <BsHeart className="icon" />
+                              </Link>
+                              <Link to={"/"} className="icon__body">
+                                <BsShuffle className="icon" />
+                              </Link>
+                              <Link to={"/"} className="icon__body">
+                                <BsSearch className="icon" />
+                              </Link>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </Col>{" "}
-                  <Col lg={3} md={6} sm={12} className="part__two__inner__body">
-                    <div className="inner__products">
-                      <div className="items">
-                        <div className="img__file">
-                          <img
-                            className="img-fluid"
-                            src="https://htmldemo.net/elehaus/elehaus/assets/images/shop/b18.jpg"
-                            alt=""
-                          />
-                        </div>
-                        <div className="text__file">
-                          <Link to={"/"} className="title">
-                            Game Triger Finger New Insulated PH-X
-                          </Link>
-                          <p className="price">
-                            <span>$160.00</span> -{" "}
-                            <span className="discount">$260.00</span>
-                          </p>
-                          <div className="rate">
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                            <MdStarRate className="icon" />
-                          </div>
-                          <div className="handbagFill">
-                            <BsHandbag />
-                          </div>
-                        </div>
-
-                        <div className="overlay__icons">
-                          <div className="overlay__icons__body">
-                            <Link to={"/"} className="icon__body">
-                              <BsHeart className="icon" />
-                            </Link>
-                            <Link to={"/"} className="icon__body">
-                              <BsShuffle className="icon" />
-                            </Link>
-                            <Link to={"/"} className="icon__body">
-                              <BsSearch className="icon" />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Col>{" "}
+                    </Col>
+                  ))}
                 </Row>{" "}
               </TabPanel>
             </Tabs>

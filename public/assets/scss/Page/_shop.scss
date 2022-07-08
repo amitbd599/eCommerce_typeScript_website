@@ -134,6 +134,41 @@
                     }
                   }
                 }
+                .price__filter__slider {
+                  margin: 25px 0;
+                  padding-bottom: 15px;
+                  h2 {
+                    font-size: 15px;
+                    font-weight: 600;
+                  }
+
+                  .rc-slider {
+                    .rc-slider-rail {
+                      height: 12px;
+                      background-color: #e9e9e9;
+                    }
+                    .rc-slider-track {
+                      height: 12px;
+                      background-color: var(--secondary-theme-color);
+                    }
+                    .rc-slider-dot {
+                      bottom: -6px;
+                      width: 8px;
+                      height: 8px;
+                      background-color: transparent;
+                      border-color: transparent;
+                    }
+                    .rc-slider-dot-active {
+                      border-color: #fff;
+                    }
+                    .rc-slider-handle {
+                      margin-top: -1px;
+                      background-color: #fff;
+                      opacity: 1;
+                      border: solid 2px var(--secondary-theme-color);
+                    }
+                  }
+                }
               }
             }
           }
@@ -319,6 +354,48 @@
                         }
                       }
                     }
+                  }
+                }
+              }
+            }
+          }
+          .product__items__pagination {
+            margin-top: 30px;
+            margin-bottom: 50px;
+            border-top: 1px solid #f4f4f4;
+            padding-top: 50px;
+            .product__items__pagination__inner {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              .left__side {
+                span {
+                  color: #666;
+                  font-size: 15px;
+                  span {
+                    padding: 0 5px;
+                    color: var(--secondary-theme-color);
+                  }
+                }
+              }
+              .right__side {
+                a {
+                  border: 1px solid #ddd;
+                  padding: 6px 12px;
+                  border-radius: 5px;
+                  color: #666;
+                  margin: 0 5px;
+                  transition: all 0.2s linear;
+                  font-size: 16px;
+                  &:hover {
+                    border-color: var(--secondary-theme-color);
+                    background: var(--secondary-theme-color);
+                    color: #fff;
+                  }
+                  &.active {
+                    border-color: var(--secondary-theme-color);
+                    background: var(--secondary-theme-color);
+                    color: #fff;
                   }
                 }
               }

@@ -5,8 +5,12 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import Slider__Setting from "../Script/Slider__Setting";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import ShopProduct from "../Script/ShopProduct";
 const BestSeller__products = () => {
   const { bestSeller__product__setting } = Slider__Setting();
+  const bestSellingProduct = ShopProduct.slice(0, 10);
+  const womenItems = ShopProduct.slice(10, 15);
+  const babyItem = ShopProduct.slice(15, 20);
   return (
     <>
       <div className="bestSeller__product">
@@ -113,164 +117,94 @@ const BestSeller__products = () => {
                         </div>
                         <div className="body__section">
                           <TabPanel>
-                            <div className="inner__tab__data">
-                              <div className="products__items">
-                                <div className="products">
-                                  <div className="img__file">
-                                    <img
-                                      className="img-fluid"
-                                      src="https://htmldemo.net/elehaus/elehaus/assets/images/shop/p7.jpg"
-                                      alt=""
-                                    />
-                                  </div>
-                                  <div className="text__file">
-                                    <Link to={"/"} className="title">
-                                      D-Phone Android Latest UI New XP
-                                    </Link>
-                                    <p className="price">$330.00</p>
-                                    <div className="rate">
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
+                            {bestSellingProduct.map((value, index) => (
+                              <div className="inner__tab__data" key={index}>
+                                <div className="products__items">
+                                  <div className="products">
+                                    <div className="img__file">
+                                      <img
+                                        className="img-fluid"
+                                        src={value.img}
+                                        alt=""
+                                      />
+                                    </div>
+                                    <div className="text__file">
+                                      <Link to={"/"} className="title">
+                                        D-Phone Android Latest UI New XP
+                                      </Link>
+                                      <p className="price">$330.00</p>
+                                      <div className="rate">
+                                        <BsFillStarFill className="icon" />
+                                        <BsFillStarFill className="icon" />
+                                        <BsFillStarFill className="icon" />
+                                        <BsFillStarFill className="icon" />
+                                        <BsFillStarFill className="icon" />
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            <div className="inner__tab__data">
-                              <div className="products__items">
-                                <div className="products">
-                                  <div className="img__file">
-                                    <img
-                                      className="img-fluid"
-                                      src="https://htmldemo.net/elehaus/elehaus/assets/images/shop/p7.jpg"
-                                      alt=""
-                                    />
-                                  </div>
-                                  <div className="text__file">
-                                    <Link to={"/"} className="title">
-                                      D-Phone Android Latest UI New XP
-                                    </Link>
-                                    <p className="price">$330.00</p>
-                                    <div className="rate">
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="inner__tab__data">
-                              <div className="products__items">
-                                <div className="products">
-                                  <div className="img__file">
-                                    <img
-                                      className="img-fluid"
-                                      src="https://htmldemo.net/elehaus/elehaus/assets/images/shop/p7.jpg"
-                                      alt=""
-                                    />
-                                  </div>
-                                  <div className="text__file">
-                                    <Link to={"/"} className="title">
-                                      D-Phone Android Latest UI New XP
-                                    </Link>
-                                    <p className="price">$330.00</p>
-                                    <div className="rate">
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="inner__tab__data">
-                              <div className="products__items">
-                                <div className="products">
-                                  <div className="img__file">
-                                    <img
-                                      className="img-fluid"
-                                      src="https://htmldemo.net/elehaus/elehaus/assets/images/shop/p7.jpg"
-                                      alt=""
-                                    />
-                                  </div>
-                                  <div className="text__file">
-                                    <Link to={"/"} className="title">
-                                      D-Phone Android Latest UI New XP
-                                    </Link>
-                                    <p className="price">$330.00</p>
-                                    <div className="rate">
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="inner__tab__data">
-                              <div className="products__items">
-                                <div className="products">
-                                  <div className="img__file">
-                                    <img
-                                      className="img-fluid"
-                                      src="https://htmldemo.net/elehaus/elehaus/assets/images/shop/p7.jpg"
-                                      alt=""
-                                    />
-                                  </div>
-                                  <div className="text__file">
-                                    <Link to={"/"} className="title">
-                                      D-Phone Android Latest UI New XP
-                                    </Link>
-                                    <p className="price">$330.00</p>
-                                    <div className="rate">
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                            ))}
                           </TabPanel>
                           <TabPanel>
-                            <div className="inner__tab__data">
-                              <div className="products__items">
-                                <div className="products">
-                                  <div className="img__file">
-                                    <img
-                                      className="img-fluid"
-                                      src="https://htmldemo.net/elehaus/elehaus/assets/images/shop/p7.jpg"
-                                      alt=""
-                                    />
-                                  </div>
-                                  <div className="text__file">
-                                    <Link to={"/"} className="title">
-                                      D-Phone Android Latest UI New XP
-                                    </Link>
-                                    <p className="price">$330.00</p>
-                                    <div className="rate">
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
-                                      <BsFillStarFill className="icon" />
+                            {womenItems.map((value, index) => (
+                              <div className="inner__tab__data" key={index}>
+                                <div className="products__items">
+                                  <div className="products">
+                                    <div className="img__file">
+                                      <img
+                                        className="img-fluid"
+                                        src={value.img}
+                                        alt=""
+                                      />
+                                    </div>
+                                    <div className="text__file">
+                                      <Link to={"/"} className="title">
+                                        D-Phone Android Latest UI New XP
+                                      </Link>
+                                      <p className="price">$330.00</p>
+                                      <div className="rate">
+                                        <BsFillStarFill className="icon" />
+                                        <BsFillStarFill className="icon" />
+                                        <BsFillStarFill className="icon" />
+                                        <BsFillStarFill className="icon" />
+                                        <BsFillStarFill className="icon" />
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
+                            ))}
+                          </TabPanel>
+                          <TabPanel>
+                            {babyItem.map((value, index) => (
+                              <div className="inner__tab__data" key={index}>
+                                <div className="products__items">
+                                  <div className="products">
+                                    <div className="img__file">
+                                      <img
+                                        className="img-fluid"
+                                        src={value.img}
+                                        alt=""
+                                      />
+                                    </div>
+                                    <div className="text__file">
+                                      <Link to={"/"} className="title">
+                                        D-Phone Android Latest UI New XP
+                                      </Link>
+                                      <p className="price">$330.00</p>
+                                      <div className="rate">
+                                        <BsFillStarFill className="icon" />
+                                        <BsFillStarFill className="icon" />
+                                        <BsFillStarFill className="icon" />
+                                        <BsFillStarFill className="icon" />
+                                        <BsFillStarFill className="icon" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
                           </TabPanel>
                         </div>
                       </Tabs>

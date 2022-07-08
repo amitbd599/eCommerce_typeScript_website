@@ -13,7 +13,7 @@ const ShopProduct: ShopProduct[] = [
     img: "/assets/images/shop-product/shop-1.png",
     imgThum: "/assets/images/shop-product/shop-1-th.png",
     price: 120,
-    discount: 50,
+    discount: 40,
     categories: "Women's Fashion",
   },
   {
@@ -21,7 +21,7 @@ const ShopProduct: ShopProduct[] = [
     img: "/assets/images/shop-product/shop-2.png",
     imgThum: "/assets/images/shop-product/shop-2-th.png",
     price: 250,
-    discount: 50,
+    discount: 36,
     categories: "Boys",
   },
   {
@@ -29,7 +29,7 @@ const ShopProduct: ShopProduct[] = [
     img: "/assets/images/shop-product/shop-3.png",
     imgThum: "/assets/images/shop-product/shop-3-th.png",
     price: 80,
-    discount: 50,
+    discount: 80,
     categories: "Girls",
   },
   {
@@ -37,7 +37,7 @@ const ShopProduct: ShopProduct[] = [
     img: "/assets/images/shop-product/shop-4.png",
     imgThum: "/assets/images/shop-product/shop-4-th.png",
     price: 300,
-    discount: 50,
+    discount: 60,
     categories: "Computer, Office & Security",
   },
   {
@@ -45,7 +45,7 @@ const ShopProduct: ShopProduct[] = [
     img: "/assets/images/shop-product/shop-5.png",
     imgThum: "/assets/images/shop-product/shop-5-th.png",
     price: 300,
-    discount: 50,
+    discount: 110,
     categories: "Beauty, Health & Hair",
   },
   {
@@ -53,7 +53,7 @@ const ShopProduct: ShopProduct[] = [
     img: "/assets/images/shop-product/shop-6.png",
     imgThum: "/assets/images/shop-product/shop-6-th.png",
     price: 270,
-    discount: 50,
+    discount: 63,
     categories: "Women's Fashion",
   },
   {
@@ -61,7 +61,7 @@ const ShopProduct: ShopProduct[] = [
     img: "/assets/images/shop-product/shop-7.png",
     imgThum: "/assets/images/shop-product/shop-7-th.png",
     price: 110,
-    discount: 50,
+    discount: 44,
     categories: "Shoes",
   },
   {
@@ -69,7 +69,7 @@ const ShopProduct: ShopProduct[] = [
     img: "/assets/images/shop-product/shop-8.png",
     imgThum: "/assets/images/shop-product/shop-8-th.png",
     price: 420,
-    discount: 50,
+    discount: 23,
     categories: "Women's Fashion",
   },
   {
@@ -77,7 +77,7 @@ const ShopProduct: ShopProduct[] = [
     img: "/assets/images/shop-product/shop-9.png",
     imgThum: "/assets/images/shop-product/shop-9-th.png",
     price: 290,
-    discount: 50,
+    discount: 96,
     categories: "Women's Fashion",
   },
   {
@@ -85,7 +85,7 @@ const ShopProduct: ShopProduct[] = [
     img: "/assets/images/shop-product/shop-10.png",
     imgThum: "/assets/images/shop-product/shop-10-th.png",
     price: 210,
-    discount: 50,
+    discount: 70,
     categories: "Bags & Shoes",
   },
   {
@@ -93,7 +93,7 @@ const ShopProduct: ShopProduct[] = [
     img: "/assets/images/shop-product/shop-11.png",
     imgThum: "/assets/images/shop-product/shop-11-th.png",
     price: 130,
-    discount: 50,
+    discount: 45,
     categories: "Men's Fashion",
   },
   {
@@ -102,7 +102,7 @@ const ShopProduct: ShopProduct[] = [
     imgThum: "/assets/images/shop-product/shop-12-th.png",
 
     price: 70,
-    discount: 50,
+    discount: 23,
     categories: "Consumer Electronics",
   },
   {
@@ -110,7 +110,7 @@ const ShopProduct: ShopProduct[] = [
     img: "/assets/images/shop-product/shop-13.png",
     imgThum: "/assets/images/shop-product/shop-13-th.png",
     price: 200,
-    discount: 50,
+    discount: 190,
     categories: "Women's Fashion",
   },
   {
@@ -118,7 +118,7 @@ const ShopProduct: ShopProduct[] = [
     img: "/assets/images/shop-product/shop-14.png",
     imgThum: "/assets/images/shop-product/shop-14-th.png",
     price: 90,
-    discount: 50,
+    discount: 20,
     categories: "Home Improvement & Tools",
   },
   {
@@ -126,15 +126,15 @@ const ShopProduct: ShopProduct[] = [
     img: "/assets/images/shop-product/shop-15.png",
     imgThum: "/assets/images/shop-product/shop-15-th.png",
     price: 100,
-    discount: 50,
+    discount: 33,
     categories: "Home Improvement & Tools",
   },
   {
-    name: "HOT SALE ! 1761-CBL-PM02,1761CBLPM02:A-B MicroLogix 1000 Series PLC programming cable",
+    name: "HOT SALE ! 1761-CBL-PM02, PLC programming cable",
     img: "/assets/images/shop-product/shop-16.png",
     imgThum: "/assets/images/shop-product/shop-16-th.png",
     price: 150,
-    discount: 50,
+    discount: 26,
     categories: "Computer, Office & Security",
   },
   {
@@ -142,15 +142,15 @@ const ShopProduct: ShopProduct[] = [
     img: "/assets/images/shop-product/shop-17.png",
     imgThum: "/assets/images/shop-product/shop-17-th.png",
     price: 160,
-    discount: 50,
+    discount: 34,
     categories: "Home Improvement & Tools",
   },
   {
-    name: "DOP-103BQ DOP-105CQ DOP-107BV DOP-107CV DOP-107EV DOP-107EG DOP-107WV DOP-110CS 2019 New Upgrade",
+    name: "DOP-103BQ DOP-105CQ  DOP-107WV DOP-110CS 2019 New Upgrade",
     img: "/assets/images/shop-product/shop-18.png",
     imgThum: "/assets/images/shop-product/shop-18-th.png",
     price: 570,
-    discount: 50,
+    discount: 136,
     categories: "Computer, Office & Security",
   },
   {
@@ -158,7 +158,7 @@ const ShopProduct: ShopProduct[] = [
     img: "/assets/images/shop-product/shop-19.png",
     imgThum: "/assets/images/shop-product/shop-19-th.png",
     price: 190,
-    discount: 50,
+    discount: 90,
     categories: "Phones & Telecommunications",
   },
   {
@@ -166,7 +166,7 @@ const ShopProduct: ShopProduct[] = [
     img: "/assets/images/shop-product/shop-20.png",
     imgThum: "/assets/images/shop-product/shop-20-th.png",
     price: 120,
-    discount: 50,
+    discount: 55,
     categories: "Phones & Telecommunications",
   },
 ];
