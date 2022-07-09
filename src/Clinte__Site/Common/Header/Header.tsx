@@ -20,6 +20,7 @@ import custom_Data from "../../Script/Custom__Data";
 import Image__Data from "../../Script/Image__Data";
 import nav__Items from "../../Script/Nav_items";
 import Product_Data from "../../Script/Product__Data";
+import QuickView from "../../Components/QuickView";
 
 const Header: React.FC = () => {
   const [data, setData] = useState("Eng");
@@ -418,6 +419,10 @@ const Header: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* ============= Quick View  Area =============*/}
+
+      <QuickView />
     </section>
   );
 };

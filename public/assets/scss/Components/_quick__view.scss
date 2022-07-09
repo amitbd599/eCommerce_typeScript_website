@@ -1,0 +1,149 @@
+.quick__view {
+  //   display: none;
+  position: fixed;
+  z-index: 999999;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  .wrapper {
+    .wrapper__body {
+      position: relative;
+      .overlay {
+        opacity: 0.5;
+        background: #333;
+        width: 100vw;
+        height: 100vh;
+      }
+      .inner__body {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        background: #fff;
+        width: 900px;
+        height: 587px;
+        border-radius: 5px;
+        transform: translate(-50%, -50%);
+        .quick__view__inner__body {
+          margin: 25px;
+          .inner__box__items {
+            display: flex;
+            justify-content: space-between;
+            .img__file {
+              width: 100%;
+              img {
+              }
+            }
+            .text__file {
+              width: 100%;
+              padding-left: 30px;
+              .header__text {
+                font-size: 20px;
+                line-height: 28px;
+                margin-bottom: 22px;
+                color: #666;
+                font-weight: 700;
+                position: relative;
+                &::after {
+                  position: absolute;
+                  width: 60px;
+                  height: 3px;
+                  background: var(--primary-theme-color);
+                  content: "";
+                  left: 0;
+                  bottom: -8px;
+                }
+              }
+              .price {
+                font-size: 20px;
+                font-weight: 800;
+              }
+              .des {
+                margin-top: 10px;
+                font-size: 15px;
+                line-height: 25px;
+                color: #666;
+              }
+              .select__size__body {
+                margin-top: 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px dashed #ddd;
+                padding-bottom: 18px;
+                .header__text__intro {
+                  font-size: 15px;
+                  color: #666;
+                  margin-right: 10px;
+                }
+                .css-6j8wv5-Input {
+                  width: 286px;
+                }
+              }
+              .footer__intro {
+                margin-top: 15px;
+                .footer__intro__price {
+                  span {
+                    font-size: 18px;
+                    font-weight: 700;
+                    color: #666;
+                  }
+                }
+                .cart__int {
+                  display: flex;
+                  margin-top: 12px;
+                  .input__field {
+                    height: 46px;
+                    display: flex;
+                    button {
+                      font-size: 20px;
+                      font-weight: 600;
+                      padding: 0px 10px;
+                      background: #f9f9f9;
+                      border: 1px solid #ddd;
+                      transition: all 0.2s linear;
+                      &:hover {
+                        background: #ddd;
+                      }
+                    }
+                    input {
+                      width: 50px;
+                      padding: 5px 8px;
+                      text-align: center;
+                      border-right: none;
+                      border-left: none;
+                    }
+                  }
+                  .button__cart {
+                    .button__mid_solid_color_black {
+                      margin-top: 0;
+                      margin-left: 15px;
+                    }
+                  }
+                }
+                .tag__info {
+                  margin-top: 40px;
+                  ul {
+                    padding: 0;
+                    li {
+                      border-top: 1px dotted #ddd;
+                      font-size: 12px;
+                      color: #666;
+                      padding: 5px 0;
+                      span {
+                        font-weight: 600;
+                        margin-right: 5px;
+                        color: var(--secondary-theme-color);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
