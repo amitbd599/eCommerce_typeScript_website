@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import About from "./Clinte__Site/Page/About";
@@ -16,10 +16,18 @@ import ShopPage from "./Clinte__Site/Page/ShopPage";
 import Single__Blog from "./Clinte__Site/Page/Single__Blog";
 import Single__Product from "./Clinte__Site/Page/Single__Product";
 import Wishlist from "./Clinte__Site/Page/Wishlist";
-
+export const ContextAPI = React.createContext<any>(null);
 const App: React.FC = () => {
+  const [active, setActive] = useState(false);
+
+  let quickViewClick: () => void;
+
+  quickViewClick = () => {
+    setActive(!active);
+  };
+
   return (
-    <div>
+    <ContextAPI.Provider value={{ quickViewClick, active }}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}></Route>
@@ -43,7 +51,7 @@ const App: React.FC = () => {
           <Route path="*" element={<Error />}></Route>
         </Routes>
       </BrowserRouter>
-    </div>
+    </ContextAPI.Provider>
   );
 };
 
