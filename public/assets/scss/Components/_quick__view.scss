@@ -106,12 +106,12 @@
                 color: #666;
               }
               .select__size__body {
-                margin-top: 20px;
+                margin-top: 12px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                border-bottom: 1px dashed #ddd;
-                padding-bottom: 18px;
+
+                padding-bottom: 10px;
                 .header__text__intro {
                   font-size: 15px;
                   color: #666;
@@ -122,7 +122,9 @@
                 }
               }
               .footer__intro {
-                margin-top: 15px;
+                border-top: 1px dashed #ddd;
+                margin-top: 8px;
+                padding-top: 6px;
                 .footer__intro__price {
                   span {
                     font-size: 18px;
@@ -132,9 +134,9 @@
                 }
                 .cart__int {
                   display: flex;
-                  margin-top: 12px;
+                  margin-top: 8px;
                   .input__field {
-                    height: 46px;
+                    height: auto;
                     display: flex;
                     button {
                       font-size: 20px;
@@ -143,6 +145,7 @@
                       background: #f9f9f9;
                       border: 1px solid #ddd;
                       transition: all 0.2s linear;
+                      height: 38px !important;
                       &:hover {
                         background: #ddd;
                       }
@@ -153,17 +156,20 @@
                       text-align: center;
                       border-right: none;
                       border-left: none;
+                      height: 38px;
                     }
                   }
                   .button__cart {
                     .button__mid_solid_color_black {
                       margin-top: 0;
                       margin-left: 15px;
+                      padding: 7px 38px;
+                      font-size: 13px;
                     }
                   }
                 }
                 .tag__info {
-                  margin-top: 40px;
+                  margin-top: 18px;
                   ul {
                     padding: 0;
                     li {

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 import React, { useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { FiMinus, FiPlus } from "react-icons/fi";
@@ -10,25 +11,20 @@ import Update__cartValue from "../Components/Update__cartValue";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import Select from "react-select";
-const Cart: React.FC = () => {
-  const productData = [
-    { id: 1, title: "CLASSIC SIMPLE BACKPACK", price: 50 },
-    { id: 2, title: "Smart Watch", price: 150 },
-  ];
+import { City, Area } from "../Script/VariableDesignItems";
+import { MdClose } from "react-icons/md";
+import { UseCartState } from "../ContextAPI/ContextAPIRoot";
 
-  const area = [
-    { value: "United States", label: "United States" },
-    { value: "Brazil", label: "Brazil" },
-    { value: "Colombia", label: "Colombia" },
-    { value: "Mexico", label: "Mexico" },
-    { value: "Canada", label: "Canada" },
-  ];
-  const city = [
-    { value: "California", label: "California" },
-    { value: "Ohaio", label: "Ohaio" },
-    { value: "Haiti", label: "Haiti" },
-    { value: "Cuba", label: "Cuba" },
-  ];
+const Cart: React.FC = () => {
+  const {
+    cartReducer: { cart, product, count },
+    dispatch,
+    addToCart,
+    decreaseValue,
+    removeFromCart,
+  } = UseCartState();
+
+  console.log(cart);
 
   return (
     <>
@@ -58,6 +54,9 @@ const Cart: React.FC = () => {
               <Row>
                 <Col lg={8} className="left__side">
                   <div className="inner__body">
+                    <div>
+                      <p>Total Product select : {cart.length}</p>
+                    </div>
                     {/* Product Show start */}
                     <table>
                       <thead>
@@ -69,10 +68,57 @@ const Cart: React.FC = () => {
                           <th></th>
                         </tr>
                       </thead>
+
                       <tbody>
-                        {productData.map((value) => {
-                          return <Update__cartValue value={value} />;
-                        })}
+                        {cart.map((value: any) => (
+                          <tr>
+                            <td className="d-flex align-items-center">
+                              <div className="img__file">
+                                <img
+                                  className="img-fluid"
+                                  src={value.img}
+                                  alt=""
+                                />
+                                <MdClose
+                                  className="close__button"
+                                  onClick={() => removeFromCart(value)}
+                                />
+                              </div>
+
+                              <p className="pl-15">{value.name}</p>
+                            </td>
+                            <td className="text-center">${value.price}</td>
+                            <td className="text-center">
+                              <div className="count">
+                                <button className="minus">
+                                  <FiMinus
+                                    onClick={() => decreaseValue(value.id)}
+                                  />
+                                </button>
+                                <span>{value.qty}</span>
+                                <button className="plus">
+                                  <FiPlus />
+                                </button>
+                              </div>
+                            </td>
+                            <td className="text-center">$ 000.00</td>
+                          </tr>
+                        ))}
+                      </tbody>
+
+                      <tbody>
+                        {/* {productData.map((value) => {
+                          return (
+                            <ContextAPI.Consumer>
+                              {({ hold, hendelIncrease, hendelDecrease }) => (
+                                <Update__cartValue
+                                  value={value}
+                                  data={"Hello"}
+                                />
+                              )}
+                            </ContextAPI.Consumer>
+                          );
+                        })} */}
                       </tbody>
                     </table>
                     {/* Product Show End */}
@@ -167,15 +213,49 @@ const Cart: React.FC = () => {
                       <h2>Shipping to CA.</h2>
                       <div className="custom__select">
                         <Select
-                          options={area}
-                          defaultValue={area[1]}
+                          options={Area}
+                          defaultValue={Area[1]}
                           styles={{
-                            option: (styles) => ({
-                              ...styles,
+                            option: (provided, state) => ({
+                              ...provided,
+                              borderBottom: "1px solid #ddd",
+                              color: state.isSelected ? "#fff" : "#666",
+                              background: state.isSelected ? "#252525" : "#fff",
+                              cursor: "pointer",
+                              margin: "0px",
+                              fontSize: "16px",
                               ":active": {
-                                ...styles[":active"],
                                 backgroundColor: "#ddd",
+                                cursor: "pointer",
                               },
+                            }),
+                            singleValue: (provided, state) => ({
+                              ...provided,
+                              color: "#666",
+
+                              fontSize: "16px",
+                            }),
+                            control: (styles) => ({
+                              ...styles,
+                              backgroundColor: "#ffffff",
+                              padding: "0px 0px",
+                              margin: "0px 0px",
+
+                              ":focus-within": {
+                                ...styles[":focus-within"],
+                                border: "1px solid #ddd",
+                                boxShadow: "none",
+                              },
+                            }),
+                            menuList: (styles) => ({
+                              ...styles,
+                              margin: "0px",
+                              padding: "0px",
+                            }),
+                            noOptionsMessage: (styles) => ({
+                              ...styles,
+                              background: "red",
+                              color: "#fff",
                             }),
                           }}
                           theme={(theme) => ({
@@ -192,15 +272,49 @@ const Cart: React.FC = () => {
                       </div>
                       <div className="custom__select">
                         <Select
-                          options={city}
-                          defaultValue={city[1]}
+                          options={City}
+                          defaultValue={City[1]}
                           styles={{
-                            option: (styles) => ({
-                              ...styles,
+                            option: (provided, state) => ({
+                              ...provided,
+                              borderBottom: "1px solid #ddd",
+                              color: state.isSelected ? "#fff" : "#666",
+                              background: state.isSelected ? "#252525" : "#fff",
+                              cursor: "pointer",
+                              margin: "0px",
+                              fontSize: "16px",
                               ":active": {
-                                ...styles[":active"],
                                 backgroundColor: "#ddd",
+                                cursor: "pointer",
                               },
+                            }),
+                            singleValue: (provided, state) => ({
+                              ...provided,
+                              color: "#666",
+
+                              fontSize: "16px",
+                            }),
+                            control: (styles) => ({
+                              ...styles,
+                              backgroundColor: "#ffffff",
+                              padding: "0px 0px",
+                              margin: "0px 0px",
+
+                              ":focus-within": {
+                                ...styles[":focus-within"],
+                                border: "1px solid #ddd",
+                                boxShadow: "none",
+                              },
+                            }),
+                            menuList: (styles) => ({
+                              ...styles,
+                              margin: "0px",
+                              padding: "0px",
+                            }),
+                            noOptionsMessage: (styles) => ({
+                              ...styles,
+                              background: "red",
+                              color: "#fff",
                             }),
                           }}
                           theme={(theme) => ({

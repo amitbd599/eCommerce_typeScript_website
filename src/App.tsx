@@ -16,18 +16,10 @@ import ShopPage from "./Clinte__Site/Page/ShopPage";
 import Single__Blog from "./Clinte__Site/Page/Single__Blog";
 import Single__Product from "./Clinte__Site/Page/Single__Product";
 import Wishlist from "./Clinte__Site/Page/Wishlist";
-export const ContextAPI = React.createContext<any>(null);
+import ContextAPIRoot from "./Clinte__Site/ContextAPI/ContextAPIRoot";
 const App: React.FC = () => {
-  const [active, setActive] = useState(false);
-
-  let quickViewClick: () => void;
-
-  quickViewClick = () => {
-    setActive(!active);
-  };
-
   return (
-    <ContextAPI.Provider value={{ quickViewClick, active }}>
+    <ContextAPIRoot>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}></Route>
@@ -51,7 +43,7 @@ const App: React.FC = () => {
           <Route path="*" element={<Error />}></Route>
         </Routes>
       </BrowserRouter>
-    </ContextAPI.Provider>
+    </ContextAPIRoot>
   );
 };
 

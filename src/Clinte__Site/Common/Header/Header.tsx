@@ -21,6 +21,8 @@ import Image__Data from "../../Script/Image__Data";
 import nav__Items from "../../Script/Nav_items";
 import Product_Data from "../../Script/Product__Data";
 import QuickView from "../../Components/QuickView";
+import { UseCartState } from "../../ContextAPI/ContextAPIRoot";
+import SideCartDataShow from "../../Components/SideCartDataShow";
 
 const Header: React.FC = () => {
   const [data, setData] = useState("Eng");
@@ -29,6 +31,10 @@ const Header: React.FC = () => {
   const { language } = custom_Data();
   const { logo } = Image__Data();
   const { mixProduct } = Product_Data();
+  const {
+    cartReducer: { cart },
+    cartSide,
+  } = UseCartState();
 
   // Handel typeScript & Langauge change
   let handelClick: (e: string) => void;
@@ -315,10 +321,10 @@ const Header: React.FC = () => {
                         <li>
                           <Link to={"/login-register"}>LOGIN</Link>
                         </li>
-                        <li className="cart__total">
+                        <li className="cart__total" onClick={cartSide}>
                           CART / <span>$0.00</span>{" "}
                           <BsFillCartFill className="icon" />
-                          <span className="cart__item">0</span>
+                          <span className="cart__item">{cart.length}</span>
                         </li>
                       </ul>
                     </div>
@@ -423,6 +429,10 @@ const Header: React.FC = () => {
       {/* ============= Quick View  Area =============*/}
 
       <QuickView />
+
+      {/* Side Cart Data Show */}
+
+      <SideCartDataShow />
     </section>
   );
 };

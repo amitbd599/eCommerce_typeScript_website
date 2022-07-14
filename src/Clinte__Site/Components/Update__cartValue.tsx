@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { FiMinus, FiPlus } from "react-icons/fi";
-import { GrClose } from "react-icons/gr";
 import { MdClose } from "react-icons/md";
 
-const Update__cartValue = ({ value }: any) => {
-  const [hold, setHold] = useState(0);
+const Update__cartValue = ({ value }: any, data: any) => {
+  console.log(data);
 
-  const hendelIncrease = () => {
-    setHold(hold + 1);
-  };
-  const hendelDecrease = () => {
-    if (hold > 0) {
-      setHold(hold - 1);
-    }
-  };
+  // const [hold, setHold] = useState(0);
+
+  // const hendelIncrease = () => {
+  //   setHold(hold + 1);
+  // };
+  // const hendelDecrease = () => {
+  //   if (hold > 0) {
+  //     setHold(hold - 1);
+  //   }
+  // };
   return (
     <tr>
       <th className="d-flex align-items-center">
@@ -31,11 +32,11 @@ const Update__cartValue = ({ value }: any) => {
       <th className="text-center">${value.price}</th>
       <th className="text-center">
         <div className="count">
-          <button className="minus" onClick={hendelDecrease}>
+          <button className="minus" onClick={data.hendelDecrease}>
             <FiMinus />
           </button>
-          <span>{hold}</span>
-          <button className="plus" onClick={hendelIncrease}>
+          <span>{data.hold}</span>
+          <button className="plus" onClick={data.hendelIncrease}>
             <FiPlus />
           </button>
         </div>

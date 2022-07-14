@@ -1,4 +1,5 @@
 type ShopProduct = {
+  id:number,
   name: string;
   img: string;
   imgThum?: string;
@@ -9,6 +10,7 @@ type ShopProduct = {
 
 const ShopProduct: ShopProduct[] = [
   {
+    id:1,
     name: "Baccarat Rouge 540 70ml Men's and Women's Perfume Brand Original Perfume",
     img: "/assets/images/shop-product/shop-1.png",
     imgThum: "/assets/images/shop-product/shop-1-th.png",
@@ -17,6 +19,7 @@ const ShopProduct: ShopProduct[] = [
     categories: "Women's Fashion",
   },
   {
+    id:2,
     name: "Original brand gift box set ladies perfumes de mujer",
     img: "/assets/images/shop-product/shop-2.png",
     imgThum: "/assets/images/shop-product/shop-2-th.png",
@@ -25,6 +28,7 @@ const ShopProduct: ShopProduct[] = [
     categories: "Boys",
   },
   {
+    id:3,
     name: "Belt Belts Electric Waist Trainer With Detachable Belt Vibrator Slim Belts",
     img: "/assets/images/shop-product/shop-3.png",
     imgThum: "/assets/images/shop-product/shop-3-th.png",
@@ -33,6 +37,7 @@ const ShopProduct: ShopProduct[] = [
     categories: "Girls",
   },
   {
+    id:4,
     name: "ND2-ND400 Neutral Density Filter ND filter camera filter",
     img: "/assets/images/shop-product/shop-4.png",
     imgThum: "/assets/images/shop-product/shop-4-th.png",
@@ -41,6 +46,7 @@ const ShopProduct: ShopProduct[] = [
     categories: "Computer, Office & Security",
   },
   {
+    id:5,
     name: "Smart Digital Arm Blood Pressure Monitor Health Care OEM Service",
     img: "/assets/images/shop-product/shop-5.png",
     imgThum: "/assets/images/shop-product/shop-5-th.png",
@@ -49,6 +55,7 @@ const ShopProduct: ShopProduct[] = [
     categories: "Beauty, Health & Hair",
   },
   {
+    id:6,
     name: "Spy X Family Anime Women Black White Printed T-shirt Girl Summer Harajuku",
     img: "/assets/images/shop-product/shop-6.png",
     imgThum: "/assets/images/shop-product/shop-6-th.png",
@@ -57,6 +64,7 @@ const ShopProduct: ShopProduct[] = [
     categories: "Women's Fashion",
   },
   {
+    id:7,
     name: "Peeli Long Sleeve Sports Jacket Women Zip Fitness Yoga Shirt Winter Warm Gym Top Activewear",
     img: "/assets/images/shop-product/shop-7.png",
     imgThum: "/assets/images/shop-product/shop-7-th.png",
@@ -65,6 +73,7 @@ const ShopProduct: ShopProduct[] = [
     categories: "Shoes",
   },
   {
+    id:8,
     name: "Green Velvet Strapless Long Prom Dress For Black Girls",
     img: "/assets/images/shop-product/shop-8.png",
     imgThum: "/assets/images/shop-product/shop-8-th.png",
@@ -73,6 +82,7 @@ const ShopProduct: ShopProduct[] = [
     categories: "Women's Fashion",
   },
   {
+    id:9,
     name: "Technoblade Merch Print Zipper Hoodies Sweatshirts Harajuku Men Women",
     img: "/assets/images/shop-product/shop-9.png",
     imgThum: "/assets/images/shop-product/shop-9-th.png",
@@ -81,6 +91,7 @@ const ShopProduct: ShopProduct[] = [
     categories: "Women's Fashion",
   },
   {
+    id:10,
     name: "Green Velvet Prom Dresses 2022 Luxury Gowns Mermaid Evening",
     img: "/assets/images/shop-product/shop-10.png",
     imgThum: "/assets/images/shop-product/shop-10-th.png",
@@ -89,6 +100,7 @@ const ShopProduct: ShopProduct[] = [
     categories: "Bags & Shoes",
   },
   {
+    id:11,
     name: "Retro Classic Viking Valhalla Odin Hoodie Men Print Hoodies Hip Hop Autumn",
     img: "/assets/images/shop-product/shop-11.png",
     imgThum: "/assets/images/shop-product/shop-11-th.png",
@@ -97,6 +109,7 @@ const ShopProduct: ShopProduct[] = [
     categories: "Men's Fashion",
   },
   {
+    id:12,
     name: "Original Type C USB Cable Mechanical Keyboard Spiral",
     img: "/assets/images/shop-product/shop-12.png",
     imgThum: "/assets/images/shop-product/shop-12-th.png",
@@ -106,6 +119,7 @@ const ShopProduct: ShopProduct[] = [
     categories: "Consumer Electronics",
   },
   {
+    id:13,
     name: "Short Curly Bob Human Hair Wigs For Women Brazilian Afro Natural Loose Deep",
     img: "/assets/images/shop-product/shop-13.png",
     imgThum: "/assets/images/shop-product/shop-13-th.png",
@@ -114,6 +128,7 @@ const ShopProduct: ShopProduct[] = [
     categories: "Women's Fashion",
   },
   {
+    id:14,
     name: "Essager Rotate Magnetic Cable Magnet Charger Micro USB Type",
     img: "/assets/images/shop-product/shop-14.png",
     imgThum: "/assets/images/shop-product/shop-14-th.png",
@@ -122,6 +137,7 @@ const ShopProduct: ShopProduct[] = [
     categories: "Home Improvement & Tools",
   },
   {
+    id:15,
     name: "Keys Cute Cat Theme Keycaps PBT Dye Sublimation Keycaps XDA Profile",
     img: "/assets/images/shop-product/shop-15.png",
     imgThum: "/assets/images/shop-product/shop-15-th.png",
@@ -130,6 +146,7 @@ const ShopProduct: ShopProduct[] = [
     categories: "Home Improvement & Tools",
   },
   {
+    id:16,
     name: "HOT SALE ! 1761-CBL-PM02, PLC programming cable",
     img: "/assets/images/shop-product/shop-16.png",
     imgThum: "/assets/images/shop-product/shop-16-th.png",
@@ -138,6 +155,7 @@ const ShopProduct: ShopProduct[] = [
     categories: "Computer, Office & Security",
   },
   {
+    id:17,
     name: "Adjustable Snowboard Backpack Shoulder Strap Snowboard Backpack Carrying Belt Ski Board Carrier",
     img: "/assets/images/shop-product/shop-17.png",
     imgThum: "/assets/images/shop-product/shop-17-th.png",
@@ -146,6 +164,7 @@ const ShopProduct: ShopProduct[] = [
     categories: "Home Improvement & Tools",
   },
   {
+    id:18,
     name: "DOP-103BQ DOP-105CQ  DOP-107WV DOP-110CS 2019 New Upgrade",
     img: "/assets/images/shop-product/shop-18.png",
     imgThum: "/assets/images/shop-product/shop-18-th.png",
@@ -154,6 +173,7 @@ const ShopProduct: ShopProduct[] = [
     categories: "Computer, Office & Security",
   },
   {
+    id:19,
     name: "Delta DOP-107BV HMI Touch Screen Human Machine Interface 7 Inch Replace DOP -B07S411 DOP-B07SS411",
     img: "/assets/images/shop-product/shop-19.png",
     imgThum: "/assets/images/shop-product/shop-19-th.png",
@@ -162,6 +182,7 @@ const ShopProduct: ShopProduct[] = [
     categories: "Phones & Telecommunications",
   },
   {
+    id:20,
     name: "SanDisk USB 3.0 Ultra Flair 128GB 150MB/s",
     img: "/assets/images/shop-product/shop-20.png",
     imgThum: "/assets/images/shop-product/shop-20-th.png",
