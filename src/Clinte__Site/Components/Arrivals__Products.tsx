@@ -1,18 +1,69 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { MdStarRate } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { BsHandbag, BsHeart, BsSearch, BsShuffle } from "react-icons/bs";
+import {
+  BsCartDash,
+  BsFillCartCheckFill,
+  BsHandbag,
+  BsHandbagFill,
+  BsHeart,
+  BsHeartFill,
+  BsSearch,
+  BsShuffle,
+} from "react-icons/bs";
 import ShopProduct from "../Script/ShopProduct";
+import tippy from "tippy.js";
 import { UseCartState } from "../ContextAPI/ContextAPIRoot";
+import { ToastContainer } from "react-toastify";
+import { Toaster } from "react-hot-toast";
 const Arrivals__Products = () => {
   const {
-    cartReducer: { cart, product },
-    dispatch,
+    cartReducer: { cart, product, wishlist, compare },
+    removeFromCart,
+    addToWishlist,
+    removeFromWishlist,
     addToCart,
+    quickViewClick,
+    addToCompare,
+    removeFromCompare,
   } = UseCartState();
+
+  //! ====================
+
+  let popup: () => void;
+  popup = () => {
+    alert("Hello");
+  };
+
+  useEffect(() => {
+    tippy("#WishList", {
+      content: 'Add to <span style="color: #F9D342;">WishList</span>',
+      placement: "left",
+      arrow: true,
+      animation: "scale-extreme",
+      theme: "light",
+      allowHTML: true,
+    });
+    tippy("#QuickView", {
+      content: 'See <span style="color: #F9D342;">QuickView</span>',
+      placement: "left",
+      arrow: true,
+      animation: "scale-extreme",
+      theme: "light",
+      allowHTML: true,
+    });
+    tippy("#Compare", {
+      content: 'Add to <span style="color: #F9D342;">Compare</span>',
+      placement: "left",
+      arrow: true,
+      animation: "scale-extreme",
+      theme: "light",
+      allowHTML: true,
+    });
+  }, []);
 
   const Trending = ShopProduct.slice(0, 8);
   const freeShipping = ShopProduct.slice(8, 16);
@@ -40,7 +91,7 @@ const Arrivals__Products = () => {
 
                 <TabPanel>
                   <Row className="part__two">
-                    {freeShipping.map((value, index) => (
+                    {product.map((value: any, index: number) => (
                       <Col
                         key={index}
                         lg={3}
@@ -80,25 +131,73 @@ const Arrivals__Products = () => {
                                 <MdStarRate className="icon" />
                               </div>
                               <div className="handbagFill">
-                                <BsHandbag onClick={() => addToCart(value)} />
+                                {cart.some((p: any) => p.id === value.id) ? (
+                                  <div>
+                                    <BsFillCartCheckFill
+                                      className="BsFillCartCheckFill"
+                                      onClick={() => removeFromCart(value)}
+                                    />
+                                  </div>
+                                ) : (
+                                  <div>
+                                    <div>
+                                      <BsCartDash
+                                        className="BsCartDash"
+                                        onClick={() => addToCart(value)}
+                                      />
+                                    </div>
+                                  </div>
+                                )}
                               </div>
                             </div>
 
                             <div className="overlay__icons">
                               <div className="overlay__icons__body">
-                                <Link to={"/"} className="icon__body">
-                                  <BsHeart className="icon" />
-                                </Link>
-                                <Link to={"/"} className="icon__body">
-                                  <BsShuffle className="icon" />
-                                </Link>
-                                {/* <Link
+                                {wishlist.some(
+                                  (p: any) => p.id === value.id
+                                ) ? (
+                                  <span
+                                    className="icon__body active"
+                                    id="WishList"
+                                    onClick={() => removeFromWishlist(value)}
+                                  >
+                                    <BsHeart className="icon" />
+                                  </span>
+                                ) : (
+                                  <span
+                                    className="icon__body "
+                                    id="WishList"
+                                    onClick={() => addToWishlist(value)}
+                                  >
+                                    <BsHeart className="icon" />
+                                  </span>
+                                )}
+
+                                {compare.some((p: any) => p.id === value.id) ? (
+                                  <span
+                                    className="icon__body active"
+                                    id="Compare"
+                                  >
+                                    <BsShuffle className="icon" />
+                                  </span>
+                                ) : (
+                                  <span
+                                    className="icon__body"
+                                    id="Compare"
+                                    onClick={() => addToCompare(value)}
+                                  >
+                                    <BsShuffle className="icon" />
+                                  </span>
+                                )}
+
+                                <Link
                                   to={"/"}
                                   className="icon__body"
-                                  onClick={quickViewClick}
+                                  id="QuickView"
+                                  onClick={() => quickViewClick(value)}
                                 >
                                   <BsSearch className="icon" />
-                                </Link> */}
+                                </Link>
                               </div>
                             </div>
                           </div>

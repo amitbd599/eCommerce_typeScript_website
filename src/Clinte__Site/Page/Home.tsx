@@ -17,9 +17,11 @@ import Subscribe__Section from "../Components/Subscribe__Section";
 
 import { FiInstagram } from "react-icons/fi";
 import Footer from "../Common/Footer/Footer";
+import { ToastContainer } from "react-toastify";
 const Home: React.FC = () => {
   return (
     <>
+      <ToastContainer hideProgressBar={true} />
       {/* Helmet Intro Start */}
       <Meta_Data title={"Home"} />
       {/* Helmet Intro End*/}

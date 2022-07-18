@@ -17,6 +17,9 @@ import Single__Blog from "./Clinte__Site/Page/Single__Blog";
 import Single__Product from "./Clinte__Site/Page/Single__Product";
 import Wishlist from "./Clinte__Site/Page/Wishlist";
 import ContextAPIRoot from "./Clinte__Site/ContextAPI/ContextAPIRoot";
+import Compare from "./Clinte__Site/Page/Compare";
+import { ToastContainer } from "react-toastify";
+
 const App: React.FC = () => {
   return (
     <ContextAPIRoot>
@@ -34,6 +37,7 @@ const App: React.FC = () => {
           <Route path="/shop" element={<ShopPage />}></Route>
           <Route path="/single-product" element={<Single__Product />}></Route>
           <Route path="/wishlist" element={<Wishlist />}></Route>
+          <Route path="/compare" element={<Compare />}></Route>
 
           <Route path="/checkout" element={<Checkout />}></Route>
 

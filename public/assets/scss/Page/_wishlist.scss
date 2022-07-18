@@ -45,8 +45,12 @@
                       max-width: 100px;
                     }
                     .product__name {
-                      margin-left: 25px;
-                      font-size: 16px;
+                      width: 420px;
+                      display: inline-block;
+                      padding-left: 0px;
+                      font-size: 14px;
+                      line-height: 24px;
+                      margin-left: 14px;
                       color: #666;
                       transition: all 0.2s;
                       font-weight: 600;
@@ -84,7 +88,7 @@
                   }
                 }
                 .action {
-                  width: 330px;
+                  width: 370px;
                   .button__mid_border_color_gray,
                   .button__mid_solid_color_black {
                     display: inline;
@@ -94,6 +98,13 @@
                 }
               }
             }
+          }
+        }
+        .wishlist__empty {
+          p {
+            color: #666;
+            font-size: 20px;
+            margin-top: 20px;
           }
         }
       }

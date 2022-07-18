@@ -1,0 +1,48 @@
+.addToCartProductPopup {
+  .wrapper {
+    .wrapper__body {
+      position: relative;
+      .inner__section {
+        position: fixed;
+        z-index: 99999;
+        border: 1px solid #ddd;
+        background-color: #f5f6f8;
+        padding: 20px;
+        left: 35px;
+        bottom: 50px;
+
+        width: 340px;
+        min-height: 190px;
+        display: none;
+        .introSection {
+          display: flex;
+          justify-content: space-between;
+          .img__file {
+            img {
+              width: 100px;
+            }
+          }
+          .text__file {
+            p {
+              color: #666;
+            }
+          }
+        }
+        .button__section {
+          display: flex;
+          justify-content: space-between;
+          .button__mid_solid_color_black {
+            display: inline-block;
+            padding: 6px 30px;
+          }
+          .button__mid_border_color_gray {
+            display: inline-block;
+          }
+        }
+        &.active {
+          display: block;
+        }
+      }
+    }
+  }
+}

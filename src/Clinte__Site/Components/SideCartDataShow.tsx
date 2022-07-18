@@ -7,6 +7,7 @@ import { UseCartState } from "../ContextAPI/ContextAPIRoot";
 const SideCartDataShow = () => {
   const {
     cartReducer: { cart },
+    removeFromCart,
     cartSideActive,
     cartSide,
   } = UseCartState();
@@ -58,7 +59,10 @@ const SideCartDataShow = () => {
                                   alt=""
                                 />
                                 <span>
-                                  <AiOutlineClose className="close__item" />
+                                  <AiOutlineClose
+                                    className="close__item"
+                                    onClick={() => removeFromCart(value)}
+                                  />
                                 </span>{" "}
                               </div>
                             </div>
@@ -72,12 +76,14 @@ const SideCartDataShow = () => {
                       <div className="button__section">
                         <Link
                           to={"/cart"}
+                          onClick={cartSide}
                           className="button__mid_solid_color_black"
                         >
                           View Cart
                         </Link>
                         <Link
-                          to={"/"}
+                          to={"/checkout"}
+                          onClick={cartSide}
                           className="button__mid_solid_color_black"
                         >
                           CHECKOUT
@@ -85,8 +91,8 @@ const SideCartDataShow = () => {
                       </div>
                     </div>
                   ) : (
-                    <div>
-                      <span>Your cart is currently empty.</span>
+                    <div className="no__product">
+                      <span>No products in the cart.</span>
                     </div>
                   )}
                 </Col>

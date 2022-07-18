@@ -23,6 +23,7 @@ import Product_Data from "../../Script/Product__Data";
 import QuickView from "../../Components/QuickView";
 import { UseCartState } from "../../ContextAPI/ContextAPIRoot";
 import SideCartDataShow from "../../Components/SideCartDataShow";
+import AddToCartProduct__Popup from "../../Components/AddToCartProduct__Popup";
 
 const Header: React.FC = () => {
   const [data, setData] = useState("Eng");
@@ -32,7 +33,7 @@ const Header: React.FC = () => {
   const { logo } = Image__Data();
   const { mixProduct } = Product_Data();
   const {
-    cartReducer: { cart },
+    cartReducer: { cart, wishlist },
     cartSide,
   } = UseCartState();
 
@@ -63,7 +64,15 @@ const Header: React.FC = () => {
       theme: "light",
       allowHTML: true,
     });
-  }, []);
+    tippy("#WishlistTopBar", {
+      content: `Total Wishlist items &nbsp; <span style="color: #F9D342;"> ${wishlist.length} </span>`,
+      placement: "bottom",
+      arrow: true,
+      animation: "scale-extreme",
+      theme: "light",
+      allowHTML: true,
+    });
+  }, [wishlist]);
 
   return (
     <section className="header__section">
@@ -123,8 +132,8 @@ const Header: React.FC = () => {
                           ))}
                         </ul>
                       </li>
-                      <li>
-                        <Link to="/">
+                      <li id="WishlistTopBar">
+                        <Link to="/wishlist">
                           <MdFavorite className="icon mr-3" /> Wishlist
                         </Link>
                       </li>
@@ -430,7 +439,7 @@ const Header: React.FC = () => {
 
       <QuickView />
 
-      {/* Side Cart Data Show */}
+      {/* ============ Side Cart Data Show =============*/}
 
       <SideCartDataShow />
     </section>

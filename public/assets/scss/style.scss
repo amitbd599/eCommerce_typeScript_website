@@ -82,6 +82,7 @@ STYLE SHEET INDEX END
 @import "Page/shop";
 @import "Page/single__product";
 @import "Page/wishlist";
+@import "Page/compare";
 
 /****************************************************
                  Components
@@ -96,6 +97,12 @@ STYLE SHEET INDEX END
 @import "Components/subscribe__section";
 @import "Components/quick__view";
 @import "Components/side_Cart_Data_Show";
+
+/****************************************************
+                 Tost Massage
+*****************************************************/
+
+@import "Common/TostMasage/addToCartTost";
 
 /****************************************************
                  Widget Styles

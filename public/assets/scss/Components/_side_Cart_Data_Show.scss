@@ -54,6 +54,9 @@
           }
           .items {
             margin-top: 25px;
+            overflow: auto;
+            padding: 12px;
+            max-height: 60vh;
             .item__card {
               display: flex;
               justify-content: space-between;
@@ -104,6 +107,23 @@
               font-size: 18px;
               font-weight: 700;
             }
+          }
+          .button__section {
+            display: flex;
+            justify-content: space-between;
+            .button__mid_solid_color_black {
+              padding: 10px 35px;
+              display: inline-block;
+            }
+          }
+        }
+        .no__product {
+          display: flex;
+          justify-content: center;
+          margin-top: 24px;
+          span {
+            font-size: 20px;
+            color: #666;
           }
         }
       }

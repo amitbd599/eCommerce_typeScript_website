@@ -14,6 +14,7 @@ import Select from "react-select";
 import { City, Area } from "../Script/VariableDesignItems";
 import { MdClose } from "react-icons/md";
 import { UseCartState } from "../ContextAPI/ContextAPIRoot";
+import { ToastContainer } from "react-toastify";
 
 const Cart: React.FC = () => {
   const {
@@ -22,12 +23,14 @@ const Cart: React.FC = () => {
     addToCart,
     decreaseValue,
     removeFromCart,
+    removeAllFromCart,
   } = UseCartState();
 
   console.log(cart);
 
   return (
     <>
+      <ToastContainer hideProgressBar={true} />
       {/* Helmet Intro Start */}
 
       <Meta_Data title={"Cart"} />
@@ -53,61 +56,61 @@ const Cart: React.FC = () => {
             <Container>
               <Row>
                 <Col lg={8} className="left__side">
-                  <div className="inner__body">
-                    <div>
-                      <p>Total Product select : {cart.length}</p>
-                    </div>
-                    {/* Product Show start */}
-                    <table>
-                      <thead>
-                        <tr>
-                          <th className="w-50">Product</th>
-                          <th className="text-center">Price</th>
-                          <th className="text-center">Quantity</th>
-                          <th className="text-center">Subtotal</th>
-                          <th></th>
-                        </tr>
-                      </thead>
-
-                      <tbody>
-                        {cart.map((value: any) => (
+                  {cart.length > 0 ? (
+                    <div className="inner__body">
+                      {/*======= Product Show start ========*/}
+                      <table>
+                        <thead>
                           <tr>
-                            <td className="d-flex align-items-center">
-                              <div className="img__file">
-                                <img
-                                  className="img-fluid"
-                                  src={value.img}
-                                  alt=""
-                                />
-                                <MdClose
-                                  className="close__button"
-                                  onClick={() => removeFromCart(value)}
-                                />
-                              </div>
-
-                              <p className="pl-15">{value.name}</p>
-                            </td>
-                            <td className="text-center">${value.price}</td>
-                            <td className="text-center">
-                              <div className="count">
-                                <button className="minus">
-                                  <FiMinus
-                                    onClick={() => decreaseValue(value.id)}
-                                  />
-                                </button>
-                                <span>{value.qty}</span>
-                                <button className="plus">
-                                  <FiPlus />
-                                </button>
-                              </div>
-                            </td>
-                            <td className="text-center">$ 000.00</td>
+                            <th className="w-50">Product</th>
+                            <th className="text-center">Price</th>
+                            <th className="text-center">Quantity</th>
+                            <th className="text-center">Subtotal</th>
+                            <th></th>
                           </tr>
-                        ))}
-                      </tbody>
+                        </thead>
 
-                      <tbody>
-                        {/* {productData.map((value) => {
+                        <tbody>
+                          {cart.map((value: any) => (
+                            <tr>
+                              <td className="d-flex ">
+                                <div className="img__file">
+                                  <img
+                                    className="img-fluid"
+                                    src={value.img}
+                                    alt=""
+                                  />
+                                  <MdClose
+                                    className="close__button"
+                                    onClick={() => removeFromCart(value)}
+                                  />
+                                </div>
+
+                                <div className="text__file">
+                                  <span>{value.name}</span>
+                                </div>
+                              </td>
+                              <td className="text-center">${value.price}</td>
+                              <td className="text-center">
+                                <div className="count">
+                                  <button className="minus">
+                                    <FiMinus
+                                      onClick={() => decreaseValue(value.id)}
+                                    />
+                                  </button>
+                                  <span>{value.qty}</span>
+                                  <button className="plus">
+                                    <FiPlus />
+                                  </button>
+                                </div>
+                              </td>
+                              <td className="text-center">$ 000.00</td>
+                            </tr>
+                          ))}
+                        </tbody>
+
+                        <tbody>
+                          {/* {productData.map((value) => {
                           return (
                             <ContextAPI.Consumer>
                               {({ hold, hendelIncrease, hendelDecrease }) => (
@@ -119,52 +122,63 @@ const Cart: React.FC = () => {
                             </ContextAPI.Consumer>
                           );
                         })} */}
-                      </tbody>
-                    </table>
-                    {/* Product Show End */}
-                    <hr className="d-md-block d-none" />
-                    {/* Middle Button Section start */}
+                        </tbody>
+                      </table>
+                      {/* Product Show End */}
+                      <hr className="d-md-block d-none" />
+                      {/* Middle Button Section start */}
 
-                    <div className="meddle__section">
-                      <div className="leftButton">
+                      <div className="meddle__section">
+                        <div className="leftButton">
+                          <Link
+                            to={"/"}
+                            className="button__mid_solid_color_black"
+                          >
+                            CONTINUE SHOPPING
+                          </Link>
+                        </div>
+                        <div className="rightButton">
+                          <span
+                            className="button__mid_border_color_gray"
+                            onClick={removeAllFromCart}
+                          >
+                            CLEAR CART
+                          </span>
+                          <Link
+                            to={"/"}
+                            className="button__mid_border_color_gray"
+                          >
+                            UPDATE CART
+                          </Link>
+                        </div>
+                      </div>
+                      {/* Middle Button Section End */}
+                      {/* Coupon section start */}
+                      <div className="coupon__section">
+                        <h3>COUPON DISCOUNT</h3>
+                        <input
+                          type="text"
+                          placeholder="Enter coupon code here..."
+                        />
+
                         <Link
                           to={"/"}
                           className="button__mid_solid_color_black"
                         >
-                          CONTINUE SHOPPING
+                          APPLY COUPON
                         </Link>
                       </div>
-                      <div className="rightButton">
-                        <Link
-                          to={"/"}
-                          className="button__mid_border_color_gray"
-                        >
-                          CLEAR CART
-                        </Link>
-                        <Link
-                          to={"/"}
-                          className="button__mid_border_color_gray"
-                        >
-                          UPDATE CART
-                        </Link>
-                      </div>
-                    </div>
-                    {/* Middle Button Section End */}
-                    {/* Coupon section start */}
-                    <div className="coupon__section">
-                      <h3>COUPON DISCOUNT</h3>
-                      <input
-                        type="text"
-                        placeholder="Enter coupon code here..."
-                      />
 
+                      {/* Coupon section End */}
+                    </div>
+                  ) : (
+                    <div className="cart__empty">
+                      <p>Total Product select : {cart.length}</p>
                       <Link to={"/"} className="button__mid_solid_color_black">
-                        APPLY COUPON
+                        Continue browsing
                       </Link>
                     </div>
-
-                    {/* Coupon section End */}
-                  </div>
+                  )}
                 </Col>
                 <Col lg={4} className="right__side">
                   <div className="inner__body">
