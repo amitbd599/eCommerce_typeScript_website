@@ -17,10 +17,19 @@ import Category from "../Script/Category";
 import Footer from "../Common/Footer/Footer";
 import { FaAlignJustify, FaList, FaMinus, FaPlus } from "react-icons/fa";
 import { MdStarRate } from "react-icons/md";
-import { BsHandbag, BsHeart, BsSearch, BsShuffle } from "react-icons/bs";
+import {
+  BsCartDash,
+  BsFillCartCheckFill,
+  BsHandbag,
+  BsHeart,
+  BsSearch,
+  BsShuffle,
+} from "react-icons/bs";
 import ShopProduct from "../Script/ShopProduct";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
+import { UseCartState } from "../ContextAPI/ContextAPIRoot";
+import { ToastContainer } from "react-toastify";
 
 const size = [
   { value: "Default sorting", label: "Default sorting" },
@@ -39,6 +48,17 @@ const show = [
 ];
 
 const ShopPage: React.FC = () => {
+  const {
+    cartReducer: { cart, product, wishlist, compare },
+    removeFromCart,
+    addToWishlist,
+    removeFromWishlist,
+    addToCart,
+    quickViewClick,
+    addToCompare,
+    removeFromCompare,
+  } = UseCartState();
+
   const marks = {
     0: "10",
     20: "80",
@@ -49,6 +69,7 @@ const ShopPage: React.FC = () => {
   };
   return (
     <Fragment>
+      <ToastContainer hideProgressBar={true} />
       {/* Helmet Intro Start */}
 
       <Meta_Data title={"Shop"} />
@@ -408,7 +429,7 @@ const ShopPage: React.FC = () => {
                   <div className="product__items">
                     <div className="product__items__inner">
                       <Row>
-                        {ShopProduct.map((value: any, index: any) => (
+                        {product.map((value: any, index: any) => (
                           <Col
                             key={index}
                             lg={4}
@@ -451,21 +472,79 @@ const ShopPage: React.FC = () => {
                                     <MdStarRate className="icon" />
                                   </div>
                                   <div className="handbagFill">
-                                    <BsHandbag />
+                                    {cart.some(
+                                      (p: any) => p.id === value.id
+                                    ) ? (
+                                      <div>
+                                        <BsFillCartCheckFill
+                                          className="BsFillCartCheckFill"
+                                          onClick={() => removeFromCart(value)}
+                                        />
+                                      </div>
+                                    ) : (
+                                      <div>
+                                        <div>
+                                          <BsCartDash
+                                            className="BsCartDash"
+                                            onClick={() => addToCart(value)}
+                                          />
+                                        </div>
+                                      </div>
+                                    )}
                                   </div>
                                 </div>
 
                                 <div className="overlay__icons">
                                   <div className="overlay__icons__body">
-                                    <Link to={"/"} className="icon__body">
-                                      <BsHeart className="icon" />
-                                    </Link>
-                                    <Link to={"/"} className="icon__body">
-                                      <BsShuffle className="icon" />
-                                    </Link>
-                                    <Link to={"/"} className="icon__body">
+                                    {wishlist.some(
+                                      (p: any) => p.id === value.id
+                                    ) ? (
+                                      <button
+                                        className="icon__body active"
+                                        id="WishList"
+                                        onClick={() =>
+                                          removeFromWishlist(value)
+                                        }
+                                      >
+                                        <BsHeart className="icon" />
+                                      </button>
+                                    ) : (
+                                      <button
+                                        className="icon__body "
+                                        id="WishList"
+                                        onClick={() => addToWishlist(value)}
+                                      >
+                                        <BsHeart className="icon" />
+                                      </button>
+                                    )}
+
+                                    {compare.some(
+                                      (p: any) => p.id === value.id
+                                    ) ? (
+                                      <button
+                                        className="icon__body active"
+                                        id="Compare"
+                                        onClick={() => removeFromCompare(value)}
+                                      >
+                                        <BsShuffle className="icon" />
+                                      </button>
+                                    ) : (
+                                      <button
+                                        className="icon__body"
+                                        id="Compare"
+                                        onClick={() => addToCompare(value)}
+                                      >
+                                        <BsShuffle className="icon" />
+                                      </button>
+                                    )}
+
+                                    <button
+                                      className="icon__body"
+                                      id="QuickView"
+                                      onClick={() => quickViewClick(value)}
+                                    >
                                       <BsSearch className="icon" />
-                                    </Link>
+                                    </button>
                                   </div>
                                 </div>
                               </div>

@@ -9,10 +9,11 @@ import useHelperFunction from "../Hooks/useHelperFunction";
 import { Size, Color } from "../Script/VariableDesignItems";
 const QuickView: React.FC = () => {
   const {
-    cartReducer: { quickViewData },
+    cartReducer: { quickViewData, cart },
     quickViewClick,
     activeQuickViewClick,
     addToCart,
+    removeFromCart,
   } = UseCartState();
 
   var settings = {
@@ -232,13 +233,21 @@ const QuickView: React.FC = () => {
                                   <button>+</button>
                                 </div>
                                 <div className="button__cart">
-                                  <Link
-                                    to={"/"}
-                                    className="button__mid_solid_color_black"
-                                    onClick={() => addToCart(value)}
-                                  >
-                                    ADD TO CART
-                                  </Link>
+                                  {cart.some((p: any) => p.id === value.id) ? (
+                                    <button
+                                      className="button__mid_solid_color_black"
+                                      onClick={() => removeFromCart(value)}
+                                    >
+                                      REMOVE FROM CART
+                                    </button>
+                                  ) : (
+                                    <button
+                                      className="button__mid_solid_color_black"
+                                      onClick={() => addToCart(value)}
+                                    >
+                                      ADD TO CART
+                                    </button>
+                                  )}
                                 </div>
                               </div>
 

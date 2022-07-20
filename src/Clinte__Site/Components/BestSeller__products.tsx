@@ -6,11 +6,13 @@ import Slider from "react-slick";
 import Slider__Setting from "../Script/Slider__Setting";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import ShopProduct from "../Script/ShopProduct";
+import { UseCartState } from "../ContextAPI/ContextAPIRoot";
 const BestSeller__products = () => {
   const { bestSeller__product__setting } = Slider__Setting();
   const bestSellingProduct = ShopProduct.slice(0, 10);
   const womenItems = ShopProduct.slice(10, 15);
   const babyItem = ShopProduct.slice(15, 20);
+
   return (
     <>
       <div className="bestSeller__product">
@@ -37,9 +39,6 @@ const BestSeller__products = () => {
                             <BsFillStarFill className="icon" />
                             <BsFillStarFill className="icon" />
                           </div>
-                          <Link to={"/"} className="bag">
-                            <BsHandbag className="icon" />
-                          </Link>
                         </div>
                         <div className="img_file">
                           <img

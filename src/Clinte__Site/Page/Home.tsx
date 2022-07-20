@@ -114,7 +114,7 @@ const Home: React.FC = () => {
               <div className="text__inner">
                 <h2>Score An Extra 30% Off Your Entire Order</h2>
 
-                <Link className="button__mid_solid_color_black" to={"/"}>
+                <Link className="button__mid_solid_color_black" to={"/shop"}>
                   SHOP NOW
                 </Link>
               </div>

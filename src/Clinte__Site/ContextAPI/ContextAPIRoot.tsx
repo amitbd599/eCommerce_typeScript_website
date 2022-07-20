@@ -1,15 +1,15 @@
-import React, { createContext, useReducer, useState, useContext } from "react";
-import { shoppingCartReducer } from "./ReducerData";
+import React, { useReducer, useState, useContext } from "react";
+import { filterItemsReducer, shoppingCartReducer } from "./ReducerData";
 import ShopProduct from "../Script/ShopProduct";
 import AddToCartTost from "../Common/TostMassage/AddToCartTost";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import AddWishlistTost from "../Common/TostMassage/AddWishlistTost";
 
 const ContextAPI = React.createContext<any>(null);
 
 const ContextAPIRoot = ({ children }: any) => {
   // =====================
-  const [Popup, setPopup] = useState(false);
+
   const [cartReducer, dispatch] = useReducer(shoppingCartReducer, {
     product: ShopProduct,
     cart: [],
@@ -17,10 +17,23 @@ const ContextAPIRoot = ({ children }: any) => {
     wishlistPopup: [],
     compare: [],
     quickViewData: [],
-    count: 0,
+    count: 3,
+    totalItem: 0,
+    // subTotal: 0,
+    totalAmount: 0,
   });
 
-  //! Add to Cart Onclick
+  const [filterReducer, filterDispatch] = useReducer(filterItemsReducer, {
+    popularity: false,
+    rating: "",
+    latest: "",
+    lowToHigh: "",
+    highToLow: "",
+    searchQuery: "",
+    stock: true,
+  });
+
+  //! Add to Cart
   let addToCart: (value: any) => void;
   addToCart = (value: any) => {
     dispatch({
@@ -68,10 +81,17 @@ const ContextAPIRoot = ({ children }: any) => {
       type: "ADD_TO_WISHLIST",
       payload: value,
     });
-    toast(<AddWishlistTost value={value} />, {
-      position: "bottom-left",
-      autoClose: 4000,
-    });
+    toast(
+      <AddWishlistTost
+        text={"Add to Wish List Product Successful"}
+        link={"/wishlist"}
+        button={"View Wishlist"}
+      />,
+      {
+        position: "bottom-left",
+        autoClose: 4000,
+      }
+    );
   };
 
   //! Remove From Wishlist
@@ -90,10 +110,17 @@ const ContextAPIRoot = ({ children }: any) => {
       type: "ADD_TO_COMPARE",
       payload: value,
     });
-    toast(<AddWishlistTost value={value} />, {
-      position: "bottom-left",
-      autoClose: 4000,
-    });
+    toast(
+      <AddWishlistTost
+        text={"Add to Compare Product Successful"}
+        link={"/compare"}
+        button={"View Compare"}
+      />,
+      {
+        position: "bottom-left",
+        autoClose: 4000,
+      }
+    );
   };
 
   //! Remove From Compare
@@ -114,6 +141,15 @@ const ContextAPIRoot = ({ children }: any) => {
       payload: id,
     });
   };
+  //! IncreaseValue cart items value
+
+  let increaseValue: (id: any) => void;
+  increaseValue = (id: any) => {
+    dispatch({
+      type: "INCREASE_VALUE",
+      payload: id,
+    });
+  };
 
   //! Quick View Function Count Here...
   const [activeQuickViewClick, setActiveQuickViewClick] = useState(false);
@@ -124,6 +160,78 @@ const ContextAPIRoot = ({ children }: any) => {
       payload: value,
     });
     setActiveQuickViewClick(!activeQuickViewClick);
+  };
+
+  // !============ Filter Function =============
+
+  // ! Popularity Filter Function
+
+  let popularityFilterFun: (id: any) => void;
+  popularityFilterFun = (id: any) => {
+    dispatch({
+      type: "POPULARITY",
+      payload: id,
+    });
+  };
+
+  // ! Rating Filter Function
+
+  let ratingFilterFun: (id: any) => void;
+  ratingFilterFun = (id: any) => {
+    dispatch({
+      type: "RATING",
+      payload: id,
+    });
+  };
+
+  // ! Latest Filter Function
+
+  let latestFilterFun: (id: any) => void;
+  latestFilterFun = (id: any) => {
+    dispatch({
+      type: "LATEST",
+      payload: id,
+    });
+  };
+
+  //! Low To High Filter Function
+
+  let lowToHighFilterFun: (id: any) => void;
+  lowToHighFilterFun = (id: any) => {
+    dispatch({
+      type: "LOW_TO_HIGH",
+      payload: id,
+    });
+  };
+
+  // ! High To Low Filter Function
+
+  let highToLowFilterFun: (id: any) => void;
+  highToLowFilterFun = (id: any) => {
+    dispatch({
+      type: "HIGH_TO_LOW",
+      payload: id,
+    });
+  };
+
+  // ! Search Query Filter Function
+
+  let searchQueryFilterFun: (id: any) => void;
+  searchQueryFilterFun = (id: any) => {
+    dispatch({
+      type: "SEARCH_QUERY",
+      payload: id,
+    });
+  };
+
+  // ! Stock Filter Function
+
+  let stockFilterFun: (id: any) => void;
+  stockFilterFun = (id: any) => {
+    dispatch({
+      type: "STOCK",
+      payload: id,
+    });
   };
 
   // =====================
@@ -146,7 +254,6 @@ const ContextAPIRoot = ({ children }: any) => {
         cartReducer,
         dispatch,
         addToCart,
-        decreaseValue,
         removeFromCart,
         removeAllFromCart,
         cartSide,
@@ -157,7 +264,17 @@ const ContextAPIRoot = ({ children }: any) => {
         removeFromWishlist,
         addToCompare,
         removeFromCompare,
-        Popup,
+        decreaseValue,
+        increaseValue,
+        filterReducer,
+        filterDispatch,
+        popularityFilterFun,
+        ratingFilterFun,
+        latestFilterFun,
+        lowToHighFilterFun,
+        highToLowFilterFun,
+        searchQueryFilterFun,
+        stockFilterFun,
       }}
     >
       {children}

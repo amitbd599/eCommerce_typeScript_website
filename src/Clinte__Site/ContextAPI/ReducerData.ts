@@ -1,7 +1,10 @@
 export const shoppingCartReducer = (state: any, action: any) => {
   switch (action.type) {
     case "ADD_TO_CART":
-      return { ...state, cart: [...state.cart, { ...action.payload, qty: 2 }] };
+      return {
+        ...state,
+        cart: [...state.cart, { ...action.payload, qty: 1, subTotal: 0 }],
+      };
 
     case "REMOVE_FROM_CART":
       return {
@@ -45,10 +48,83 @@ export const shoppingCartReducer = (state: any, action: any) => {
         quickViewData: [action.payload],
       };
 
-    case "DECREASE_VALUE":
-      return { ...state, cart: [...state.cart, { qty: 10 }] };
+    case "GET_TOTAL":
+      let { totalItem, totalAmount } = state.cart.reduce(
+        (preValue: any, curValue: any) => {
+          let { qty, price } = curValue;
 
-    // return { ...state, count: state.count + 1 };
+          let updateTotalAmount = price * qty;
+
+          preValue.totalAmount = preValue.totalAmount + updateTotalAmount;
+
+          preValue.totalItem = preValue.totalItem + qty;
+          return preValue;
+        },
+        { totalItem: 0, totalAmount: 0 }
+      );
+      return { ...state, totalItem, totalAmount };
+
+    case "DECREASE_VALUE":
+      let updateDecreaseValue = state.cart
+        .map((curEle: any) => {
+          if (curEle.id === action.payload) {
+            return { ...curEle, qty: curEle.qty - 1 };
+          }
+          return curEle;
+        })
+        .filter((currElem: any) => currElem.qty !== 0);
+
+      return { ...state, cart: updateDecreaseValue };
+
+    case "INCREASE_VALUE":
+      let updateIncreaseValue = state.cart.map((curEle: any) => {
+        if (curEle.id === action.payload) {
+          return { ...curEle, qty: curEle.qty + 1 };
+        }
+        return curEle;
+      });
+
+      return { ...state, cart: updateIncreaseValue };
+
+    default:
+      return state;
+  }
+};
+
+//!  ============== Filter Reducer ===============
+
+export const filterItemsReducer = (state: any, action: any) => {
+  switch (action.type) {
+    case "POPULARITY":
+      return { ...state, popularity: !state.popularity };
+
+    case "RATING":
+      return { ...state, rating: action.payload };
+
+    case "LATEST":
+      return { ...state, latest: action.payload };
+
+    case "LOW_TO_HIGH":
+      return { ...state, lowToHigh: action.payload };
+
+    case "HIGH_TO_LOW":
+      return { ...state, highToLow: action.payload };
+
+    case "SEARCH_QUERY":
+      return { ...state, searchQuery: action.payload };
+    case "STOCK":
+      return { ...state, stock: !state.stock };
+
+    case "CLEAR_FILTER":
+      return {
+        popularity: false,
+        rating: "",
+        latest: "",
+        lowToHigh: "",
+        highToLow: "",
+        searchQuery: "",
+        stock: true,
+      };
 
     default:
       return state;

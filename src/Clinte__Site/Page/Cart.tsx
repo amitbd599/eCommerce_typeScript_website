@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-pascal-case */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import { GrClose } from "react-icons/gr";
@@ -18,15 +18,30 @@ import { ToastContainer } from "react-toastify";
 
 const Cart: React.FC = () => {
   const {
-    cartReducer: { cart, product, count },
+    cartReducer: { cart, product, count, totalItem, totalAmount },
     dispatch,
     addToCart,
     decreaseValue,
+    increaseValue,
     removeFromCart,
     removeAllFromCart,
+    filterReducer: {
+      popularity,
+      rating,
+      latest,
+      lowToHigh,
+      highToLow,
+      searchQuery,
+      stock,
+    },
+    filterDispatch,
   } = UseCartState();
 
-  console.log(cart);
+  useEffect(() => {
+    dispatch({
+      type: "GET_TOTAL",
+    });
+  }, [cart]);
 
   return (
     <>
@@ -93,18 +108,22 @@ const Cart: React.FC = () => {
                               <td className="text-center">${value.price}</td>
                               <td className="text-center">
                                 <div className="count">
-                                  <button className="minus">
-                                    <FiMinus
-                                      onClick={() => decreaseValue(value.id)}
-                                    />
+                                  <button
+                                    className="minus"
+                                    onClick={() => decreaseValue(value.id)}
+                                  >
+                                    <FiMinus />
                                   </button>
                                   <span>{value.qty}</span>
-                                  <button className="plus">
+                                  <button
+                                    className="plus"
+                                    onClick={() => increaseValue(value.id)}
+                                  >
                                     <FiPlus />
                                   </button>
                                 </div>
                               </td>
-                              <td className="text-center">$ 000.00</td>
+                              <td className="text-center">$ {value.price}</td>
                             </tr>
                           ))}
                         </tbody>
@@ -186,7 +205,7 @@ const Cart: React.FC = () => {
                     <hr />
                     <div className="total__price d-flex justify-content-between align-items-center">
                       <h5>Subtotal</h5>
-                      <h5>$100.00</h5>
+                      <h5>$ {totalAmount}</h5>
                     </div>
                     <hr />
                     <div className="shipping">

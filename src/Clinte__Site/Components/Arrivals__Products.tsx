@@ -177,6 +177,7 @@ const Arrivals__Products = () => {
                                   <span
                                     className="icon__body active"
                                     id="Compare"
+                                    onClick={() => removeFromCompare(value)}
                                   >
                                     <BsShuffle className="icon" />
                                   </span>

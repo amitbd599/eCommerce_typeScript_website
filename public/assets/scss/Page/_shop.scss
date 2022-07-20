@@ -287,6 +287,9 @@
                       color: rgb(193 193 193);
                       transition: all 0.3s linear;
                       cursor: pointer;
+                      .BsFillCartCheckFill {
+                        color: var(--primary-theme-color);
+                      }
                       &:hover {
                         color: var(--primary-theme-color);
                       }
@@ -309,6 +312,12 @@
                         opacity: 0;
                         overflow: hidden;
                         transform: translateY(-10px);
+                        &.active {
+                          background-color: var(--primary-theme-color);
+                          .icon {
+                            color: var(--color-white);
+                          }
+                        }
 
                         &:nth-child(1) {
                           transition: all 0.2s linear;
