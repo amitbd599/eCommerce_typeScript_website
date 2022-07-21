@@ -33,7 +33,7 @@ const Header: React.FC = () => {
   const { logo } = Image__Data();
   const { mixProduct } = Product_Data();
   const {
-    cartReducer: { cart, wishlist, totalItem },
+    cartReducer: { cart, wishlist, totalItem, subTotalAmount },
     cartSide,
   } = UseCartState();
 
@@ -331,7 +331,7 @@ const Header: React.FC = () => {
                           <Link to={"/login-register"}>LOGIN</Link>
                         </li>
                         <li className="cart__total" onClick={cartSide}>
-                          CART / <span>$0.00</span>{" "}
+                          CART / <span>$ {subTotalAmount}</span>{" "}
                           <BsFillCartFill className="icon" />
                           <span className="cart__item">{totalItem}</span>
                         </li>

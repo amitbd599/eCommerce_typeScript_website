@@ -22,6 +22,7 @@ import { Toaster } from "react-hot-toast";
 const Arrivals__Products = () => {
   const {
     cartReducer: { cart, product, wishlist, compare },
+    dispatch,
     removeFromCart,
     addToWishlist,
     removeFromWishlist,
@@ -64,6 +65,12 @@ const Arrivals__Products = () => {
       allowHTML: true,
     });
   }, []);
+
+  useEffect(() => {
+    dispatch({
+      type: "GET_TOTAL",
+    });
+  }, [cart]);
 
   const Trending = ShopProduct.slice(0, 8);
   const freeShipping = ShopProduct.slice(8, 16);

@@ -1,4 +1,4 @@
-import React, { Fragment, useRef, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Header from "../Common/Header/Header";
 import Intro__Section from "../Common/IntroSection/Intro__Section";
@@ -32,12 +32,12 @@ import { UseCartState } from "../ContextAPI/ContextAPIRoot";
 import { ToastContainer } from "react-toastify";
 
 const sortingItems = [
-  { value: "Default sorting", label: "Default sorting" },
+  { value: "Default_sorting", label: "Default sorting" },
   { value: "Popularity", label: "Popularity" },
-  { value: "Average rating", label: "Average rating" },
-  { value: "Sort by latest", label: "Sort by latest" },
-  { value: "Price low to high", label: "Price low to high" },
-  { value: "Price high to low", label: "Price high to low" },
+  { value: "Average_rating", label: "Average rating" },
+  { value: "Sort_by_latest", label: "Sort by latest" },
+  { value: "Price_low_to_high", label: "Price low to high" },
+  { value: "Price_high_to_low", label: "Price high to low" },
 ];
 const show = [
   { value: "Show 6", label: "Show 6 " },
@@ -74,19 +74,27 @@ const ShopPage: React.FC = () => {
 
   const handleChange = (e: any) => {
     setSelectedOptions(e.value);
+  };
+
+  useEffect(() => {
     sortDispatch({
       type: "LOW_TO_HIGH",
       payload: selectedOptions,
     });
-  };
+  }, [selectedOptions]);
 
   console.log(selectedOptions);
 
   const transformProducts = () => {
     let sortProduct = product;
-    if (sort === "Price low to high") {
-      sortProduct = sortProduct.sort((a: any, b: any) =>
-        sort === "Price low to high" ? a.price - b.price : b.price - a.price
+    if (sort === "Price_low_to_high") {
+      sortProduct = sortProduct.sort(
+        (a: any, b: any) => sort === "Price_low_to_high" && a.price - b.price
+      );
+    }
+    if (sort === "Price_high_to_low") {
+      sortProduct = sortProduct.sort(
+        (a: any, b: any) => sort === "Price_high_to_low" && b.price - a.price
       );
     }
     return sortProduct;
@@ -129,17 +137,6 @@ const ShopPage: React.FC = () => {
                   <div className="filter">
                     <span>Filter :</span>
                     <span>Clean All</span>
-                    <input
-                      type="checkbox"
-                      name=""
-                      id=""
-                      onChange={() =>
-                        sortDispatch({
-                          type: "LOW_TO_HIGH",
-                          payload: "lowToHigh",
-                        })
-                      }
-                    />
                   </div>
                   <div className="accordion__body">
                     <Accordion
@@ -341,11 +338,12 @@ const ShopPage: React.FC = () => {
                     <div className="sort__intro__inner">
                       <div className="sort__title">
                         <span>Sort By :</span>
-                        <span>{selectedOptions}</span>
                       </div>
                       <div className="select__data__left">
                         <Select
                           className="select__size"
+                          // onChange={handleChange}
+
                           onChange={handleChange}
                           defaultValue={sortingItems[0]}
                           options={sortingItems}
