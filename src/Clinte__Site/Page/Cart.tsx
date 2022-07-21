@@ -18,14 +18,14 @@ import { ToastContainer } from "react-toastify";
 
 const Cart: React.FC = () => {
   const {
-    cartReducer: { cart, product, count, totalItem, totalAmount },
+    cartReducer: { cart, product, count, totalItem, subTotalAmount },
     dispatch,
     addToCart,
     decreaseValue,
     increaseValue,
     removeFromCart,
     removeAllFromCart,
-    filterReducer: {
+    sortReducer: {
       popularity,
       rating,
       latest,
@@ -34,7 +34,7 @@ const Cart: React.FC = () => {
       searchQuery,
       stock,
     },
-    filterDispatch,
+    sortDispatch,
   } = UseCartState();
 
   useEffect(() => {
@@ -123,7 +123,9 @@ const Cart: React.FC = () => {
                                   </button>
                                 </div>
                               </td>
-                              <td className="text-center">$ {value.price}</td>
+                              <td className="text-center">
+                                $ {value.price * value.qty}
+                              </td>
                             </tr>
                           ))}
                         </tbody>
@@ -205,7 +207,7 @@ const Cart: React.FC = () => {
                     <hr />
                     <div className="total__price d-flex justify-content-between align-items-center">
                       <h5>Subtotal</h5>
-                      <h5>$ {totalAmount}</h5>
+                      <h5>$ {subTotalAmount}</h5>
                     </div>
                     <hr />
                     <div className="shipping">
@@ -377,7 +379,7 @@ const Cart: React.FC = () => {
                     <hr />
                     <div className="total__price d-flex justify-content-between align-items-center">
                       <h5>Total</h5>
-                      <h5>$100.00</h5>
+                      <h5>$ {subTotalAmount}</h5>
                     </div>
                     <div>
                       <Link to={"/"} className="button__mid_solid_color_black">

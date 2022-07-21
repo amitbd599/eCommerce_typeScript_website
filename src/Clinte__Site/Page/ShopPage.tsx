@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useRef, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Header from "../Common/Header/Header";
 import Intro__Section from "../Common/IntroSection/Intro__Section";
@@ -31,7 +31,7 @@ import "rc-slider/assets/index.css";
 import { UseCartState } from "../ContextAPI/ContextAPIRoot";
 import { ToastContainer } from "react-toastify";
 
-const size = [
+const sortingItems = [
   { value: "Default sorting", label: "Default sorting" },
   { value: "Popularity", label: "Popularity" },
   { value: "Average rating", label: "Average rating" },
@@ -57,6 +57,8 @@ const ShopPage: React.FC = () => {
     quickViewClick,
     addToCompare,
     removeFromCompare,
+    sortReducer: { popularity, rating, latest, sort },
+    sortDispatch,
   } = UseCartState();
 
   const marks = {
@@ -67,6 +69,29 @@ const ShopPage: React.FC = () => {
     80: "250",
     100: "1000",
   };
+
+  const [selectedOptions, setSelectedOptions] = useState([]);
+
+  const handleChange = (e: any) => {
+    setSelectedOptions(e.value);
+    sortDispatch({
+      type: "LOW_TO_HIGH",
+      payload: selectedOptions,
+    });
+  };
+
+  console.log(selectedOptions);
+
+  const transformProducts = () => {
+    let sortProduct = product;
+    if (sort === "Price low to high") {
+      sortProduct = sortProduct.sort((a: any, b: any) =>
+        sort === "Price low to high" ? a.price - b.price : b.price - a.price
+      );
+    }
+    return sortProduct;
+  };
+
   return (
     <Fragment>
       <ToastContainer hideProgressBar={true} />
@@ -104,6 +129,17 @@ const ShopPage: React.FC = () => {
                   <div className="filter">
                     <span>Filter :</span>
                     <span>Clean All</span>
+                    <input
+                      type="checkbox"
+                      name=""
+                      id=""
+                      onChange={() =>
+                        sortDispatch({
+                          type: "LOW_TO_HIGH",
+                          payload: "lowToHigh",
+                        })
+                      }
+                    />
                   </div>
                   <div className="accordion__body">
                     <Accordion
@@ -305,12 +341,14 @@ const ShopPage: React.FC = () => {
                     <div className="sort__intro__inner">
                       <div className="sort__title">
                         <span>Sort By :</span>
+                        <span>{selectedOptions}</span>
                       </div>
                       <div className="select__data__left">
                         <Select
                           className="select__size"
-                          defaultValue={size[0]}
-                          options={size}
+                          onChange={handleChange}
+                          defaultValue={sortingItems[0]}
+                          options={sortingItems}
                           styles={{
                             option: (provided, state) => ({
                               ...provided,
@@ -429,7 +467,7 @@ const ShopPage: React.FC = () => {
                   <div className="product__items">
                     <div className="product__items__inner">
                       <Row>
-                        {product.map((value: any, index: any) => (
+                        {transformProducts().map((value: any, index: any) => (
                           <Col
                             key={index}
                             lg={4}

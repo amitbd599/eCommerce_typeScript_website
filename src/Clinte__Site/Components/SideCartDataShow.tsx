@@ -6,11 +6,13 @@ import { Link } from "react-router-dom";
 import { UseCartState } from "../ContextAPI/ContextAPIRoot";
 const SideCartDataShow = () => {
   const {
-    cartReducer: { cart },
+    cartReducer: { cart, subTotalAmount },
     removeFromCart,
     cartSideActive,
     cartSide,
   } = UseCartState();
+
+  console.log(subTotalAmount);
 
   return (
     <div
@@ -41,10 +43,12 @@ const SideCartDataShow = () => {
                         {cart.map((value: any) => (
                           <div className="item__card">
                             <div className="left__side">
-                              <p className="title">{value.name.slice(0, 50)}</p>
+                              <p className="title">
+                                {value.name.slice(0, 50)} . . .
+                              </p>
                               <p className="price">
                                 {" "}
-                                <span>1</span>{" "}
+                                <span>{value.qty}</span>{" "}
                                 <span>
                                   <AiOutlineClose />
                                 </span>{" "}
@@ -71,7 +75,7 @@ const SideCartDataShow = () => {
                       </div>
                       <div className="sub__total">
                         <span>Subtotal:</span>
-                        <span>$ 200</span>
+                        <span>$ {subTotalAmount}</span>
                       </div>
                       <div className="button__section">
                         <Link

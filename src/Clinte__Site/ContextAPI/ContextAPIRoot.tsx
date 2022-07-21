@@ -1,5 +1,5 @@
 import React, { useReducer, useState, useContext } from "react";
-import { filterItemsReducer, shoppingCartReducer } from "./ReducerData";
+import { sortItemsReducer, shoppingCartReducer } from "./ReducerData";
 import ShopProduct from "../Script/ShopProduct";
 import AddToCartTost from "../Common/TostMassage/AddToCartTost";
 import { toast } from "react-toastify";
@@ -8,8 +8,6 @@ import AddWishlistTost from "../Common/TostMassage/AddWishlistTost";
 const ContextAPI = React.createContext<any>(null);
 
 const ContextAPIRoot = ({ children }: any) => {
-  // =====================
-
   const [cartReducer, dispatch] = useReducer(shoppingCartReducer, {
     product: ShopProduct,
     cart: [],
@@ -19,19 +17,16 @@ const ContextAPIRoot = ({ children }: any) => {
     quickViewData: [],
     count: 3,
     totalItem: 0,
-    // subTotal: 0,
-    totalAmount: 0,
+    subTotalAmount: 0,
   });
 
-  const [filterReducer, filterDispatch] = useReducer(filterItemsReducer, {
+  const [sortReducer, sortDispatch] = useReducer(sortItemsReducer, {
     popularity: false,
     rating: "",
     latest: "",
-    lowToHigh: "",
-    highToLow: "",
-    searchQuery: "",
-    stock: true,
   });
+
+  console.log(sortReducer);
 
   //! Add to Cart
   let addToCart: (value: any) => void;
@@ -234,20 +229,8 @@ const ContextAPIRoot = ({ children }: any) => {
     });
   };
 
-  // =====================
+  //! =========== Return Main Context File ==========
 
-  // Cart Item IncreaseValue and DecreaseValue add Function
-  const [hold, setHold] = useState(0); // ------
-  let hendelIncrease: () => void;
-  hendelIncrease = () => {
-    setHold(hold + 1);
-  };
-  let hendelDecrease: () => void;
-  hendelDecrease = () => {
-    if (hold > 0) {
-      setHold(hold - 1);
-    }
-  };
   return (
     <ContextAPI.Provider
       value={{
@@ -266,8 +249,8 @@ const ContextAPIRoot = ({ children }: any) => {
         removeFromCompare,
         decreaseValue,
         increaseValue,
-        filterReducer,
-        filterDispatch,
+        sortReducer,
+        sortDispatch,
         popularityFilterFun,
         ratingFilterFun,
         latestFilterFun,

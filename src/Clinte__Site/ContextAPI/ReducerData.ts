@@ -49,20 +49,22 @@ export const shoppingCartReducer = (state: any, action: any) => {
       };
 
     case "GET_TOTAL":
-      let { totalItem, totalAmount } = state.cart.reduce(
+      let { totalItem, subTotalAmount } = state.cart.reduce(
         (preValue: any, curValue: any) => {
           let { qty, price } = curValue;
 
-          let updateTotalAmount = price * qty;
+          let updatesubTotalAmount = price * qty;
 
-          preValue.totalAmount = preValue.totalAmount + updateTotalAmount;
+          preValue.subTotalAmount =
+            preValue.subTotalAmount + updatesubTotalAmount;
 
           preValue.totalItem = preValue.totalItem + qty;
+
           return preValue;
         },
-        { totalItem: 0, totalAmount: 0 }
+        { totalItem: 0, subTotalAmount: 0 }
       );
-      return { ...state, totalItem, totalAmount };
+      return { ...state, totalItem, subTotalAmount };
 
     case "DECREASE_VALUE":
       let updateDecreaseValue = state.cart
@@ -91,9 +93,9 @@ export const shoppingCartReducer = (state: any, action: any) => {
   }
 };
 
-//!  ============== Filter Reducer ===============
+//!  ============== Sorting Reducer ===============
 
-export const filterItemsReducer = (state: any, action: any) => {
+export const sortItemsReducer = (state: any, action: any) => {
   switch (action.type) {
     case "POPULARITY":
       return { ...state, popularity: !state.popularity };
@@ -105,17 +107,12 @@ export const filterItemsReducer = (state: any, action: any) => {
       return { ...state, latest: action.payload };
 
     case "LOW_TO_HIGH":
-      return { ...state, lowToHigh: action.payload };
+      return { ...state, sort: action.payload };
 
     case "HIGH_TO_LOW":
-      return { ...state, highToLow: action.payload };
+      return { ...state, sort: action.payload };
 
-    case "SEARCH_QUERY":
-      return { ...state, searchQuery: action.payload };
-    case "STOCK":
-      return { ...state, stock: !state.stock };
-
-    case "CLEAR_FILTER":
+    case "DEFAULT_FILTER":
       return {
         popularity: false,
         rating: "",
