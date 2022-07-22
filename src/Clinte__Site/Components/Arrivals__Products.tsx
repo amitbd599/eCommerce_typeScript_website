@@ -19,6 +19,7 @@ import tippy from "tippy.js";
 import { UseCartState } from "../ContextAPI/ContextAPIRoot";
 import { ToastContainer } from "react-toastify";
 import { Toaster } from "react-hot-toast";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 const Arrivals__Products = () => {
   const {
     cartReducer: { cart, product, wishlist, compare },
@@ -33,11 +34,6 @@ const Arrivals__Products = () => {
   } = UseCartState();
 
   //! ====================
-
-  let popup: () => void;
-  popup = () => {
-    alert("Hello");
-  };
 
   useEffect(() => {
     tippy("#WishList", {
@@ -131,11 +127,20 @@ const Arrivals__Products = () => {
                                 </span>
                               </p>
                               <div className="rate">
+                                {[...Array(5)].map((_: any, i: any) => (
+                                  <span key={i}>
+                                    {value.rating > i ? (
+                                      <AiFillStar className="icon" />
+                                    ) : (
+                                      <AiOutlineStar className="icon" />
+                                    )}
+                                  </span>
+                                ))}
+
+                                {/* <MdStarRate className="icon" />
                                 <MdStarRate className="icon" />
                                 <MdStarRate className="icon" />
-                                <MdStarRate className="icon" />
-                                <MdStarRate className="icon" />
-                                <MdStarRate className="icon" />
+                                <MdStarRate className="icon" /> */}
                               </div>
                               <div className="handbagFill">
                                 {cart.some((p: any) => p.id === value.id) ? (

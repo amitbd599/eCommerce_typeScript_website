@@ -30,11 +30,12 @@ import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import { UseCartState } from "../ContextAPI/ContextAPIRoot";
 import { ToastContainer } from "react-toastify";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 const sortingItems = [
   { value: "Default_sorting", label: "Default sorting" },
   { value: "Popularity", label: "Popularity" },
-  { value: "Average_rating", label: "Average rating" },
+  { value: "Sort_by_rating", label: "Sort by rating" },
   { value: "Sort_by_latest", label: "Sort by latest" },
   { value: "Price_low_to_high", label: "Price low to high" },
   { value: "Price_high_to_low", label: "Price high to low" },
@@ -87,18 +88,42 @@ const ShopPage: React.FC = () => {
 
   const transformProducts = () => {
     let sortProduct = product;
-    if (sort === "Price_low_to_high") {
+    if (sort === "Default_sorting") {
+      sortProduct = sortProduct.sort(
+        (a: any, b: any) => sort === "Default_sorting" && a.price - b.price
+      );
+      return sortProduct;
+    } else if (sort === "Price_low_to_high") {
       sortProduct = sortProduct.sort(
         (a: any, b: any) => sort === "Price_low_to_high" && a.price - b.price
       );
-    }
-    if (sort === "Price_high_to_low") {
+      return sortProduct;
+    } else if (sort === "Price_high_to_low") {
       sortProduct = sortProduct.sort(
         (a: any, b: any) => sort === "Price_high_to_low" && b.price - a.price
       );
+      return sortProduct;
+    } else if (sort === "Sort_by_rating") {
+      sortProduct = sortProduct.sort(
+        (a: any, b: any) => sort === "Sort_by_rating" && b.rating - a.rating
+      );
+      return sortProduct;
+    } else if (sort === "Sort_by_latest") {
+      sortProduct = sortProduct.sort(
+        (a: any, b: any) => sort === "Sort_by_latest" && b.date - a.date
+      );
+      return sortProduct;
+    } else if (sort === "Popularity") {
+      sortProduct = sortProduct.sort(
+        (a: any, b: any) => sort === "Popularity" && b.popularity - a.popularity
+      );
+      return sortProduct;
+    } else {
+      return sortProduct;
     }
-    return sortProduct;
   };
+
+  console.log(transformProducts());
 
   return (
     <Fragment>
@@ -501,11 +526,15 @@ const ShopPage: React.FC = () => {
                                     </span>
                                   </p>
                                   <div className="rate">
-                                    <MdStarRate className="icon" />
-                                    <MdStarRate className="icon" />
-                                    <MdStarRate className="icon" />
-                                    <MdStarRate className="icon" />
-                                    <MdStarRate className="icon" />
+                                    {[...Array(5)].map((_: any, i: any) => (
+                                      <span key={i}>
+                                        {value.rating > i ? (
+                                          <AiFillStar className="icon" />
+                                        ) : (
+                                          <AiOutlineStar className="icon" />
+                                        )}
+                                      </span>
+                                    ))}
                                   </div>
                                   <div className="handbagFill">
                                     {cart.some(

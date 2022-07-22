@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { IoMdClose } from "react-icons/io";
 import { Link } from "react-router-dom";
@@ -13,11 +13,18 @@ import Product__Slider__One from "../Widget/Slider/Product__Slider__One";
 const Wishlist: React.FC = () => {
   const {
     cartReducer: { wishlist, cart },
+    dispatch,
     addToCart,
     removeFromCart,
     quickViewClick,
     removeFromWishlist,
   } = UseCartState();
+
+  useEffect(() => {
+    dispatch({
+      type: "GET_TOTAL",
+    });
+  }, [cart]);
   return (
     <>
       <ToastContainer hideProgressBar={true} />

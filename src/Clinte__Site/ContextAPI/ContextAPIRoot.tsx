@@ -20,11 +20,7 @@ const ContextAPIRoot = ({ children }: any) => {
     subTotalAmount: 0,
   });
 
-  const [sortReducer, sortDispatch] = useReducer(sortItemsReducer, {
-    popularity: false,
-    rating: "",
-    latest: "",
-  });
+  const [sortReducer, sortDispatch] = useReducer(sortItemsReducer, {});
 
   console.log(sortReducer);
 
