@@ -31,12 +31,13 @@ import "rc-slider/assets/index.css";
 import { UseCartState } from "../ContextAPI/ContextAPIRoot";
 import { ToastContainer } from "react-toastify";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import TextField from "@mui/material/TextField";
 
 const sortingItems = [
-  { value: "Default_sorting", label: "Default sorting" },
+  { value: "Sort_by_latest", label: "Sort by latest" },
   { value: "Popularity", label: "Popularity" },
   { value: "Sort_by_rating", label: "Sort by rating" },
-  { value: "Sort_by_latest", label: "Sort by latest" },
+
   { value: "Price_low_to_high", label: "Price low to high" },
   { value: "Price_high_to_low", label: "Price high to low" },
 ];
@@ -58,7 +59,7 @@ const ShopPage: React.FC = () => {
     quickViewClick,
     addToCompare,
     removeFromCompare,
-    sortReducer: { popularity, rating, latest, sort },
+    sortReducer: { sort, filterCategory, filterPrice, clearFilter },
     sortDispatch,
   } = UseCartState();
 
@@ -71,7 +72,7 @@ const ShopPage: React.FC = () => {
     100: "1000",
   };
 
-  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [selectedOptions, setSelectedOptions] = useState("Sort_by_latest");
 
   const handleChange = (e: any) => {
     setSelectedOptions(e.value);
@@ -79,18 +80,16 @@ const ShopPage: React.FC = () => {
 
   useEffect(() => {
     sortDispatch({
-      type: "LOW_TO_HIGH",
+      type: "SORT",
       payload: selectedOptions,
     });
   }, [selectedOptions]);
 
-  console.log(selectedOptions);
-
-  const transformProducts = () => {
+  const sortingAllProducts = () => {
     let sortProduct = product;
-    if (sort === "Default_sorting") {
+    if (sort === "Sort_by_latest") {
       sortProduct = sortProduct.sort(
-        (a: any, b: any) => sort === "Default_sorting" && a.price - b.price
+        (a: any, b: any) => sort === "Sort_by_latest" && b.date - a.date
       );
       return sortProduct;
     } else if (sort === "Price_low_to_high") {
@@ -108,11 +107,6 @@ const ShopPage: React.FC = () => {
         (a: any, b: any) => sort === "Sort_by_rating" && b.rating - a.rating
       );
       return sortProduct;
-    } else if (sort === "Sort_by_latest") {
-      sortProduct = sortProduct.sort(
-        (a: any, b: any) => sort === "Sort_by_latest" && b.date - a.date
-      );
-      return sortProduct;
     } else if (sort === "Popularity") {
       sortProduct = sortProduct.sort(
         (a: any, b: any) => sort === "Popularity" && b.popularity - a.popularity
@@ -123,7 +117,112 @@ const ShopPage: React.FC = () => {
     }
   };
 
-  console.log(transformProducts());
+  // const filterCategoryProducts = () => {
+  //   let FilterProducts = sortingAllProducts();
+
+  //   if (filterCategory === "Women's Fashion") {
+  //     FilterProducts = FilterProducts.filter((product: any) => {
+  //       return product.categories === "Women's Fashion";
+  //     });
+  //     return FilterProducts;
+  //   } else if (filterCategory === "Men's Fashion") {
+  //     FilterProducts = FilterProducts.filter((product: any) => {
+  //       return product.categories === "Men's Fashion";
+  //     });
+  //     return FilterProducts;
+  //   } else if (filterCategory === "Phones & Telecommunications") {
+  //     FilterProducts = FilterProducts.filter((product: any) => {
+  //       return product.categories === "Phones & Telecommunications";
+  //     });
+  //     return FilterProducts;
+  //   } else if (filterCategory === "Computer, Office & Security") {
+  //     FilterProducts = FilterProducts.filter((product: any) => {
+  //       return product.categories === "Computer, Office & Security";
+  //     });
+  //     return FilterProducts;
+  //   } else if (filterCategory === "Consumer Electronics") {
+  //     FilterProducts = FilterProducts.filter((product: any) => {
+  //       return product.categories === "Consumer Electronics";
+  //     });
+  //     return FilterProducts;
+  //   } else if (filterCategory === "Jewelry & Watches") {
+  //     FilterProducts = FilterProducts.filter((product: any) => {
+  //       return product.categories === "Jewelry & Watches";
+  //     });
+  //     return FilterProducts;
+  //   } else if (filterCategory === "Home, Pet & Appliances") {
+  //     FilterProducts = FilterProducts.filter((product: any) => {
+  //       return product.categories === "Home, Pet & Appliances";
+  //     });
+  //     return FilterProducts;
+  //   } else if (filterCategory === "Bags & Shoes") {
+  //     FilterProducts = FilterProducts.filter((product: any) => {
+  //       return product.categories === "Bags & Shoes";
+  //     });
+  //     return FilterProducts;
+  //   } else if (filterCategory === "Toys, Kids & Babies") {
+  //     FilterProducts = FilterProducts.filter((product: any) => {
+  //       return product.categories === "Toys, Kids & Babies";
+  //     });
+  //     return FilterProducts;
+  //   } else if (filterCategory === "Beauty, Health & Hair") {
+  //     FilterProducts = FilterProducts.filter((product: any) => {
+  //       return product.categories === "Beauty, Health & Hair";
+  //     });
+  //     return FilterProducts;
+  //   } else if (filterCategory === "Automobiles & Motorcycles") {
+  //     FilterProducts = FilterProducts.filter((product: any) => {
+  //       return product.categories === "Automobiles & Motorcycles";
+  //     });
+  //     return FilterProducts;
+  //   } else if (filterCategory === "Home Improvement & Tools") {
+  //     FilterProducts = FilterProducts.filter((product: any) => {
+  //       return product.categories === "Home Improvement & Tools";
+  //     });
+  //     return FilterProducts;
+  //   } else if (filterCategory === "Clear All Filter") {
+  //     FilterProducts = FilterProducts.filter((product: any) => {
+  //       return product;
+  //     });
+  //     return FilterProducts;
+  //   } else {
+  //     return FilterProducts;
+  //   }
+  // };
+
+  // console.log(filterCategoryProducts());
+
+  //! ==================
+
+  // const [filterItems, setFilterItems] = useState(sortingAllProducts());
+
+  // const filterResult = (value: any) => {
+  //   let FilterProducts = sortingAllProducts();
+  //   let result = FilterProducts.filter((curData: any) => {
+  //     return curData.categories === value;
+  //   });
+  //   return setFilterItems(result);
+  // };
+
+  let filterCategoryFun = () => {
+    let FilterProducts = sortingAllProducts();
+    if (filterCategory) {
+      FilterProducts = FilterProducts.filter((curData: any) => {
+        return curData.categories === filterCategory;
+      });
+    }
+    if (filterPrice) {
+      FilterProducts = FilterProducts.filter((curData: any) => {
+        return curData.price <= filterPrice;
+      });
+    }
+    if (clearFilter === true) {
+      FilterProducts = FilterProducts.filter((product: any) => {
+        return product;
+      });
+    }
+    return FilterProducts;
+  };
 
   return (
     <Fragment>
@@ -161,7 +260,21 @@ const ShopPage: React.FC = () => {
                 <Col lg={3} className="left__side">
                   <div className="filter">
                     <span>Filter :</span>
-                    <span>Clean All</span>
+                    <span>
+                      <input type="radio" name="category" id="clear" />
+                      <label htmlFor="clear"></label>
+                    </span>
+                    <span
+                      onClick={() =>
+                        sortDispatch({
+                          type: "CLEAR_FILTER",
+                          payload: true,
+                        })
+                        
+                      }
+                    >
+                      Clean All
+                    </span>
                   </div>
                   <div className="accordion__body">
                     <Accordion
@@ -179,13 +292,46 @@ const ShopPage: React.FC = () => {
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                          <ul className="items__body">
-                            {Category.map((value, index) => (
+                          <div className="category__items">
+                            {Category.map((value: any, index: number) => (
+                              <div>
+                                <input
+                                  type="radio"
+                                  name="category"
+                                  id={index.toString()}
+                                />
+                                <label
+                                  htmlFor={index.toString()}
+                                  onClick={() =>
+                                    sortDispatch({
+                                      type: "FILTER_CATEGORY",
+                                      payload: value.category,
+                                    })
+                                  }
+                                >
+                                  {value.category}
+                                </label>
+                              </div>
+                            ))}
+                          </div>
+                          {/* <ul className="items__body">
+                            {Category.map((value: any, index: any) => (
                               <li key={index}>
-                                <Link to={"/"}>{value.category}</Link>
+                                <span
+                                  // onClick={() => filterResult(value.category)}
+
+                                  onClick={() =>
+                                    sortDispatch({
+                                      type: "FILTER_CATEGORY",
+                                      payload: value.category,
+                                    })
+                                  }
+                                >
+                                  {value.category}
+                                </span>
                               </li>
                             ))}
-                          </ul>
+                          </ul> */}
                         </AccordionItemPanel>
                       </AccordionItem>
                       <AccordionItem uuid="b">
@@ -199,28 +345,101 @@ const ShopPage: React.FC = () => {
                           </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                          <ul className="items__body">
-                            <li>
-                              <input type="checkbox" name="" id="price_0" />
-                              <label htmlFor="price_0">$0.00 - $100.00</label>
-                            </li>
-                            <li>
-                              <input type="checkbox" name="" id="price_1" />
-                              <label htmlFor="price_1">$100.00 - $200.00</label>
-                            </li>
-                            <li>
-                              <input type="checkbox" name="" id="price_2" />
-                              <label htmlFor="price_2">$200.00 - $300.00</label>
-                            </li>
-                            <li>
-                              <input type="checkbox" name="" id="price_3" />
-                              <label htmlFor="price_3">$300.00 - $500.00</label>
-                            </li>
-                            <li>
-                              <input type="checkbox" name="" id="price_4" />
-                              <label htmlFor="price_4">$500.00</label>
-                            </li>
-                          </ul>
+                          <form action="">
+                            <ul className="items__body">
+                              <li>
+                                <input
+                                  type="radio"
+                                  name="Price__Filter"
+                                  id="price__one"
+                                />
+                                <label
+                                  htmlFor="price__one"
+                                  onClick={() =>
+                                    sortDispatch({
+                                      type: "FILTER_PRICE",
+                                      payload: 100,
+                                    })
+                                  }
+                                >
+                                  $0.00 - $100.00
+                                </label>
+                              </li>
+                              <li>
+                                <input
+                                  type="radio"
+                                  name="Price__Filter"
+                                  id="price_1"
+                                />
+                                <label
+                                  htmlFor="price_1"
+                                  onClick={() =>
+                                    sortDispatch({
+                                      type: "FILTER_PRICE",
+                                      payload: 200,
+                                    })
+                                  }
+                                >
+                                  $100.00 - $200.00
+                                </label>
+                              </li>
+                              <li>
+                                <input
+                                  type="radio"
+                                  name="Price__Filter"
+                                  id="price_2"
+                                />
+                                <label
+                                  htmlFor="price_2"
+                                  onClick={() =>
+                                    sortDispatch({
+                                      type: "FILTER_PRICE",
+                                      payload: 300,
+                                    })
+                                  }
+                                >
+                                  $200.00 - $300.00
+                                </label>
+                              </li>
+                              <li>
+                                <input
+                                  type="radio"
+                                  name="Price__Filter"
+                                  id="price_3"
+                                />
+                                <label
+                                  htmlFor="price_3"
+                                  onClick={() =>
+                                    sortDispatch({
+                                      type: "FILTER_PRICE",
+                                      payload: 500,
+                                    })
+                                  }
+                                >
+                                  $300.00 - $500.00
+                                </label>
+                              </li>
+                              <li>
+                                <input
+                                  type="radio"
+                                  name="Price__Filter"
+                                  id="price_4"
+                                />
+                                <label
+                                  htmlFor="price_4"
+                                  onClick={() =>
+                                    sortDispatch({
+                                      type: "FILTER_PRICE",
+                                      payload: 1000,
+                                    })
+                                  }
+                                >
+                                  $1000.00 +
+                                </label>
+                              </li>
+                            </ul>
+                          </form>
+
                           <div className="price__filter__slider">
                             <h2>FILTER BY PRICE</h2>
 
@@ -490,7 +709,7 @@ const ShopPage: React.FC = () => {
                   <div className="product__items">
                     <div className="product__items__inner">
                       <Row>
-                        {transformProducts().map((value: any, index: any) => (
+                        {filterCategoryFun().map((value: any, index: any) => (
                           <Col
                             key={index}
                             lg={4}

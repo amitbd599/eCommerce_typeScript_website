@@ -1,7 +1,7 @@
 type dataType = {
   category?: String;
   link?: String;
-  subCategory?: any;
+  subCategory?: any; 
 };
 
 const Category: dataType[] = [

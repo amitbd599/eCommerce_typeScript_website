@@ -97,31 +97,17 @@ export const shoppingCartReducer = (state: any, action: any) => {
 
 export const sortItemsReducer = (state: any, action: any) => {
   switch (action.type) {
-    case "POPULARITY":
-      return { ...state, popularity: !state.popularity };
-
-    case "RATING":
-      return { ...state, rating: action.payload };
-
-    case "LATEST":
-      return { ...state, latest: action.payload };
-
-    case "LOW_TO_HIGH":
+    case "SORT":
       return { ...state, sort: action.payload };
 
-    case "HIGH_TO_LOW":
-      return { ...state, sort: action.payload };
+    case "FILTER_CATEGORY":
+      return { ...state, filterCategory: action.payload };
 
-    case "DEFAULT_FILTER":
-      return {
-        popularity: false,
-        rating: "",
-        latest: "",
-        lowToHigh: "",
-        highToLow: "",
-        searchQuery: "",
-        stock: true,
-      };
+    case "FILTER_PRICE":
+      return { ...state, filterPrice: action.payload };
+
+    case "CLEAR_FILTER":
+      return [];
 
     default:
       return state;

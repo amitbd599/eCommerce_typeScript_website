@@ -1,7 +1,7 @@
 type ShopProduct = {
   id: number;
   name: string;
-  img: string;
+  img: string; 
   imgThum?: string;
   discount?: number;
   price: number;
